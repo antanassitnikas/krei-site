@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="lt">
+<head></head>
+<body>
+<!-- krei · Teisinė informacija. Projektai parengti 2026-09-03 pagal BDAR/LT teisę ir konkurentų (aievoliucija.lt, customaistudio.io, teltonika, turingcollege) praktiką. PRIEŠ SKELBIANT PERŽIŪRĖTI TEISININKUI. Placeholderiai: [ĮMONĖS PAVADINIMAS], [Įmonės kodas], [Adresas], [El. paštas], [DATA]. -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>krei Teisinė informacija</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBFAF8; --paper-2:#F3EFE9; --panel:#FFFFFF;
+  --ink:#0A0A0A; --ink-2:#141210; --muted:#57534E; --stone:#78716C; --faint:#A8A29E;
+  --ember:#C15F3C; --ember-bright:#D97757; --ember-deep:#9A4A2E; --ember-tint:#F4E7DF;
+  --line:#E7E3DD; --line-dark:rgba(255,255,255,.12);
+  --display:'Inter Tight',ui-sans-serif,system-ui,sans-serif;
+  --body:'Inter',ui-sans-serif,system-ui,sans-serif;
+  --serif:'Fraunces',Georgia,serif;
+  --ease:cubic-bezier(.2,.7,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:66px}
+html{scroll-padding-top:80px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.narrow{max-width:760px;margin:0 auto}
+a{color:inherit}
+b,strong{font-weight:600}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+
+h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:-.045em;line-height:.98;text-wrap:balance}
+h2{font-size:clamp(40px,5.2vw,72px)}
+h2 .w{font-weight:500}
+h3{font-weight:400;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.03em;line-height:1.1}
+.center{text-align:center}
+.center h2{margin-left:auto;margin-right:auto}
+.lead{font-size:clamp(16.5px,1.6vw,18.5px);line-height:1.6;color:var(--muted);max-width:60ch;margin:22px auto 0}
+.center .lead{margin-left:auto;margin-right:auto}
+.label{font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);display:block;margin-bottom:18px}
+
+/* kvadratiniai mygtukai - CAIS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:500;font-size:14px;letter-spacing:-.005em;padding:14px 24px;border-radius:0;text-decoration:none;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:background .15s var(--ease),color .15s var(--ease),border-color .15s var(--ease),transform .15s var(--ease)}
+.btn:hover{background:var(--ember);border-color:var(--ember);color:#fff}
+.btn-ember{background:var(--ember);border-color:var(--ember);color:#fff;text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:600;padding:16px 26px}
+.btn-ember:hover{background:var(--ember-bright);border-color:var(--ember-bright)}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.on-dark .btn-line{color:var(--paper);border-color:rgba(255,255,255,.7)}
+.on-dark .btn-line:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.micro{font-size:13px;color:var(--stone)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(10,10,10,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-dark);color:var(--paper)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo .wm{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:-.01em;line-height:1}
+.logo .dot{color:var(--ember-bright)}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,.82)}
+.nav-links a:hover{color:#fff}
+.nav .btn{background:var(--ember);color:#fff;border-color:var(--ember);padding:11px 20px}
+.nav .btn:hover{background:var(--ember-bright);border-color:var(--ember-bright);color:#fff}
+.nav.light{background:rgba(251,250,248,.97);border-bottom-color:var(--line);color:var(--ink)}
+.nav.light .nav-links a{color:var(--muted)}.nav.light .nav-links a:hover{color:var(--ink)}
+.nav.light .btn{background:var(--ember);color:#fff;border-color:var(--ember)}
+.nav.light .logo .dot{color:var(--ember)}
+
+/* HERO - juodas, tinklelis, kreivė */
+.hero{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;min-height:min(92vh,900px);display:flex;align-items:flex-end}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:72px 72px;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:clamp(72px,9vw,120px);padding-bottom:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end}
+.hero-grid>div{min-width:0}
+.hero h1{font-size:clamp(40px,5.2vw,74px);letter-spacing:-.05em;line-height:.96;max-width:17ch}
+.hero h1 .acc{color:var(--ember-bright);text-shadow:0 0 28px rgba(217,119,87,.35)}
+.hero .sub{font-size:clamp(16.5px,1.5vw,19px);line-height:1.6;color:rgba(255,255,255,.82);max-width:48ch;margin:clamp(28px,4vw,64px) 0 30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero .micro{width:100%;color:rgba(255,255,255,.55);margin-top:4px}
+.hero-foot{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line-dark);margin-top:36px;padding:16px 0 18px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:500}
+/* kreivė */
+.curve{position:relative;padding-bottom:0;align-self:end}
+.curve svg{display:block;width:100%;height:auto}
+.curve .here-t{font-family:var(--display);font-weight:400;font-size:25px;letter-spacing:-.02em}
+.hero .wm-in{font-family:var(--serif);font-weight:600;font-size:1.12em;color:#fff;letter-spacing:-.01em}
+.hero .wm-in .dot{color:var(--ember-bright)}
+.wm-in.ink{font-family:var(--serif);font-weight:600;font-size:1.12em;color:var(--ink);letter-spacing:-.01em}
+.wm-in.ink .dot{color:var(--ember)}
+/* LOGO MARQUEE - bespalviai, judantys */
+.logos-row{display:block;margin:44px 0 0}
+.logos-row .lbl{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500;margin-bottom:18px}
+.logos-viewport{display:flex;gap:64px;overflow:hidden;width:100%;min-width:0;contain:inline-size;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.logos-track{display:flex;align-items:center;gap:64px;flex:none;width:max-content;animation:marquee 48s linear infinite}
+.logos-row:hover .logos-track{animation-play-state:paused}
+.logos-track img{height:30px;width:auto;max-width:150px;object-fit:contain;opacity:.55;filter:grayscale(1);display:block}
+@keyframes marquee{to{transform:translateX(calc(-100% - 64px))}}
+/* KOMANDA */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px}
+.person .ava{width:100%;aspect-ratio:1;background:var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:300;font-size:48px;letter-spacing:-.04em;color:var(--stone);margin-bottom:18px;background-size:cover;background-position:center 20%}
+.person .ava::after{content:attr(data-i)}
+.person .ava.photo::after{content:none}
+.person h3{font-size:19px;font-weight:500;letter-spacing:-.02em}
+.person .r{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-deep);font-weight:600;margin:4px 0 10px}
+.person p{font-size:14.5px;color:var(--muted);line-height:1.5}
+#komanda .stats{margin-top:64px}
+@media(max-width:860px){.team{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.team{grid-template-columns:1fr}}
+/* PATIRTIES JUOSTA - social proof po hero (nebenaudojama) */
+.cred{padding:clamp(48px,6vw,84px) 0;border-bottom:1px solid var(--line)}
+.cred-lead{font-family:var(--display);font-weight:300;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.035em;line-height:1.15;max-width:26ch}
+.cred .stats{margin-top:36px;border-top:none;padding-top:0}
+.curve .src{display:block;margin-top:12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+/* SEKCIJŲ ORAS - 152px kaip CAIS */
+section{padding:clamp(80px,10.5vw,152px) 0}
+section.dark{background:var(--ink);color:var(--paper)}
+section.dark h2,section.dark h3{color:var(--paper)}
+section.dark .lead{color:rgba(255,255,255,.7)}
+section.dark .label{color:var(--ember-bright)}
+
+/* STAT JUOSTA */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;border-top:1px solid var(--line);padding-top:36px;margin-top:64px}
+.stat .n{font-family:var(--display);font-weight:300;font-size:clamp(40px,4.6vw,64px);letter-spacing:-.045em;line-height:1;color:var(--ink)}
+.stat .n .u{color:var(--ember)}
+.stat .l{font-size:14px;color:var(--muted);margin-top:10px;max-width:24ch;line-height:1.45}
+
+/* ATVEJAI santrauka - 5 eilutės su viena plytele */
+.mini{margin-top:56px;border-bottom:1px solid var(--line)}
+.mini-row{display:grid;grid-template-columns:44px 1fr auto;gap:36px;align-items:start;padding:32px 0;border-top:1px solid var(--line);text-decoration:none;color:inherit;transition:background .2s var(--ease)}
+.mini-row:hover .txt b{color:var(--ember-deep)}
+.mini-row .no{font-family:var(--body);font-size:12px;letter-spacing:.1em;color:var(--ember);font-weight:500;font-variant-numeric:tabular-nums;align-self:start;padding-top:8px}
+.mini-row.soon .no{color:var(--faint)}
+.mini-row .txt b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(19px,1.9vw,24px);letter-spacing:-.03em;line-height:1.15;transition:color .2s var(--ease)}
+.mini-row .txt .bp{display:grid;grid-template-columns:44px 1fr;gap:14px;color:var(--muted);font-size:15px;margin-top:10px;max-width:70ch;line-height:1.5}
+.mini-row .txt .bp em{font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--stone);padding-top:4px}
+.mini-row .txt .bp.po{color:var(--ink);font-weight:500}
+.mini-row .txt .bp.po em{color:var(--ember-deep)}
+.mini-row .txt .more{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:600;color:var(--ember-deep)}
+.mini-row .tile-sub{display:block;font-family:var(--body);font-size:12.5px;color:var(--muted);margin-top:12px;letter-spacing:0;white-space:normal;max-width:22ch;margin-left:auto;line-height:1.45}
+.mini-row .tile{font-family:var(--display);font-weight:300;font-size:clamp(34px,3.4vw,46px);letter-spacing:-.045em;line-height:1;text-align:right;min-width:200px;white-space:nowrap;padding-top:4px}
+.mini-row .tile i{font-style:normal;color:var(--ember);font-size:.5em;letter-spacing:-.02em}
+.mini-row .tile small{display:block;font-family:var(--body);font-size:12px;color:var(--stone);margin-top:8px;letter-spacing:0;white-space:normal;max-width:18ch;margin-left:auto}
+.mini-cta{margin-top:32px}
+.stats-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.mini-row{grid-template-columns:32px 1fr;gap:10px 16px}.mini-row .tile{grid-column:2;text-align:left;min-width:0}.mini-row .tile small,.mini-row .tile-sub{margin-left:0}.stats-3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stats-3{grid-template-columns:1fr}}
+/* ATVEJAI - rail + Prieš/Po kortelė (naudojama krei-istorijos puslapyje) */
+.cases-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;margin-top:56px;align-items:start}
+.case-rail{display:flex;flex-direction:column;border-top:1px solid var(--line);position:sticky;top:90px;align-self:start}
+.case-rail button{display:grid;grid-template-columns:36px 1fr auto;gap:18px;align-items:center;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);border-left:2px solid transparent;padding:26px 8px 26px 14px;font-family:var(--display);font-weight:300;font-size:clamp(20px,2vw,27px);letter-spacing:-.03em;color:var(--stone);cursor:pointer;transition:color .2s var(--ease),border-color .2s var(--ease)}
+.case-rail button .no{font-family:var(--body);font-size:12px;letter-spacing:.1em;font-weight:500;font-variant-numeric:tabular-nums}
+.case-rail button .arr{opacity:0;color:var(--ember);font-family:var(--body);font-size:18px;transition:opacity .2s var(--ease)}
+.case-rail button:hover:not(:disabled){color:var(--ink)}
+.case-rail button.on{color:var(--ember-deep);border-left-color:var(--ember);font-weight:400}
+.case-rail button.on .arr{opacity:1}
+.case-rail button:disabled{cursor:default;color:var(--faint)}
+.case-panel{position:relative}
+.case{display:none;position:relative;background:var(--panel);border:1px solid var(--line);padding:clamp(28px,3.5vw,48px);overflow:hidden;background-image:linear-gradient(rgba(10,10,10,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(10,10,10,.04) 1px,transparent 1px);background-size:56px 56px;background-position:-1px -1px}
+.case.on{display:block}
+.case-tag{font-size:13.5px;font-weight:500;color:var(--stone);letter-spacing:.01em;display:flex;align-items:center;gap:10px;margin-bottom:26px}
+.case-tag .dot{width:8px;height:8px;background:var(--ember);flex:none}
+.ba{padding:0 0 26px}
+.ba+.ba{border-top:1px solid var(--line);padding-top:26px}
+.pill{display:inline-block;font-family:var(--body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--stone);background:var(--paper-2);padding:7px 12px;margin-bottom:14px}
+.pill.po{color:var(--ember-deep);background:var(--ember-tint)}
+.ba p{font-size:clamp(16px,1.5vw,18.5px);line-height:1.55;color:var(--muted);max-width:60ch}
+.ba p.after{color:var(--ink);font-weight:500}
+.case-stats{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0;margin-top:6px}
+.case-stats b{display:block;font-family:var(--display);font-weight:300;font-size:clamp(34px,3.6vw,48px);letter-spacing:-.045em;line-height:1;color:var(--ink)}
+.case-stats b .u{color:var(--ember);font-size:.5em;letter-spacing:-.02em}
+.case-stats>div>span{display:block;font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.4;max-width:26ch}
+.case-stats b .u{display:inline}
+.essence{font-family:var(--display);font-weight:400;font-size:clamp(18px,1.8vw,22px);letter-spacing:-.025em;line-height:1.3;color:var(--ink);margin:26px 0;max-width:46ch}
+.mock{border:1px solid var(--line);background:var(--paper);box-shadow:0 12px 40px rgba(10,10,10,.06);margin-top:8px}
+.mock-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:14.5px}
+.mock-head b{font-weight:600;color:var(--ink)}
+.mock-ic{width:14px;height:14px;background:var(--ember);flex:none}
+.mock-src{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);font-weight:500}
+.mock-chip{margin-left:auto;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ember-deep);background:var(--ember-tint);padding:6px 10px}
+.bars{padding:10px 18px 6px}
+.bar-row{display:grid;grid-template-columns:90px 1fr 56px;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink)}
+.bar-row:last-child{border-bottom:0}
+.bar-row.hi{font-weight:600}
+.bar-row .tr{display:flex;flex-direction:column;gap:4px}
+.bar-row .tr i{display:block;height:10px;background:var(--ember)}
+.bar-row .tr i.ly{height:6px;background:var(--line)}
+.bar-row .k{text-align:right;font-variant-numeric:tabular-nums}
+.mock-foot{padding:10px 18px 14px;font-size:12.5px;color:var(--stone)}
+.case-tag .dot.soon{background:var(--faint)}
+/* mock: chat */
+.chat{padding:16px 18px 6px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:78%;padding:10px 14px;font-size:14px;line-height:1.45;border:1px solid var(--line);background:var(--panel)}
+.msg .who{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);font-weight:500;margin-bottom:4px}
+.msg.out{align-self:flex-end;background:var(--ember-tint);border-color:transparent;color:var(--ink)}
+.msg.sys{align-self:center;max-width:100%;border:0;background:none;font-size:12.5px;color:var(--ember-deep);font-weight:600;padding:4px 0}
+/* mock: pirkėjo byla */
+.kv{padding:6px 18px}
+.kv-row{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.45}
+.kv-row:last-child{border-bottom:0}
+.kv-row .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);font-weight:500;padding-top:3px}
+.kv-row .v{color:var(--ink)}
+/* mock: PDF pasiūlymas */
+.doc{margin:14px 18px 6px;border:1px solid var(--line);background:var(--panel);padding:18px 20px}
+.doc-top{display:flex;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px;font-size:13px;color:var(--muted)}
+.doc-top b{display:block;font-size:16px;color:var(--ink);margin-bottom:2px}
+.doc-top .r{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.doc-tag{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ember-deep);background:var(--ember-tint);padding:4px 8px;margin-bottom:4px}
+.doc-row{display:grid;grid-template-columns:1fr 44px 96px;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink)}
+.doc-row .q{color:var(--stone);text-align:right;font-variant-numeric:tabular-nums}
+.doc-row .s{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.doc-sum{display:flex;justify-content:flex-end;gap:32px;padding:6px 0;font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.doc-sum.total{border-top:1px solid var(--ink);margin-top:6px;padding-top:10px;font-weight:600;color:var(--ink);font-size:16px}
+/* mock: dienos žurnalas */
+.log{padding:14px 18px 8px;font-size:14px}
+.log-chip{display:inline-block;font-size:12.5px;font-weight:600;color:var(--ember-deep);background:var(--ember-tint);padding:6px 12px;margin-bottom:14px}
+.log-check{display:flex;gap:10px;padding:5px 0;color:var(--ink)}
+.log-check::before{content:"✓";color:var(--ember);font-weight:700;flex:none}
+.log-row{display:grid;grid-template-columns:56px 1fr 1fr auto;gap:12px;padding:10px 0;border-top:1px solid var(--line);color:var(--muted);font-variant-numeric:tabular-nums}
+.log-row:first-of-type{margin-top:10px}
+.log-row .ok{color:var(--ink);font-weight:500}
+.log-row .flag{font-size:12.5px;color:var(--ember-deep);font-weight:600}
+@media(max-width:560px){.kv-row{grid-template-columns:1fr;gap:4px}.doc-row{grid-template-columns:1fr 36px 80px}.log-row{grid-template-columns:50px 1fr;gap:4px 10px}.msg{max-width:92%}}
+.case-cta{display:inline-block;margin-top:30px;font-weight:600;font-size:17px;color:var(--ember-deep);text-decoration:none;letter-spacing:-.01em}
+.case-cta:hover{color:var(--ember)}
+.case-no{position:absolute;right:-16px;bottom:-52px;font-family:var(--display);font-weight:300;font-size:190px;letter-spacing:-.06em;color:var(--paper-2);line-height:1;pointer-events:none;z-index:0}
+.case>*{position:relative;z-index:1}
+.case>.case-no{z-index:0}
+.cases .stats{margin-top:64px}
+@media(max-width:1024px){.cases-grid{grid-template-columns:1fr;gap:28px}.case-rail{position:static;flex-direction:row;overflow-x:auto;border-top:0;border-bottom:1px solid var(--line)}.case-rail button{border-bottom:0;border-left:0;border-bottom:2px solid transparent;padding:14px 12px;font-size:17px;white-space:nowrap;grid-template-columns:auto 1fr}.case-rail button .arr{display:none}.case-rail button.on{border-bottom-color:var(--ember)}}
+@media(max-width:560px){.case-stats{grid-template-columns:1fr}.bar-row{grid-template-columns:70px 1fr 48px}}
+/* SEKTORIŲ KORTELĖS (senos, nebenaudojamos) - balta kortelė + tamsi plytelė */
+.tabs{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin:44px 0 28px;font-size:14px;font-weight:500;color:var(--stone)}
+.tabs span{padding-bottom:8px;border-bottom:2px solid transparent}
+.tabs span.on{color:var(--ember-deep);border-color:var(--ember)}
+.ind{display:grid;grid-template-columns:1.15fr .85fr;gap:0;border:1px solid var(--line);background:var(--panel);margin-bottom:18px}
+.ind .l{padding:clamp(28px,3.5vw,48px)}
+.ind .l h3{font-size:clamp(26px,2.8vw,36px);font-weight:300;letter-spacing:-.04em;margin-bottom:12px}
+.ind .l p{color:var(--muted);max-width:52ch}
+.ind ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:22px}
+.ind li{display:flex;gap:10px;font-size:14.5px;color:var(--ink)}
+.ind li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ember);flex:none;margin-top:9px}
+.ind .r{background:var(--ink);color:var(--paper);padding:clamp(28px,3.5vw,48px);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.ind .r::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
+.ind .r .k{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500}
+.ind .r .big{font-family:var(--display);font-weight:300;font-size:clamp(36px,4.2vw,58px);letter-spacing:-.045em;line-height:1;margin:22px 0 10px}
+.ind .r .big .was{display:block;font-size:.42em;color:rgba(255,255,255,.45);text-decoration:line-through;letter-spacing:-.02em;margin-bottom:8px}
+.ind .r p{color:rgba(255,255,255,.7);font-size:14.5px;max-width:30ch}
+.ind .r .em{color:var(--ember-bright)}
+
+/* PROBLEMA - sąrašas + proza */
+.prob-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;margin-top:56px;align-items:start}
+.prob-list{list-style:none;display:flex;flex-direction:column}
+.prob-list li{padding:16px 0;border-top:1px solid var(--line);font-family:var(--display);font-weight:400;font-size:clamp(17px,1.6vw,20px);letter-spacing:-.02em;display:flex;gap:16px;align-items:baseline}
+.prob-list li:last-child{border-bottom:1px solid var(--line)}
+.prob-list li::before{content:"";width:8px;height:8px;background:var(--ember);flex:none;transform:translateY(-2px)}
+.prob-prose p{color:var(--muted);margin-bottom:18px;max-width:54ch}
+.prob-prose p b{color:var(--ink);font-weight:600}
+.prob-prose .punch{font-family:var(--display);font-weight:400;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em;color:var(--ink);line-height:1.25;margin:26px 0}
+
+/* PARTNERIS - 5 stulpeliai be kortelių */
+.roles{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:72px;position:relative;padding-top:38px}
+.roles::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--ember);opacity:.45}
+.role{position:relative}
+.role::before{content:"";position:absolute;left:0;top:-38px;width:15px;height:15px;border-radius:50%;background:var(--ember)}
+@media(max-width:1024px){.roles::before,.role::before{display:none}.roles{padding-top:0}}
+.role h3{font-size:18px;font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
+.role .no{font-family:var(--display);font-weight:300;font-size:15px;letter-spacing:.06em;color:var(--ember);margin-bottom:14px;font-variant-numeric:tabular-nums}
+.role p{font-size:14.5px;color:var(--muted)}
+.ready{margin-top:72px;background:var(--paper-2);border:1px solid var(--line);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.ready h3{font-weight:400;font-size:24px}
+.ready p{color:var(--muted);font-size:15px;max-width:52ch;margin-top:6px}
+
+/* PRINCIPAI - tamsi juosta */
+.prin{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+.prin .txt h2{font-size:clamp(36px,4.4vw,60px)}
+.prin .txt h2 .acc{color:var(--ember-bright)}
+.prin .txt p{color:rgba(255,255,255,.72);margin-top:24px;max-width:48ch}
+.prin .txt p .acc{color:var(--ember-bright)}
+.prin-list{display:flex;flex-direction:column}
+.prin-item{border-top:1px solid var(--line-dark)}
+.prin-item:last-child{border-bottom:1px solid var(--line-dark)}
+.prin-item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;padding:18px 0;font-family:var(--display);font-weight:300;font-size:clamp(18px,1.8vw,23px);letter-spacing:-.025em;line-height:1.25;color:rgba(255,255,255,.88)}
+.prin-item summary::-webkit-details-marker{display:none}
+.prin-item summary .no{font-family:var(--body);font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.45);font-weight:500;padding-top:7px;font-variant-numeric:tabular-nums;transition:color .2s var(--ease)}
+.prin-item[open] summary .no,.prin-item summary:hover .no{color:var(--ember-bright)}
+.prin-item[open] summary{color:#fff}
+.prin-item summary b{font-weight:500;color:#fff}
+.prin-item p{padding:0 0 22px 50px;color:rgba(255,255,255,.66);font-size:15px;line-height:1.6;max-width:56ch}
+@media(max-width:560px){.prin-item p{padding-left:0}}
+
+/* ĮRODYMAI, NE PAŽADAI */
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
+.pf{border:1px solid var(--line);background:var(--panel);padding:32px 30px}
+.pf .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:500}
+.pf .n{font-family:var(--display);font-weight:300;font-size:clamp(44px,5vw,68px);letter-spacing:-.05em;line-height:1;margin:22px 0 12px;font-variant-numeric:tabular-nums}
+.pf .n .u{color:var(--ember)}
+.pf .n .was{display:block;font-size:.4em;color:var(--faint);text-decoration:line-through;letter-spacing:-.02em;margin-bottom:6px}
+.pf h3{font-size:19px;font-weight:500;letter-spacing:-.02em;margin-bottom:8px}
+.pf p{font-size:14.5px;color:var(--muted)}
+.feat{margin-top:18px;display:grid;grid-template-columns:1.3fr .7fr;gap:18px}
+.feat .q{background:var(--paper-2);border:1px solid var(--line);padding:clamp(28px,3.5vw,48px)}
+.feat .q .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);font-weight:500;margin-bottom:18px;display:block}
+.feat .q p{font-family:var(--display);font-weight:300;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.035em;line-height:1.2}
+.feat .q p b{font-weight:500}
+.feat .q .who{margin-top:22px;font-size:14px;color:var(--muted)}
+.feat .g{background:var(--ink);color:var(--paper);padding:clamp(28px,3.5vw,48px);display:flex;flex-direction:column;justify-content:space-between}
+.feat .g .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500}
+.feat .g .n{font-family:var(--display);font-weight:300;font-size:clamp(44px,5vw,72px);letter-spacing:-.05em;line-height:1;margin:18px 0 8px}
+.feat .g .n .u{color:var(--ember-bright)}
+.feat .g p{color:rgba(255,255,255,.7);font-size:14.5px}
+.feat .g a{color:#fff;font-size:14px;font-weight:500;margin-top:22px;display:inline-block}
+
+/* GARANTIJA */
+.guar{border:1px solid var(--line);background:var(--panel);display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:56px}
+.guar .a{padding:clamp(28px,3.5vw,48px);border-right:1px solid var(--line)}
+.guar .b{padding:clamp(28px,3.5vw,48px);background:var(--paper-2)}
+.guar h3{font-size:clamp(24px,2.6vw,34px);font-weight:300;letter-spacing:-.04em}
+.guar .g-body{margin-top:20px;font-size:17px;line-height:1.55;color:var(--muted);max-width:44ch}
+.guar .g-body b{color:var(--ink)}
+.guar .g-body .hl{color:var(--ember-deep);font-weight:600}
+.guar .b .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);font-weight:500;display:block;margin-bottom:16px}
+.guar ol{list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:c}
+.guar ol li{counter-increment:c;display:flex;gap:14px;font-size:15px;color:var(--ink);line-height:1.5}
+.guar ol li::before{content:"(" counter(c) ")";font-family:var(--display);color:var(--ember);font-weight:500;flex:none}
+.guar .pub{margin-top:22px;font-weight:600;font-size:14.5px}
+.guar .b .btn{margin-top:26px}
+.guar.single{grid-template-columns:1fr;max-width:860px;margin-left:auto;margin-right:auto}
+.guar.single .a{border-right:0}
+.guar.single .g-body{max-width:60ch}
+.guar .pub a{color:var(--ember-deep)}
+
+/* PASIŪLYMAS - offer kortelė */
+.offer{margin-top:56px;border:2px solid var(--ember);background:var(--panel);padding:clamp(26px,3.5vw,44px)}
+.offer-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
+.offer-head .label{margin-bottom:0}
+.offer-note{font-size:13.5px;color:var(--muted)}
+.offer-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:48px}
+.offer-k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--stone);margin-bottom:12px}
+.offer-list{list-style:none;display:flex;flex-direction:column}
+.offer-list li{display:block;position:relative;padding:12px 0 12px 26px;border-top:1px solid var(--line);font-size:15px;color:var(--muted);line-height:1.5}
+.offer-list li:last-child{border-bottom:1px solid var(--line)}
+.offer-list li::before{content:"✓";color:var(--ember);font-weight:700;position:absolute;left:0;top:12px}
+.offer-list li b{color:var(--ink);font-weight:600}
+.offer-side{border-left:1px solid var(--line);padding-left:40px;display:flex;flex-direction:column}
+.offer-side p{font-size:15px;color:var(--ink);margin-bottom:22px;line-height:1.55}
+.offer-side .offer-k{margin-bottom:8px}
+.offer-side .btn{align-self:flex-start;margin-top:auto}
+.offer-side .micro{margin-top:10px}
+.ladder-head{margin-top:72px;display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:baseline}
+.ladder-head p{color:var(--muted);font-size:16px;max-width:60ch}
+.ladder-head .label{margin-bottom:0}
+.step .tag{position:absolute;top:-11px;left:18px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--ember);padding:4px 9px}
+.step.hi{border-color:var(--ember);box-shadow:0 0 0 1px var(--ember)}
+.step.core .tag{background:var(--ink)}
+@media(max-width:860px){.offer-grid{grid-template-columns:1fr;gap:28px}.offer-side{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px}.ladder-head{grid-template-columns:1fr;gap:10px}}
+/* KELIAS - laiptai su kylančiais blokais (logo motyvas) */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:56px;align-items:stretch}
+.step{border:1px solid var(--line);background:var(--panel);padding:26px 22px 28px;display:flex;flex-direction:column;position:relative}
+.step .blocks{display:flex;gap:4px;align-items:flex-end;height:34px;margin-bottom:22px}
+.step .blocks i{display:block;width:12px;height:12px;background:var(--ember)}
+.step .blocks i:nth-child(2){height:16px}.step .blocks i:nth-child(3){height:20px}.step .blocks i:nth-child(4){height:26px}.step .blocks i:nth-child(5){height:32px}
+.step .no{font-family:var(--body);font-size:11.5px;letter-spacing:.12em;color:var(--stone);font-weight:500;font-variant-numeric:tabular-nums}
+.step h3{font-size:clamp(19px,1.6vw,22px);font-weight:500;letter-spacing:-.025em;line-height:1.15;margin:8px 0 6px}
+.step .meta{font-size:12.5px;color:var(--ember-deep);font-weight:600;letter-spacing:.01em;margin-bottom:18px}
+.step dl{margin:0;display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.step dt{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:600;margin-bottom:3px}
+.step dd{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+.step dd:last-child{color:var(--ink)}
+@media(max-width:1180px){.steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+/* FORMATAI (senas sąrašas, nebenaudojamas) */
+.formats{margin-top:56px;border-top:1px solid var(--line)}
+.fmt{display:grid;grid-template-columns:56px 1fr 1.15fr;gap:32px;padding:38px 0;border-bottom:1px solid var(--line);align-items:start}
+.fmt .no{font-family:var(--body);font-size:12px;letter-spacing:.1em;color:var(--ember);font-weight:500;padding-top:9px;font-variant-numeric:tabular-nums}
+.fmt h3{font-size:clamp(22px,2.4vw,30px);font-weight:400;letter-spacing:-.03em;line-height:1.15}
+.fmt p{color:var(--muted);font-size:15.5px;max-width:52ch}
+@media(max-width:860px){.fmt{grid-template-columns:40px 1fr;gap:12px 20px}.fmt p{grid-column:2}}
+/* PRADĖK (senas) - du keliai, nebenaudojama */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px}
+.path{padding:clamp(28px,3.5vw,44px);border:1px solid var(--line);display:flex;flex-direction:column}
+.path.beige{background:var(--paper-2)}
+.path.ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.path .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ember-deep);margin-bottom:22px;display:inline-flex;align-items:center;gap:8px}
+.path.ink .tag{color:var(--ember-bright)}
+.path .tag::before{content:"";width:6px;height:6px;background:currentColor}
+.path h3{font-size:clamp(26px,2.8vw,36px);font-weight:300;letter-spacing:-.04em}
+.path .pr{font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;margin:16px 0 6px}
+.path .pr small{font-family:var(--body);font-size:13px;font-weight:500;color:var(--stone);letter-spacing:0}
+.path.ink .pr small{color:rgba(255,255,255,.55)}
+.path .d{color:var(--muted);font-size:15px;max-width:46ch}
+.path.ink .d{color:rgba(255,255,255,.72)}
+.path ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:26px 0 30px}
+.path li{display:flex;gap:12px;font-size:14.5px}
+.path li::before{content:"✓";color:var(--ember);font-weight:600;flex:none}
+.path.ink li::before{color:var(--ember-bright)}
+.path .btn{margin-top:auto;align-self:flex-start}
+.path .refund{margin-top:14px;font-size:13.5px;font-weight:600;color:var(--ember-deep)}
+.ladder{margin-top:18px;border:1px solid var(--line);background:var(--panel)}
+.ladder .row{display:grid;grid-template-columns:1.1fr 2fr auto;gap:24px;padding:20px 28px;border-top:1px solid var(--line);align-items:baseline}
+.ladder .row:first-child{border-top:none}
+.ladder .row h4{font-family:var(--display);font-weight:500;font-size:17px;letter-spacing:-.02em}
+.ladder .row p{font-size:14px;color:var(--muted)}
+.ladder .row .pr{font-family:var(--display);font-weight:400;font-size:22px;letter-spacing:-.03em;white-space:nowrap;text-align:right}
+.price-ctx{margin-top:18px;font-size:14px;color:var(--muted);max-width:80ch}
+.price-ctx b{color:var(--ink)}
+.anchors{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;max-width:900px}
+.anchor{border-top:1px solid var(--line);padding-top:18px}
+.anchor h4{font-family:var(--display);font-weight:500;font-size:16px;letter-spacing:-.02em;margin-bottom:6px}
+.anchor p{font-size:14.5px;color:var(--muted)}
+.anchor p b{color:var(--ink)}
+
+/* DUK */
+.faq{max-width:820px;margin:48px auto 0}
+.faq details{border-top:1px solid var(--line);padding:20px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-family:var(--display);font-weight:400;font-size:clamp(17px,1.7vw,20px);letter-spacing:-.025em;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--ember);font-size:22px;font-weight:300;line-height:1;flex-shrink:0;transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);margin-top:12px;font-size:15px;max-width:64ch}
+.faq details p b{color:var(--ink)}
+
+/* BOOKING */
+.book .cal-slot{margin:48px auto 0;max-width:880px;min-height:540px;border:1px dashed rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px;text-align:center}
+.book .cal-note{color:rgba(255,255,255,.55);font-size:14px;max-width:42ch}
+.book .micro{color:rgba(255,255,255,.55)}
+.confirm{display:none;margin:20px auto 0;max-width:880px;border:1px solid var(--ember);padding:30px}
+.confirm h3{font-size:22px;margin-bottom:12px}
+.confirm p{color:rgba(255,255,255,.72);font-size:15px}
+.confirm p b{color:#fff}
+.form-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;max-width:1000px;margin:48px auto 0}
+.form-intro{grid-column:1 / -1;font-family:var(--display);font-weight:400;font-size:19px;letter-spacing:-.02em;border-top:1px solid var(--line-dark);padding-top:26px}
+.form-wrap{border:1px solid var(--line-dark);padding:30px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:500;font-size:12.5px;color:rgba(255,255,255,.7);margin-bottom:6px;letter-spacing:.02em}
+.field input,.field textarea,.field select{width:100%;background:var(--ink-2);border:1px solid rgba(255,255,255,.18);border-radius:0;padding:12px 14px;color:var(--paper);font-family:var(--body);font-size:15px}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--ember-bright)}
+.field textarea{resize:vertical;min-height:78px}
+.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D97757' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-side h3{font-size:20px;font-weight:400;margin-bottom:18px}
+.form-side .fs{display:flex;gap:11px;margin-bottom:14px;color:rgba(255,255,255,.72);font-size:14.5px}
+.form-side .fs::before{content:"✓";color:var(--ember-bright);font-weight:600}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:rgba(255,255,255,.7);margin:6px 0 16px;line-height:1.45}
+.consent input{margin-top:3px;accent-color:var(--ember)}
+.consent a{color:#fff}
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;background:var(--ink);color:var(--paper);border:1px solid var(--line-dark);padding:16px 18px;display:none;gap:16px;align-items:center;flex-wrap:wrap;font-size:13.5px;max-width:860px;margin:0 auto}
+.cookie.on{display:flex}
+.cookie p{flex:1;min-width:240px;margin:0;color:rgba(255,255,255,.8)}
+.cookie a{color:#fff}
+.cookie .btn{padding:10px 16px;font-size:13px}
+.cookie .btn-line{color:var(--paper);border-color:rgba(255,255,255,.6)}
+.form-msg{display:none;border:1px solid var(--ember);padding:14px;color:#fff;margin-bottom:16px;font-size:14px}
+
+/* FOOTER - daugiastulpis */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;border-top:1px solid var(--line-dark)}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+.foot .tag{font-family:var(--display);font-weight:300;font-size:22px;letter-spacing:-.03em;color:#fff;margin:16px 0 10px;max-width:22ch}
+.foot p{font-size:14px;max-width:36ch}
+.foot h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500;margin-bottom:14px}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14px}
+.foot a{text-decoration:none;color:rgba(255,255,255,.75)}
+.foot a:hover{color:#fff}
+.foot-bottom{margin-top:48px;padding-top:20px;border-top:1px solid var(--line-dark);font-size:12.5px;color:rgba(255,255,255,.45);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* MOTION */
+@media(prefers-reduced-motion:no-preference){
+  .hero h1,.hero .sub,.hero-cta,.curve{animation:rise .8s var(--ease) both}
+  .hero .sub{animation-delay:.1s}.hero-cta{animation-delay:.18s}.curve{animation-delay:.25s}
+  .curve rect{transform-origin:bottom;animation:grow .9s var(--ease) both}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
+
+@media(max-width:1024px){
+  .roles{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .wrap{padding:0 22px}
+  .hero{min-height:auto;align-items:flex-start}
+  .hero-grid,.ind,.prob-grid,.prin,.proof-grid,.feat,.guar,.paths,.form-grid,.anchors{grid-template-columns:1fr}
+  .guar .a{border-right:none;border-bottom:1px solid var(--line)}
+  .stats{grid-template-columns:1fr 1fr}
+  .roles{grid-template-columns:1fr 1fr}
+  .ladder .row{grid-template-columns:1fr;gap:6px}
+  .ladder .row .pr{text-align:left}
+  .nav-links{display:none}
+  .curve{margin-top:28px}
+}
+@media(max-width:560px){
+  .stats,.roles,.foot{grid-template-columns:1fr}
+}
+</style>
+<style>
+.legal-head{padding:clamp(56px,7vw,96px) 0 32px}
+.legal-grid{display:grid;grid-template-columns:240px 1fr;gap:64px;align-items:start;padding-bottom:clamp(80px,10vw,140px)}
+.doc-rail{position:sticky;top:90px;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.doc-rail a{padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+.doc-rail a:hover{color:var(--ember-deep)}
+.doc-body{max-width:72ch;padding-bottom:64px;border-bottom:1px solid var(--line);margin-bottom:64px}
+.doc-body:last-child{border-bottom:0}
+.doc-body h2{font-size:clamp(30px,3.4vw,44px);margin-bottom:18px}
+.doc-body h3{font-family:var(--body);font-weight:600;font-size:16px;letter-spacing:0;line-height:1.35;margin:30px 0 8px;color:var(--ink)}
+.doc-body p,.doc-body li{font-size:15px;line-height:1.65;color:var(--muted)}
+.doc-body p{margin-bottom:12px}
+.doc-body ul{padding-left:20px;margin-bottom:12px}
+.doc-body strong{color:var(--ink)}
+.doc-body a{color:var(--ember-deep)}
+.doc-body table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0}
+.doc-body td,.doc-body th{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.draft{border:1px solid var(--ember);background:var(--ember-tint);padding:14px 18px;font-size:14px;color:var(--ember-deep);font-weight:600;margin-top:20px}
+@media(max-width:860px){.legal-grid{grid-template-columns:1fr;gap:28px}.doc-rail{position:static}}
+</style>
+<a id="top"></a>
+<header>
+<nav class="nav light" id="nav" aria-label="Pagrindinė navigacija">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="krei, į puslapio pradžią">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 48 48" fill="none" role="img" aria-label="krei ženklas: trys kylantys blokai"><rect x="5" y="30" width="13" height="13" rx="3.2" fill="#9A4A2E"/><rect x="17.5" y="17.5" width="13" height="13" rx="3.2" fill="#C15F3C"/><rect x="30" y="5" width="13" height="13" rx="3.2" fill="#D97757"/></svg>
+      <span class="wm">kre<span class="dot">i</span></span>
+    </a>
+    <div class="nav-links"><a href="/">← Pagrindinis</a><a href="#privatumas">Privatumas</a><a href="#slapukai">Slapukai</a><a href="#taisykles">Taisyklės</a><a href="#garantija">Garantija</a></div>
+    <a href="/#pokalbis" class="btn">Strateginis pokalbis →</a>
+  </div>
+</nav>
+</header>
+<main>
+<section class="legal-head" style="padding-bottom:0">
+  <div class="wrap">
+    <span class="label">Teisinė informacija</span>
+    <h2>Privatumas, slapukai, <span class="w">taisyklės ir garantija.</span></h2>
+    <p class="draft">Projektas parengtas 2026-09-03. Prieš skelbiant peržiūrėti teisininkui ir užpildyti rekvizitus.</p>
+  </div>
+</section>
+<section style="padding-top:40px">
+  <div class="wrap legal-grid">
+    <nav class="doc-rail" aria-label="Dokumentai">
+      <a href="#privatumas">Privatumo politika</a>
+      <a href="#slapukai">Slapukų politika</a>
+      <a href="#taisykles">Paslaugų teikimo taisyklės</a>
+      <a href="#garantija">Rezultatų garantijos sąlygos</a>
+    </nav>
+    <div>
+<article class="doc-body" id="privatumas">
+<h2>Privatumo politika</h2>
+<p><strong>Projektas parengtas 2026-09-03. Prieš skelbiant peržiūrėti teisininkui.</strong></p>
+<p>Paskutinis atnaujinimas: [DATA]. Įsigalioja nuo: [DATA].</p>
+
+<h3>1. Bendrosios nuostatos</h3>
+<p>Ši privatumo politika (toliau: Politika) nustato, kaip [ĮMONĖS PAVADINIMAS], veikianti prekės ženklu „krei", tvarko asmens duomenis, gaunamus per svetainę krei.lt (toliau: Svetainė), užklausų formas, susirašinėjimą, strategijos pokalbius ir teikiant paslaugas. Politika parengta vadovaujantis 2016 m. balandžio 27 d. Europos Parlamento ir Tarybos reglamentu (ES) 2016/679 (Bendrasis duomenų apsaugos reglamentas, toliau: BDAR), Lietuvos Respublikos asmens duomenų teisinės apsaugos įstatymu ir Lietuvos Respublikos elektroninių ryšių įstatymu.</p>
+<p>Mūsų paslaugos skirtos juridiniams asmenims. Vis dėlto, bendraudami su įmonėmis, tvarkome jų atstovų, darbuotojų ir kontaktinių asmenų asmens duomenis. Ši Politika taikoma būtent šiems fiziniams asmenims. Jeigu pateikiate kito asmens (pavyzdžiui, kolegos) duomenis, privalote turėti teisę tai daryti ir informuoti tą asmenį apie šią Politiką.</p>
+
+<h3>2. Duomenų valdytojas</h3>
+<ul>
+<li>Pavadinimas: [ĮMONĖS PAVADINIMAS]</li>
+<li>Juridinio asmens kodas: [Įmonės kodas]</li>
+<li>Registruotos buveinės adresas: [Adresas]</li>
+<li>El. paštas duomenų apsaugos klausimais: [El. paštas]</li>
+<li>Svetainė: https://krei.lt</li>
+</ul>
+<p>Duomenų apsaugos pareigūnas nepaskirtas, nes pagal BDAR 37 straipsnį tokia pareiga mums netaikoma. Visais asmens duomenų klausimais kreipkitės aukščiau nurodytu el. paštu.</p>
+
+<h3>3. Kokius asmens duomenis tvarkome</h3>
+<p>Tvarkome tik tuos duomenis, kurie būtini konkrečiam tikslui pasiekti.</p>
+<p><strong>3.1. Užklausos ir strategijos pokalbio formos duomenys:</strong></p>
+<ul>
+<li>vardas (ir pavardė, jeigu ją nurodote);</li>
+<li>įmonės pavadinimas;</li>
+<li>telefono numeris;</li>
+<li>el. pašto adresas;</li>
+<li>darbuotojų skaičius;</li>
+<li>veiklos sektorius;</li>
+<li>laisvos formos proceso ar problemos aprašymas, kurį pateikiate formoje.</li>
+</ul>
+<p>Prašome į laisvos formos laukus nerašyti specialių kategorijų asmens duomenų (sveikatos, politinių pažiūrų, religijos ir pan.) ar kitų asmenų duomenų, kurie nėra būtini užklausai.</p>
+<p><strong>3.2. Sutarties vykdymo duomenys:</strong> kliento atstovo vardas, pavardė, pareigos, kontaktiniai duomenys, susirašinėjimo turinys, susitikimų įrašai ar užrašai (jeigu iš anksto informuojame ir gauname sutikimą įrašyti), sąskaitų ir mokėjimų informacija.</p>
+<p><strong>3.3. Kliento sistemų duomenys teikiant paslaugas:</strong> diegdami dirbtinio intelekto sprendimus (toliau: DI darbuotojai) galime gauti prieigą prie kliento sistemų (CRM, el. paštas, dokumentai, kiti įrankiai), kuriose yra kliento darbuotojų, klientų ar partnerių asmens duomenų. Šių duomenų valdytojas yra klientas, o mes veikiame kaip duomenų tvarkytojas pagal atskirą duomenų tvarkymo sutartį (žr. 8 skyrių). Ši Politika tokiems duomenims taikoma tik tiek, kiek nustato tvarkytojo pareigas.</p>
+<p><strong>3.4. Techniniai ir naršymo duomenys:</strong> IP adresas, naršyklės tipas ir versija, įrenginio tipas, operacinė sistema, apsilankymo data ir laikas, peržiūrėti puslapiai, nukreipimo šaltinis, slapukų identifikatoriai. Daugiau informacijos: Slapukų politika.</p>
+<p><strong>3.5. Rinkodaros duomenys:</strong> el. pašto adresas, vardas, įmonė, jūsų pasirinkimai dėl rinkodaros pranešimų gavimo.</p>
+
+<h3>4. Tvarkymo tikslai ir teisiniai pagrindai</h3>
+<p><strong>4.1. Užklausos apdorojimas ir strategijos pokalbio organizavimas.</strong> Tikslas: atsakyti į jūsų užklausą, suplanuoti ir pravesti 30 minučių strategijos pokalbį, parengti individualų pasiūlymą. Teisinis pagrindas: veiksmai, kurių imamasi jūsų prašymu prieš sudarant sutartį (BDAR 6 str. 1 d. b p.). Jeigu užklausą pateikiate kaip įmonės atstovas, papildomas pagrindas yra mūsų teisėtas interesas bendrauti su potencialaus kliento atstovais (BDAR 6 str. 1 d. f p.).</p>
+<p><strong>4.2. Sutarties sudarymas ir vykdymas.</strong> Tikslas: paslaugų teikimas, projekto valdymas, susirašinėjimas, sąskaitų išrašymas, garantijos sąlygų vykdymas. Teisinis pagrindas: sutarties vykdymas (BDAR 6 str. 1 d. b p.) ir teisėtas interesas tvarkyti kliento atstovų kontaktinius duomenis (BDAR 6 str. 1 d. f p.).</p>
+<p><strong>4.3. Buhalterinė apskaita ir teisinių prievolių vykdymas.</strong> Tikslas: sąskaitų faktūrų išrašymas, apskaitos dokumentų saugojimas, mokesčių administravimas. Teisinis pagrindas: teisinė prievolė (BDAR 6 str. 1 d. c p.), Lietuvos Respublikos finansinės apskaitos įstatymas ir Pridėtinės vertės mokesčio įstatymas.</p>
+<p><strong>4.4. Tiesioginė rinkodara.</strong> Tikslas: naujienlaiškių, pasiūlymų, renginių ir edukacinio turinio siuntimas el. paštu. Teisinis pagrindas: jūsų sutikimas (BDAR 6 str. 1 d. a p.), išreikštas pažymint atskirą langelį formoje. Esamiems klientams panašių paslaugų pasiūlymus galime siųsti teisėto intereso pagrindu (BDAR 6 str. 1 d. f p., Elektroninių ryšių įstatymo 81 str.), kiekviename pranešime suteikdami galimybę atsisakyti. Sutikimą galite atšaukti bet kada, tai neturi įtakos iki atšaukimo atlikto tvarkymo teisėtumui.</p>
+<p><strong>4.5. Svetainės analitika ir reklamos efektyvumo matavimas.</strong> Tikslas: suprasti, kaip naudojama Svetainė, matuoti ir optimizuoti reklamos kampanijas (Meta Pixel, Google Analytics, jeigu naudojama). Teisinis pagrindas: jūsų sutikimas, išreikštas slapukų juostoje (BDAR 6 str. 1 d. a p., Elektroninių ryšių įstatymo 96 str.).</p>
+<p><strong>4.6. Svetainės ir sistemų saugumas.</strong> Tikslas: apsaugoti Svetainę ir mūsų sistemas nuo neteisėtos prieigos, kenkėjiškos veiklos, sukčiavimo, užtikrinti veikimą, registruoti techninius įvykius. Teisinis pagrindas: teisėtas interesas (BDAR 6 str. 1 d. f p.).</p>
+<p><strong>4.7. Teisinių reikalavimų nustatymas, vykdymas ir gynimas.</strong> Tikslas: pretenzijų nagrinėjimas, ginčų sprendimas, įrodymų išsaugojimas. Teisinis pagrindas: teisėtas interesas (BDAR 6 str. 1 d. f p.).</p>
+
+<h3>5. Duomenų gavėjai ir tvarkytojai</h3>
+<p>Asmens duomenų neparduodame. Duomenis perduodame tik šioms gavėjų kategorijoms ir tik tiek, kiek būtina:</p>
+<ul>
+<li><strong>Svetainės talpinimo ir formų apdorojimo paslaugų teikėjas:</strong> [HOSTINGO TEIKĖJAS, šalis, serverių vieta].</li>
+<li><strong>Google Ireland Limited (Google Workspace):</strong> el. paštas, kalendorius, dokumentai, susitikimų platforma. Serveriai ES ir JAV.</li>
+<li><strong>Meta Platforms Ireland Limited (Meta Pixel, Meta reklamos):</strong> reklamos efektyvumo matavimas ir auditorijų formavimas, tik gavus jūsų sutikimą slapukų juostoje. Meta gali perduoti duomenis į JAV.</li>
+<li><strong>Google Ireland Limited (Google Analytics, Google Fonts):</strong> jeigu naudojame Google Analytics, tik gavus sutikimą. Google Fonts įkeliant šriftus jūsų IP adresas perduodamas Google serveriams.</li>
+<li><strong>Susitikimų rezervavimo įrankis:</strong> [Calendly, LLC / Cal.com, Inc. / kita], jeigu naudojamas strategijos pokalbio laikui suderinti.</li>
+<li><strong>Ryšių su klientais valdymo sistema (CRM):</strong> [CRM TEIKĖJAS], užklausų ir klientų kontaktų administravimui.</li>
+<li><strong>Buhalterinės apskaitos paslaugų teikėjas ir apskaitos programa:</strong> [BUHALTERIJOS TEIKĖJAS].</li>
+<li><strong>Dirbtinio intelekto modelių ir automatizavimo platformų teikėjai:</strong> teikiant paslaugas kliento duomenys gali būti apdorojami per sutartyje nurodytus DI modelių teikėjus (pavyzdžiui, OpenAI, Anthropic, Google) ir automatizavimo įrankius. Konkretūs teikėjai nurodomi sutartyje ir duomenų tvarkymo sutartyje.</li>
+<li><strong>Valstybės institucijos:</strong> mokesčių administratorius, teismai, priežiūros institucijos, kai to reikalauja teisės aktai.</li>
+<li><strong>Profesiniai patarėjai:</strong> teisininkai, auditoriai, kai būtina ginti mūsų teises.</li>
+</ul>
+<p>Su visais duomenų tvarkytojais sudarome duomenų tvarkymo sutartis pagal BDAR 28 straipsnį.</p>
+
+<h3>6. Duomenų perdavimas už Europos ekonominės erdvės ribų</h3>
+<p>Dalis mūsų naudojamų paslaugų teikėjų (Google, Meta, susitikimų rezervavimo ir DI modelių teikėjai) gali tvarkyti duomenis Jungtinėse Amerikos Valstijose ar kitose trečiosiose šalyse. Tokiais atvejais duomenis perduodame tik esant vienai iš šių apsaugos priemonių:</p>
+<ul>
+<li>Europos Komisijos sprendimas dėl tinkamumo (BDAR 45 str.), įskaitant ES ir JAV duomenų privatumo sistemą (EU-U.S. Data Privacy Framework) sertifikuotiems gavėjams;</li>
+<li>Europos Komisijos patvirtintos standartinės sutarčių sąlygos (BDAR 46 str. 2 d. c p.) su papildomomis techninėmis ir organizacinėmis priemonėmis, kai reikia;</li>
+<li>kitos BDAR V skyriuje numatytos priemonės.</li>
+</ul>
+<p>Turite teisę paprašyti pateikti taikomų apsaugos priemonių kopiją, kreipdamiesi 2 skyriuje nurodytu el. paštu.</p>
+
+<h3>7. Duomenų saugojimo terminai</h3>
+<ul>
+<li><strong>Užklausos ir potencialių klientų (leadų) duomenys:</strong> 24 mėnesiai nuo paskutinio jūsų aktyvaus veiksmo (užklausos, pokalbio, atsakymo į laišką), jeigu nesudaroma sutartis.</li>
+<li><strong>Sutartys, pasiūlymai, sąskaitos faktūros ir kiti apskaitos dokumentai:</strong> 10 metų nuo atitinkamų finansinių metų pabaigos pagal Lietuvos Respublikos finansinės apskaitos įstatymą ir Dokumentų ir archyvų įstatymą.</li>
+<li><strong>Sutarties vykdymo susirašinėjimas ir projekto medžiaga:</strong> 3 metai nuo sutarties pabaigos (bendras ieškinio senaties terminas ir garantijos ginčų laikotarpis), nebent teisės aktai ar ginčas reikalauja ilgiau.</li>
+<li><strong>Rinkodaros sutikimas ir kontaktiniai duomenys rinkodarai:</strong> iki sutikimo atšaukimo. Sutikimo faktą (kada ir kaip duotas) saugome dar 3 metus po atšaukimo, kad galėtume įrodyti tvarkymo teisėtumą.</li>
+<li><strong>Slapukų ir analitikos duomenys:</strong> pagal Slapukų politikoje nurodytus terminus.</li>
+<li><strong>Saugumo žurnalai:</strong> iki 12 mėnesių.</li>
+</ul>
+<p>Pasibaigus terminui duomenys ištrinami arba negrįžtamai nuasmeninami. Jeigu vyksta ginčas, duomenys saugomi iki galutinio sprendimo įvykdymo.</p>
+
+<h3>8. Duomenų tvarkymas teikiant paslaugas klientams (tvarkytojo vaidmuo)</h3>
+<p>Kai diegiame DI darbuotojus ar kitus sprendimus kliento sistemose, kliento darbuotojų, klientų ir partnerių asmens duomenis tvarkome kliento vardu ir tik pagal jo dokumentais patvirtintus nurodymus. Tokiais atvejais:</p>
+<ul>
+<li>su klientu sudarome duomenų tvarkymo sutartį (BDAR 28 str.), kurioje nurodomi tvarkymo dalykas, trukmė, pobūdis, tikslas, duomenų kategorijos, subtvarkytojai ir saugumo priemonės;</li>
+<li>subtvarkytojus (DI modelių teikėjus, automatizavimo platformas, talpinimo paslaugas) pasitelkiame tik su kliento žinia ir sutikimu;</li>
+<li>pasibaigus paslaugoms duomenis grąžiname arba ištriname kliento pasirinkimu, išskyrus atvejus, kai teisės aktai įpareigoja saugoti.</li>
+</ul>
+
+<h3>9. Jūsų teisės</h3>
+<p>Pagal BDAR turite šias teises:</p>
+<ul>
+<li><strong>Teisė susipažinti</strong> (15 str.): gauti patvirtinimą, ar tvarkome jūsų duomenis, ir jų kopiją.</li>
+<li><strong>Teisė reikalauti ištaisyti</strong> (16 str.): netikslius ar neišsamius duomenis.</li>
+<li><strong>Teisė reikalauti ištrinti</strong> (17 str.): kai duomenys nebereikalingi, sutikimas atšauktas ar tvarkymas neteisėtas, išskyrus atvejus, kai saugoti įpareigoja teisės aktai.</li>
+<li><strong>Teisė apriboti tvarkymą</strong> (18 str.).</li>
+<li><strong>Teisė į duomenų perkeliamumą</strong> (20 str.): gauti sutikimo ar sutarties pagrindu tvarkomus duomenis susistemintu, įprastai naudojamu ir kompiuterio skaitomu formatu.</li>
+<li><strong>Teisė nesutikti</strong> (21 str.): su tvarkymu teisėto intereso pagrindu ir bet kada su tvarkymu tiesioginės rinkodaros tikslais.</li>
+<li><strong>Teisė atšaukti sutikimą</strong> (7 str. 3 d.): bet kada, paspaudus atsisakymo nuorodą laiške arba parašius mums; atšaukimas neturi įtakos iki tol atlikto tvarkymo teisėtumui.</li>
+<li><strong>Teisė nebūti automatizuoto sprendimo objektu</strong> (22 str.): nepriimame sprendimų, sukeliančių jums teisinius padarinius, vien automatizuotu būdu.</li>
+<li><strong>Teisė pateikti skundą priežiūros institucijai:</strong> Valstybinė duomenų apsaugos inspekcija (VDAI), L. Sapiegos g. 17, LT-10312 Vilnius, tel. (8 5) 271 2804, el. paštas ada@ada.lt, svetainė vdai.lrv.lt. Skundą taip pat galite pateikti kitos ES valstybės, kurioje gyvenate ar dirbate, priežiūros institucijai.</li>
+</ul>
+<p><strong>Kaip pasinaudoti teisėmis:</strong> parašykite 2 skyriuje nurodytu el. paštu. Atsakysime ne vėliau kaip per 1 mėnesį nuo prašymo gavimo; sudėtingais atvejais terminą galime pratęsti dar 2 mėnesiais, apie tai informuodami. Prieš atsakydami galime paprašyti patvirtinti tapatybę. Prašymai nagrinėjami nemokamai, išskyrus akivaizdžiai nepagrįstus ar neproporcingus prašymus, už kuriuos galime imti pagrįstą mokestį arba atsisakyti juos vykdyti.</p>
+
+<h3>10. Duomenų saugumas</h3>
+<p>Taikome technines ir organizacines priemones, atitinkančias riziką (BDAR 32 str.): prieigos kontrolę pagal principą „tik būtina žinoti", dviejų veiksnių autentifikavimą, duomenų šifravimą perduodant (TLS) ir saugant, reguliarų atsarginį kopijavimą, prieigų peržiūrą pasibaigus projektams, konfidencialumo įsipareigojimus komandai ir rangovams. Apie asmens duomenų saugumo pažeidimą, keliantį didelį pavojų jūsų teisėms, informuosime jus ir VDAI BDAR nustatyta tvarka.</p>
+
+<h3>11. Nepilnamečių duomenys</h3>
+<p>Svetainė ir paslaugos skirtos verslui, todėl nėra skirtos asmenims iki 18 metų. Sąmoningai nerenkame nepilnamečių duomenų. Sužinoję, kad tokius duomenis gavome, juos ištrinsime.</p>
+
+<h3>12. Nuorodos į trečiųjų šalių svetaines</h3>
+<p>Svetainėje gali būti nuorodų į kitų subjektų svetaines ar įrankius (pavyzdžiui, susitikimų rezervavimo puslapį, socialinius tinklus). Už jų privatumo praktiką neatsakome; rekomenduojame susipažinti su jų politikomis.</p>
+
+<h3>13. Politikos pakeitimai</h3>
+<p>Politiką galime atnaujinti pasikeitus teisės aktams, naudojamiems įrankiams ar paslaugoms. Aktuali redakcija visada skelbiama Svetainėje su atnaujinimo data. Apie esminius pakeitimus klientus ir sutikimą rinkodarai davusius asmenis informuosime el. paštu.</p>
+
+<h3>14. Kontaktai</h3>
+<p>[ĮMONĖS PAVADINIMAS], juridinio asmens kodas [Įmonės kodas], [Adresas]. El. paštas: [El. paštas].</p>
+</article>
+<article class="doc-body" id="slapukai">
+<h2>Slapukų politika</h2>
+<p><strong>Projektas parengtas 2026-09-03. Prieš skelbiant peržiūrėti teisininkui.</strong></p>
+<p>Paskutinis atnaujinimas: [DATA].</p>
+
+<h3>1. Bendrosios nuostatos</h3>
+<p>Ši slapukų politika paaiškina, kaip [ĮMONĖS PAVADINIMAS] (prekės ženklas „krei", toliau: mes) naudoja slapukus ir panašias technologijas svetainėje krei.lt (toliau: Svetainė). Politika skaitoma kartu su Privatumo politika, kurioje aprašyta, kaip tvarkome asmens duomenis. Slapukų naudojimą reglamentuoja Lietuvos Respublikos elektroninių ryšių įstatymo 96 straipsnis ir BDAR.</p>
+
+<h3>2. Kas yra slapukai</h3>
+<p>Slapukai yra nedideli tekstiniai failai, kuriuos svetainė įrašo į jūsų įrenginį (kompiuterį, telefoną, planšetę). Jie leidžia svetainei atpažinti jūsų naršyklę, įsiminti pasirinkimus ir rinkti informaciją apie naudojimąsi svetaine. Panašiai veikia ir kitos technologijos: pikseliai (nematomi vaizdo elementai, siunčiantys užklausą į serverį), vietinė saugykla (local storage), žymos (tags). Šioje politikoje visas jas vadiname slapukais.</p>
+<p>Pagal kilmę slapukai skirstomi į pirmosios šalies (juos nustato Svetainė) ir trečiosios šalies (juos nustato kiti subjektai, pavyzdžiui, Meta ar Google). Pagal trukmę: seanso slapukai ištrinami uždarius naršyklę, nuolatiniai slapukai lieka įrenginyje nustatytą laiką.</p>
+
+<h3>3. Slapukų kategorijos</h3>
+<p><strong>3.1. Būtinieji slapukai.</strong> Reikalingi, kad Svetainė veiktų ir kad galėtume įsiminti jūsų sutikimo dėl slapukų pasirinkimą. Jie nerenka rinkodarai skirtos informacijos. Sutikimas jiems nereikalingas (Elektroninių ryšių įstatymo 96 str. 3 d.), jų išjungti negalima.</p>
+<p><strong>3.2. Analitiniai slapukai.</strong> Padeda suprasti, kaip lankytojai naudojasi Svetaine: kurie puslapiai populiariausi, iš kur atėjote, kiek laiko praleidote. Informacija naudojama apibendrintai Svetainei tobulinti. Nustatomi tik gavus jūsų sutikimą.</p>
+<p><strong>3.3. Rinkodaros slapukai.</strong> Naudojami reklamos efektyvumui matuoti ir reklamai rodyti asmenims, kurie lankėsi Svetainėje (pavyzdžiui, Meta platformose). Nustatomi tik gavus jūsų sutikimą.</p>
+
+<h3>4. Naudojami slapukai</h3>
+<p>Žemiau pateikiamas naudojamų slapukų sąrašas. Konkretūs pavadinimai ir terminai gali keistis priklausomai nuo paslaugų teikėjų atnaujinimų; aktualų sąrašą galite peržiūrėti slapukų nustatymų lange.</p>
+
+<p><strong>Būtinieji</strong></p>
+<ul>
+<li><strong>[SUTIKIMO SLAPUKO PAVADINIMAS, pvz. cookie_consent / cc_cookie]</strong>. Teikėjas: krei.lt (pirmoji šalis). Paskirtis: išsaugo jūsų sutikimo dėl slapukų pasirinkimą, kad juosta nebūtų rodoma kaskart. Trukmė: [12 mėnesių]. Sutikimas: nereikalingas.</li>
+<li><strong>[SEANSO SLAPUKO PAVADINIMAS, pvz. PHPSESSID / __session]</strong>. Teikėjas: krei.lt (pirmoji šalis). Paskirtis: seanso palaikymas, formos apsauga nuo automatinių užklausų. Trukmė: iki naršyklės uždarymo. Sutikimas: nereikalingas.</li>
+</ul>
+
+<p><strong>Analitiniai (jeigu naudojama Google Analytics)</strong></p>
+<ul>
+<li><strong>_ga</strong>. Teikėjas: Google Ireland Limited (Google Analytics). Paskirtis: atskiria lankytojus, priskiria atsitiktinį identifikatorių lankomumo statistikai. Trukmė: 2 metai. Sutikimas: reikalingas.</li>
+<li><strong>_ga_[ID]</strong>. Teikėjas: Google Ireland Limited. Paskirtis: išlaiko seanso būseną Google Analytics 4. Trukmė: 2 metai. Sutikimas: reikalingas.</li>
+<li><strong>_gid</strong>. Teikėjas: Google Ireland Limited. Paskirtis: atskiria lankytojus 24 valandų laikotarpiu. Trukmė: 24 valandos. Sutikimas: reikalingas.</li>
+</ul>
+<p>Google Analytics duomenys gali būti perduodami į JAV. Perdavimas grindžiamas ES ir JAV duomenų privatumo sistema ir standartinėmis sutarčių sąlygomis. IP adresų anonimizavimas įjungtas.</p>
+
+<p><strong>Rinkodaros (Meta Pixel)</strong></p>
+<ul>
+<li><strong>_fbp</strong>. Teikėjas: Meta Platforms Ireland Limited. Paskirtis: atpažįsta naršyklę reklamos efektyvumui matuoti ir reklamai Meta platformose (Facebook, Instagram) rodyti. Trukmė: 3 mėnesiai. Sutikimas: reikalingas.</li>
+<li><strong>_fbc</strong>. Teikėjas: Meta Platforms Ireland Limited. Paskirtis: išsaugo reklamos paspaudimo identifikatorių (fbclid), kai į Svetainę atėjote iš Meta reklamos. Trukmė: 3 mėnesiai. Sutikimas: reikalingas.</li>
+<li><strong>fr</strong>. Teikėjas: Meta Platforms Ireland Limited (nustatomas facebook.com domene). Paskirtis: reklamos rodymas ir matavimas, susiejant su jūsų Facebook paskyra, jeigu esate prisijungę. Trukmė: 3 mėnesiai. Sutikimas: reikalingas.</li>
+</ul>
+<p>Meta Pixel be sutikimo neįkeliamas. Davus sutikimą Meta gali gauti informaciją apie jūsų apsilankymą, peržiūrėtus puslapius ir atliktus veiksmus (pavyzdžiui, formos pateikimą) ir susieti ją su jūsų Meta paskyra. Meta gali perduoti duomenis į JAV pagal ES ir JAV duomenų privatumo sistemą. Meta duomenų politika: https://www.facebook.com/privacy/policy. Reklamos nustatymus galite keisti savo Meta paskyroje.</p>
+
+<p><strong>Google Fonts (ne slapukas)</strong></p>
+<p>Svetainėje naudojami Google Fonts šriftai, įkeliami iš Google serverių. Slapukai nenaudojami, tačiau įkeliant šriftą jūsų naršyklė siunčia užklausą Google (Google Ireland Limited), kuri gauna jūsų IP adresą ir techninę naršyklės informaciją. Teisinis pagrindas: teisėtas interesas užtikrinti vienodą Svetainės atvaizdavimą (BDAR 6 str. 1 d. f p.). [ALTERNATYVA: jeigu šriftai talpinami savo serveryje, šią pastraipą pašalinti.]</p>
+
+<h3>5. Kaip valdyti sutikimą</h3>
+<p><strong>5.1. Slapukų juosta.</strong> Pirmą kartą apsilankius Svetainėje rodoma slapukų juosta. Joje galite: sutikti su visais slapukais, atsisakyti visų nebūtinųjų arba pasirinkti kategorijas atskirai. Nebūtinieji slapukai nenustatomi, kol nesutinkate. Pasirinkimą galite bet kada pakeisti ar sutikimą atšaukti paspaudę nuorodą „Slapukų nustatymai" Svetainės apačioje. Sutikimo atšaukimas neturi įtakos iki atšaukimo atlikto tvarkymo teisėtumui.</p>
+<p><strong>5.2. Naršyklės nustatymai.</strong> Slapukus galite blokuoti ar ištrinti naršyklės nustatymuose. Instrukcijos: Google Chrome (Nustatymai, Privatumas ir saugumas, Slapukai), Safari (Nuostatos, Privatumas), Mozilla Firefox (Nustatymai, Privatumas ir saugumas), Microsoft Edge (Nustatymai, Slapukai ir svetainių leidimai). Užblokavus būtinuosius slapukus dalis Svetainės funkcijų gali neveikti.</p>
+<p><strong>5.3. Trečiųjų šalių atsisakymo įrankiai.</strong> Google Analytics: https://tools.google.com/dlpage/gaoptout. Meta reklamos nustatymai: https://www.facebook.com/ads/preferences. Bendras reklamos atsisakymas: https://www.youronlinechoices.com/lt/.</p>
+
+<h3>6. Saugojimo terminai</h3>
+<p>Slapukai saugomi 4 skyriuje nurodytą laiką nuo jų nustatymo arba paskutinio atnaujinimo. Slapukų sutikimo įrašą (kada ir kokias kategorijas pasirinkote) saugome 12 mėnesių, po to sutikimo paprašysime iš naujo. Slapukais surinkti analitikos duomenys Google Analytics paskyroje saugomi [14 mėnesių]; Meta Pixel įvykių duomenys Meta reklamos paskyroje saugomi pagal Meta nustatymus (iki 180 dienų auditorijoms).</p>
+
+<h3>7. Pakeitimai</h3>
+<p>Šią politiką galime atnaujinti pakeitę naudojamus įrankius ar pasikeitus teisės aktams. Aktuali redakcija skelbiama Svetainėje su atnaujinimo data. Iš esmės pasikeitus slapukų naudojimui, sutikimo paprašysime iš naujo.</p>
+
+<h3>8. Kontaktai</h3>
+<p>Klausimai dėl slapukų: [El. paštas]. Duomenų valdytojas: [ĮMONĖS PAVADINIMAS], kodas [Įmonės kodas], [Adresas]. Daugiau apie jūsų teises: Privatumo politika.</p>
+</article>
+<article class="doc-body" id="taisykles">
+<h2>Paslaugų teikimo taisyklės ir sąlygos</h2>
+<p><strong>Projektas parengtas 2026-09-03. Prieš skelbiant peržiūrėti teisininkui.</strong></p>
+<p>Paskutinis atnaujinimas: [DATA]. Galioja nuo: [DATA].</p>
+
+<h3>1. Bendrosios nuostatos</h3>
+<p>1.1. Šios paslaugų teikimo taisyklės ir sąlygos (toliau: Taisyklės) nustato [ĮMONĖS PAVADINIMAS], juridinio asmens kodas [Įmonės kodas], buveinė [Adresas], veikiančios prekės ženklu „krei" (toliau: krei arba Paslaugų teikėjas), ir jos klientų (toliau: Klientas) santykius užsakant ir teikiant dirbtinio intelekto diegimo bei susijusias paslaugas.</p>
+<p>1.2. Paslaugos teikiamos tik juridiniams asmenims ir verslu užsiimantiems fiziniams asmenims. Vartotojų teisių apsaugą reglamentuojančios nuostatos netaikomos.</p>
+<p>1.3. Taisyklės yra neatskiriama kiekvienos su Klientu sudaromos paslaugų sutarties, pasiūlymo ar užsakymo (toliau kartu: Sutartis) dalis. Esant prieštaravimui tarp Taisyklių ir Sutarties, taikoma Sutartis. Rezultatų garantijai papildomai taikomos Rezultatų garantijos sąlygos.</p>
+<p>1.4. Pateikdamas užklausą, priimdamas pasiūlymą arba pasirašydamas Sutartį Klientas patvirtina, kad susipažino su Taisyklėmis ir su jomis sutinka. Klientą atstovaujantis asmuo patvirtina, kad turi teisę sudaryti sandorius Kliento vardu.</p>
+
+<h3>2. Sąvokos</h3>
+<ul>
+<li><strong>DI darbuotojas:</strong> krei sukurta ir Kliento aplinkoje paleista automatizuota darbo eiga, agentas ar sprendimas, naudojantis dirbtinio intelekto modelius ir vykdantis sutartą užduotį realiuose Kliento duomenyse.</li>
+<li><strong>Žemėlapis:</strong> projekto pradžioje krei ir Kliento suderintas dokumentas, kuriame nustatomos diegiamos darbo eigos, atsakingi asmenys, reikalingos prieigos, terminai ir sėkmės rodikliai (KPI).</li>
+<li><strong>Paskirtas asmuo:</strong> Kliento paskirtas darbuotojas, atsakingas už bendradarbiavimą su krei, sprendimų priėmimą ir prieigų suteikimą.</li>
+<li><strong>Trečiųjų šalių įrankiai:</strong> ne krei valdomos programinės įrangos platformos, API ir dirbtinio intelekto modeliai (pavyzdžiui, OpenAI, Anthropic, Google, Make, n8n, Zapier, CRM sistemos).</li>
+</ul>
+
+<h3>3. Paslaugų apimtis</h3>
+<p>3.1. krei teikia šias paslaugas:</p>
+<ul>
+<li><strong>DI diegimas:</strong> Kliento procesų analizė, DI darbuotojų projektavimas, konfigūravimas, integravimas su Kliento sistemomis, testavimas ir paleidimas į gamybą;</li>
+<li><strong>Konsultacijos:</strong> strategijos pokalbiai, procesų auditas, dirbtinio intelekto pritaikymo galimybių vertinimas, rekomendacijos;</li>
+<li><strong>Mokymai:</strong> Kliento komandos apmokymas dirbti su įdiegtais sprendimais ir dirbtinio intelekto įrankiais;</li>
+<li><strong>Mėnesinė partnerystė:</strong> nuolatinė įdiegtų sprendimų priežiūra, tobulinimas, naujų darbo eigų kūrimas ir konsultacijos už fiksuotą mėnesinį mokestį.</li>
+</ul>
+<p>3.2. Nemokamas 30 minučių strategijos pokalbis yra konsultacinio pobūdžio ir nesukuria krei pareigos teikti paslaugas ar Kliento pareigos jas užsakyti.</p>
+<p>3.3. Konkreti paslaugų apimtis, rezultatai, terminai ir kaina nustatomi individualiame pasiūlyme ir Sutartyje. Darbai, neįtraukti į Sutartį, laikomi papildomais ir atliekami tik atskiru rašytiniu susitarimu.</p>
+
+<h3>4. Užsakymo tvarka</h3>
+<p>4.1. Užsakymas vyksta tokia seka: (a) Klientas pateikia užklausą per Svetainės formą, el. paštu ar kitu kanalu; (b) šalys surengia strategijos pokalbį; (c) krei pateikia individualų rašytinį pasiūlymą, galiojantį jame nurodytą laiką (jeigu nenurodyta, 14 kalendorinių dienų); (d) Klientui priėmus pasiūlymą, šalys pasirašo Sutartį arba Klientas patvirtina pasiūlymą raštu (el. paštu) ir apmoka avansinę sąskaitą.</p>
+<p>4.2. Sutartis laikoma sudaryta nuo jos pasirašymo abiejų šalių arba nuo avansinės sąskaitos apmokėjimo, priklausomai nuo to, kas įvyksta anksčiau.</p>
+<p>4.3. Per pirmąsias projekto dienas šalys suderina Žemėlapį. Žemėlapis, patvirtintas el. paštu arba projekto valdymo įrankyje, tampa Sutarties priedu.</p>
+
+<h3>5. Kainos ir atsiskaitymas</h3>
+<p>5.1. Kainos nustatomos individualiame pasiūlyme. Kainos nurodomos eurais be pridėtinės vertės mokesčio (PVM); PVM pridedamas pagal Lietuvos Respublikos teisės aktus. Kai Klientas yra kitoje ES valstybėje registruotas PVM mokėtojas, taikomas atvirkštinis apmokestinimas.</p>
+<p>5.2. Jeigu Sutartyje nenustatyta kitaip, atsiskaitymas vyksta taip: avansas [50] proc. sumos apmokamas prieš darbų pradžią; likusi dalis apmokama per [7] kalendorines dienas nuo DI darbuotojo paleidimo į gamybą arba nuo Sutartyje nurodyto etapo užbaigimo. Mėnesinės partnerystės mokestis mokamas iš anksto už kiekvieną ateinantį mėnesį.</p>
+<p>5.3. Sąskaitos faktūros išrašomos elektroniniu būdu ir siunčiamos Kliento nurodytu el. paštu. Apmokėjimo terminas: [7] kalendorinės dienos nuo sąskaitos išrašymo, jeigu sąskaitoje nenurodyta kitaip.</p>
+<p>5.4. Vėluojant apmokėti, krei turi teisę: skaičiuoti 0,05 proc. dydžio delspinigius nuo neapmokėtos sumos už kiekvieną uždelstą dieną; sustabdyti paslaugų teikimą ir prieigą prie krei valdomų sprendimų, apie tai įspėjus prieš 5 darbo dienas; taikyti Lietuvos Respublikos mokėjimų, atliekamų pagal komercines sutartis, vėlavimo prevencijos įstatyme numatytas priemones.</p>
+<p>5.5. Trečiųjų šalių įrankių mokesčiai (DI modelių API naudojimas, platformų prenumeratos) į krei kainą neįtraukiami, nebent pasiūlyme nurodyta kitaip. Klientas juos apmoka tiesiogiai teikėjams savo paskyrose.</p>
+<p>5.6. Sumokėtos sumos negrąžinamos, išskyrus Rezultatų garantijos sąlygose ir teisės aktuose numatytus atvejus.</p>
+
+<h3>6. Kliento įsipareigojimai</h3>
+<p>6.1. Klientas įsipareigoja:</p>
+<ul>
+<li>paskirti Paskirtą asmenį, turintį įgaliojimus priimti sprendimus projekto klausimais, ir užtikrinti jo dalyvavimą sutartuose susitikimuose;</li>
+<li>iki Žemėlapyje nustatyto termino suteikti krei reikalingas prieigas prie sistemų, duomenų, paskyrų ir dokumentų, būtinų paslaugoms teikti;</li>
+<li>laiku (per 2 darbo dienas, jeigu nesusitarta kitaip) teikti atsakymus, patvirtinimus ir grįžtamąjį ryšį;</li>
+<li>užtikrinti, kad krei pateikiami ir DI darbuotojų tvarkomi duomenys surinkti ir naudojami teisėtai, Klientas turi teisę juos tvarkyti ir perduoti tvarkyti krei bei trečiųjų šalių įrankiams;</li>
+<li>saugoti prieigos duomenis, laiku informuoti krei apie jų pasikeitimą ir atšaukti prieigas pasibaigus projektui;</li>
+<li>prieš naudojant DI darbuotojų sukurtus rezultatus teisiškai reikšmingiems ar negrįžtamiems veiksmams (pavyzdžiui, mokėjimams, sutartiniams įsipareigojimams, komunikacijai su reguliuotojais) užtikrinti žmogaus peržiūrą;</li>
+<li>laikytis trečiųjų šalių įrankių naudojimo sąlygų;</li>
+<li>laiku atsiskaityti.</li>
+</ul>
+<p>6.2. Klientui vėluojant vykdyti 6.1 punkte numatytus įsipareigojimus, projekto terminai nukeliami atitinkamam laikotarpiui, o krei neatsako už su tuo susijusį vėlavimą.</p>
+
+<h3>7. krei įsipareigojimai</h3>
+<p>7.1. krei įsipareigoja teikti paslaugas profesionaliai, laikydamasi Sutarties, Žemėlapio ir gerosios rinkos praktikos, informuoti Klientą apie projekto eigą sutartu dažnumu ir nedelsiant pranešti apie aplinkybes, galinčias paveikti terminus ar rezultatus.</p>
+<p>7.2. krei turi teisę pasitelkti subrangovus, likdama atsakinga už jų darbą kaip už savo.</p>
+
+<h3>8. Intelektinė nuosavybė</h3>
+<p>8.1. <strong>Kliento sistema ir konfigūracija.</strong> Klientui visiškai atsiskaičius pagal Sutartį, Klientui pereina nuosavybės teisė ir visos turtinės teisės į specialiai Klientui sukurtą DI darbuotojo konfigūraciją: darbo eigų schemas, instrukcijas (promptus), integracijų nustatymus, specialiai Klientui parašytą kodą ir dokumentaciją. Iki visiško atsiskaitymo šios teisės priklauso krei, o Klientui suteikiama neišimtinė licencija naudoti sprendimą savo vidaus veikloje.</p>
+<p>8.2. <strong>krei metodika.</strong> krei išlaiko visas teises į savo metodiką, procesų šablonus, bendrojo pobūdžio promptų bibliotekas, vidinius įrankius, komponentus ir praktinę patirtį (know-how), sukurtus iki Sutarties ar nepriklausomai nuo jos, taip pat į bendruosius sprendimus, kurie nėra specifiniai Klientui. Tiek, kiek tokie elementai įtraukti į Kliento sprendimą, Klientui suteikiama neterminuota, neišimtinė, neperleidžiama licencija juos naudoti kaip Kliento sprendimo dalį.</p>
+<p>8.3. Klientas neturi teisės perparduoti, sublicencijuoti ar viešai platinti krei metodikos, šablonų ir mokymų medžiagos.</p>
+<p>8.4. Kliento duomenys, prekių ženklai ir turinys lieka Kliento nuosavybe. krei juos naudoja tik paslaugoms teikti.</p>
+<p>8.5. krei turi teisę nurodyti Klientą kaip savo klientą ir aprašyti projektą apibendrintai (be konfidencialios informacijos) rinkodaros tikslais, nebent Klientas raštu nurodo kitaip. Konkretūs skaičiai ir citatos skelbiami tik su Kliento sutikimu.</p>
+
+<h3>9. Konfidencialumas</h3>
+<p>9.1. Konfidencialia informacija laikoma bet kokia neviešai prieinama verslo, techninė, finansinė, klientų, procesų ir kita informacija, kurią šalis gauna iš kitos šalies vykdant Sutartį, taip pat pati Sutartis ir jos kaina.</p>
+<p>9.2. Šalys įsipareigoja konfidencialią informaciją naudoti tik Sutarties tikslais, neatskleisti tretiesiems asmenims be rašytinio kitos šalies sutikimo, išskyrus savo darbuotojus, subrangovus ir patarėjus, kuriems ji būtina ir kurie saistomi lygiaverčių įsipareigojimų, taip pat atvejus, kai atskleisti reikalauja teisės aktai ar teismas.</p>
+<p>9.3. Konfidencialumo įsipareigojimai galioja Sutarties galiojimo metu ir 3 metus po jos pabaigos. Kliento pageidavimu šalys pasirašo atskirą konfidencialumo sutartį (NDA); jeigu tarp NDA ir šio skyriaus yra prieštaravimų, taikoma NDA.</p>
+
+<h3>10. Asmens duomenų tvarkymas</h3>
+<p>10.1. Kliento atstovų kontaktinius duomenis krei tvarko kaip duomenų valdytoja pagal Privatumo politiką.</p>
+<p>10.2. Kai teikdama paslaugas krei gauna prieigą prie Kliento sistemose esančių asmens duomenų (Kliento darbuotojų, klientų, partnerių), krei veikia kaip duomenų tvarkytoja Kliento nurodymu. Tokiu atveju šalys sudaro duomenų tvarkymo sutartį pagal BDAR 28 straipsnį (toliau: DPA), kuri yra Sutarties priedas. DPA nustato tvarkymo dalyką, trukmę, pobūdį ir tikslą, duomenų kategorijas, patvirtintus subtvarkytojus (įskaitant DI modelių teikėjus), saugumo priemones ir duomenų grąžinimo ar ištrynimo tvarką.</p>
+<p>10.3. Klientas atsako už tai, kad turėtų teisėtą pagrindą perduoti asmens duomenis tvarkyti krei ir Žemėlapyje suderintiems trečiųjų šalių įrankiams, įskaitant duomenų perdavimą už EEE ribų.</p>
+
+<h3>11. Trečiųjų šalių įrankiai ir dirbtinio intelekto modeliai</h3>
+<p>11.1. DI darbuotojai veikia naudodami trečiųjų šalių įrankius ir dirbtinio intelekto modelius, kurių krei nekontroliuoja. Klientas sudaro sutartis su šių įrankių teikėjais tiesiogiai (savo paskyrose) ir laikosi jų sąlygų.</p>
+<p>11.2. krei negarantuoja trečiųjų šalių įrankių nepertraukiamo veikimo, prieinamumo, kainų stabilumo ar funkcijų išlikimo. krei neatsako už nuostolius, kilusius dėl trečiųjų šalių įrankių gedimų, API pakeitimų, paslaugos nutraukimo, limitų ar kainų pokyčių.</p>
+<p>11.3. Dirbtinio intelekto modeliai nuolat keičiasi: teikėjai gali atnaujinti, pakeisti ar nutraukti modelių versijas, o tai gali paveikti DI darbuotojo elgseną ir rezultatų kokybę. Klientas pripažįsta, kad DI modeliai gali generuoti netikslius, neišsamius ar netikėtus rezultatus, ir atsako už jų peržiūrą prieš naudojant. Modelio pakeitimas, būtinas dėl teikėjo sprendimų, atliekamas mėnesinės partnerystės rėmuose arba už papildomą sutartą mokestį.</p>
+<p>11.4. krei gali rekomenduoti įrankius, tačiau galutinį sprendimą dėl jų naudojimo priima Klientas.</p>
+
+<h3>12. Atsakomybės ribojimas</h3>
+<p>12.1. Bendra krei atsakomybė pagal Sutartį, nepriklausomai nuo reikalavimo pagrindo, ribojama Kliento pagal tą Sutartį krei faktiškai sumokėta suma per 12 mėnesių iki įvykio, sukėlusio reikalavimą.</p>
+<p>12.2. krei neatsako už netiesioginius nuostolius: negautas pajamas ar pelną, prarastas verslo galimybes, reputacijos žalą, duomenų praradimą dėl trečiųjų šalių įrankių, veiklos sutrikimus, taip pat už nuostolius, kilusius dėl Kliento sprendimų, priimtų remiantis DI darbuotojų rezultatais be žmogaus peržiūros.</p>
+<p>12.3. Ribojimai netaikomi atsakomybei už tyčią ar didelį neatsargumą, taip pat kitais atvejais, kai atsakomybės riboti neleidžia imperatyvios teisės normos.</p>
+<p>12.4. krei neteikia jokių garantijų, išskyrus aiškiai nurodytas Sutartyje ir Rezultatų garantijos sąlygose. Rezultatų garantija yra išimtinė Kliento teisių gynimo priemonė dėl DI darbuotojo neveikimo garantijos laikotarpiu.</p>
+<p>12.5. Klientas įsipareigoja atlyginti krei nuostolius, kilusius dėl trečiųjų asmenų reikalavimų, susijusių su Kliento pateiktų duomenų neteisėtumu ar Kliento pažeistomis trečiųjų šalių įrankių sąlygomis.</p>
+
+<h3>13. Sutarties galiojimas ir nutraukimas</h3>
+<p>13.1. Projektinė Sutartis galioja iki visų šalių įsipareigojimų įvykdymo.</p>
+<p>13.2. Mėnesinė partnerystė sudaroma neterminuotai ir automatiškai pratęsiama kas mėnesį. Bet kuri šalis gali ją nutraukti bet kada, pranešusi raštu (el. paštu) iki einamojo mėnesinio periodo pabaigos; nutraukimas įsigalioja pasibaigus apmokėtam periodui. Už apmokėtą periodą mokestis negrąžinamas.</p>
+<p>13.3. Bet kuri šalis gali nutraukti Sutartį vienašališkai, jeigu kita šalis iš esmės pažeidžia Sutartį ir per 14 kalendorinių dienų nuo rašytinio įspėjimo pažeidimo nepašalina. Esminiu pažeidimu laikoma, be kita ko, vėlavimas apmokėti daugiau kaip 30 dienų, konfidencialumo pažeidimas, prieigų nesuteikimas ilgiau kaip 30 dienų.</p>
+<p>13.4. Klientui nutraukus projektinę Sutartį ne dėl krei kaltės, Klientas apmoka už iki nutraukimo faktiškai atliktus darbus; avansas negrąžinamas ta apimtimi, kiek jis padengia atliktus darbus ir patirtas išlaidas.</p>
+<p>13.5. Nutraukus Sutartį krei per 14 dienų perduoda Klientui atliktų darbų rezultatus (ta apimtimi, kiek už juos apmokėta), o Klientas atšaukia krei prieigas. 8, 9, 10, 12 ir 16 skyriai galioja ir po Sutarties pabaigos.</p>
+
+<h3>14. Nenugalima jėga (force majeure)</h3>
+<p>14.1. Šalis neatsako už įsipareigojimų nevykdymą, jeigu tai lėmė aplinkybės, kurių ji negalėjo kontroliuoti ir protingai numatyti Sutarties sudarymo metu, ir negalėjo užkirsti kelio jų padariniams (Lietuvos Respublikos civilinio kodekso 6.212 str.): stichinės nelaimės, karas, valstybės institucijų veiksmai, plataus masto interneto ar elektros tiekimo sutrikimai, esminių dirbtinio intelekto modelių teikėjų paslaugų nutraukimas visoje rinkoje.</p>
+<p>14.2. Apie tokias aplinkybes šalis praneša kitai šaliai per 5 darbo dienas. Aplinkybėms trunkant ilgiau kaip 60 dienų, bet kuri šalis gali nutraukti Sutartį.</p>
+
+<h3>15. Pakeitimai</h3>
+<p>15.1. krei gali keisti Taisykles, paskelbdama naują redakciją Svetainėje ne vėliau kaip prieš 14 dienų iki įsigaliojimo. Jau sudarytoms Sutartims taikoma jų sudarymo metu galiojusi Taisyklių redakcija, nebent Klientas raštu sutinka su nauja redakcija. Mėnesinės partnerystės Klientams nauja redakcija taikoma nuo kito mėnesinio periodo; nesutikdamas Klientas gali nutraukti partnerystę 13.2 punkte nustatyta tvarka.</p>
+
+<h3>16. Taikytina teisė ir ginčų sprendimas</h3>
+<p>16.1. Taisyklėms ir Sutarčiai taikoma Lietuvos Respublikos teisė.</p>
+<p>16.2. Ginčai sprendžiami derybomis. Šalis, manančią, kad jos teisės pažeistos, pateikia kitai šaliai rašytinę pretenziją, į kurią atsakoma per 14 kalendorinių dienų. Nepavykus susitarti per 30 dienų nuo pretenzijos gavimo, ginčas sprendžiamas Lietuvos Respublikos teismuose pagal krei buveinės vietą Vilniuje, jeigu imperatyvios teisės normos nenustato kitaip.</p>
+
+<h3>17. Baigiamosios nuostatos</h3>
+<p>17.1. Pranešimai šalims siunčiami Sutartyje nurodytais el. pašto adresais ir laikomi gautais kitą darbo dieną po išsiuntimo.</p>
+<p>17.2. Jeigu kuri nors Taisyklių nuostata pripažįstama negaliojančia, kitos nuostatos lieka galioti.</p>
+<p>17.3. Klientas neturi teisės perleisti teisių ir pareigų pagal Sutartį be krei rašytinio sutikimo.</p>
+
+<h3>18. Kontaktai</h3>
+<p>[ĮMONĖS PAVADINIMAS], juridinio asmens kodas [Įmonės kodas], [Adresas]. El. paštas: [El. paštas]. Svetainė: https://krei.lt.</p>
+</article>
+<article class="doc-body" id="garantija">
+<h2>Rezultatų garantijos sąlygos</h2>
+<p><strong>Projektas parengtas 2026-09-03. Prieš skelbiant peržiūrėti teisininkui.</strong></p>
+<p>Paskutinis atnaujinimas: [DATA]. Galioja nuo: [DATA].</p>
+
+<h3>1. Garantijos esmė</h3>
+<p>1.1. [ĮMONĖS PAVADINIMAS], veikianti prekės ženklu „krei" (toliau: krei), DI diegimo paslaugų klientams (toliau: Klientas) suteikia tokią rezultatų garantiją:</p>
+<p><em>„Jei per 30 dienų tavo komanda neturi bent vieno DI darbuotojo, dirbančio realiame kasdieniame darbe ir nešančio rezultatus, dirbame nemokamai dar 15 dienų. Jei iki 45 dienos vis dar neveikia, o iš tavo pusės buvo viskas padaryta, grąžiname 100% pinigų."</em></p>
+<p>1.2. Šios sąlygos (toliau: Garantijos sąlygos) nustato, kaip ši garantija taikoma, kokios sąvokos joje vartojamos ir kokia tvarka ja pasinaudojama. Garantijos sąlygos yra Paslaugų teikimo taisyklių ir sąlygų bei paslaugų sutarties (toliau: Sutartis) priedas. Esant prieštaravimui tarp Garantijos sąlygų ir Sutarties, taikoma Sutartis, jeigu ji Klientui palankesnė.</p>
+<p>1.3. Garantija taikoma DI diegimo paslaugoms (projektams), kurių pasiūlyme ar Sutartyje nurodyta, kad garantija taikoma. Garantija netaikoma atskirai perkamoms konsultacijoms, mokymams ir mėnesinei partnerystei, nebent Sutartyje nurodyta kitaip.</p>
+
+<h3>2. Sąvokos</h3>
+<p>2.1. <strong>Žemėlapis:</strong> projekto pradžioje (per pirmąsias [5] darbo dienas nuo Sutarties sudarymo) krei ir Kliento raštu suderintas dokumentas, kuriame nustatomi: diegiamas DI darbuotojas ir jo užduotis; sėkmės rodikliai (KPI); Paskirtas asmuo; reikalingos prieigos ir duomenys bei jų pateikimo terminas; sutartas minimalus paleidimų skaičius; savaitinių susitikimų grafikas.</p>
+<p>2.2. <strong>Veikiantis DI darbuotojas:</strong> DI darbuotojas laikomas veikiančiu, kai tenkinamos visos šios sąlygos:</p>
+<ul>
+<li>jis paleistas gamybinėje aplinkoje (ne bandomojoje ar demonstracinėje), tai yra Kliento realiose sistemose ar paskyrose;</li>
+<li>jis vykdo Žemėlapyje sutartą užduotį realiuose Kliento kasdienio darbo duomenyse, o ne testiniuose pavyzdžiuose;</li>
+<li>jį naudoja Kliento komanda ir jis įvykdytas ne mažiau kaip Žemėlapyje sutartą kartų skaičių, ką patvirtina įrankių žurnalai (automatizavimo platformos, DI modelio ar Kliento sistemos vykdymo įrašai).</li>
+</ul>
+<p>2.3. <strong>Rezultatai:</strong> Žemėlapyje sutartas išmatuojamas sėkmės rodiklis (KPI), kurį DI darbuotojas turi pasiekti arba pagerinti. Rodiklis privalo būti objektyviai išmatuojamas iš įrankių žurnalų ar Kliento sistemų duomenų, pavyzdžiui: sutaupytos darbo valandos per savaitę, atsakymo klientui laikas, apdorotų užklausų skaičius, klaidų skaičius, užduočių įvykdymo laikas. Jeigu Žemėlapyje rodiklis nesuderintas, rezultatais laikomas pats DI darbuotojo sutartos užduoties vykdymas realiuose duomenyse sutartą kartų skaičių.</p>
+<p>2.4. <strong>Paskirtas asmuo:</strong> Kliento Žemėlapyje nurodytas darbuotojas, atsakingas už bendradarbiavimą su krei ir sprendimų priėmimą. Klientas gali jį pakeisti, apie tai pranešęs raštu; pakeitimas neturi įtakos terminams.</p>
+<p>2.5. <strong>Diena:</strong> kalendorinė diena, jeigu nenurodyta kitaip. Darbo diena: Lietuvos Respublikos darbo diena.</p>
+
+<h3>3. Terminų skaičiavimas</h3>
+<p>3.1. 30 dienų ir 45 dienų terminai (toliau: Garantijos laikotarpis) pradedami skaičiuoti nuo vėlesnės iš šių datų: (a) Sutarties sudarymo ir avansinio mokėjimo gavimo dienos; (b) dienos, kai Klientas suteikė visas Žemėlapyje nurodytas prieigas ir duomenis. Pradžios datą krei patvirtina Klientui raštu (el. paštu).</p>
+<p>3.2. Jeigu Klientas prieigas ar duomenis pateikia dalimis, terminas pradedamas skaičiuoti nuo paskutinės būtinos prieigos suteikimo dienos.</p>
+<p>3.3. Garantijos laikotarpis sustabdomas laikotarpiui, kai darbai negali vykti dėl Kliento pusės (prieigos atšauktos ar neveikia, Paskirtas asmuo nepasiekiamas ilgiau kaip 3 darbo dienas iš eilės, Klientas nepateikia būtinų patvirtinimų), ir atnaujinamas kliūtį pašalinus. Apie sustabdymą krei praneša Klientui raštu tą pačią ar kitą darbo dieną.</p>
+
+<h3>4. Kliento pusės sąlygos</h3>
+<p>4.1. Garantija taikoma, jeigu iš Kliento pusės buvo viskas padaryta, tai yra tenkinamos visos šios sąlygos:</p>
+<ul>
+<li><strong>paskirtas asmuo dalyvavo bent 3 iš 4 savaitinių susitikimų;</strong></li>
+<li><strong>prieigos ir duomenys pateikti iki žemėlapio termino;</strong></li>
+<li><strong>darbo eiga paleista sutartą skaičių kartų pagal įrankių žurnalus.</strong></li>
+</ul>
+<p>4.2. Sąlygų vykdymas fiksuojamas objektyviai: susitikimų dalyvavimas pagal kalendoriaus kvietimus ir susitikimų įrašus ar užrašus; prieigų pateikimas pagal el. pašto ar projekto įrankio įrašus; paleidimų skaičius pagal įrankių žurnalus. Jeigu pratęsto 45 dienų laikotarpio metu vyksta papildomi savaitiniai susitikimai, pirmosios sąlygos reikalavimas taikomas proporcingai (ne mažiau kaip 75 proc. suplanuotų susitikimų).</p>
+<p>4.3. Trečioji sąlyga (paleidimų skaičius) laikoma įvykdyta ir tuo atveju, jeigu Klientas darbo eigą bandė paleisti sutartą skaičių kartų, tačiau ji neveikė dėl krei atsakomybėje esančių priežasčių, ir tai matyti žurnaluose.</p>
+
+<h3>5. Garantijos taikymo eiga</h3>
+<p>5.1. <strong>Tikrinimas 30 dieną.</strong> Ne vėliau kaip 30 Garantijos laikotarpio dieną krei ir Klientas kartu patikrina, ar Klientas turi bent vieną Veikiantį DI darbuotoją, nešantį Rezultatus. Patikrinimo išvada fiksuojama raštu (el. paštu).</p>
+<p>5.2. <strong>Pirmoji priemonė: 15 papildomų dienų nemokamai.</strong> Jeigu 30 dieną Veikiančio DI darbuotojo nėra, krei be jokio papildomo mokesčio tęsia darbus dar 15 dienų (iki 45 Garantijos laikotarpio dienos), siekdama pasiekti 2.2 ir 2.3 punktuose apibrėžtą būseną. Šiuo laikotarpiu Kliento pusės sąlygos (4 skyrius) galioja toliau.</p>
+<p>5.3. <strong>Antroji priemonė: 100 proc. pinigų grąžinimas.</strong> Jeigu 45 dieną Veikiančio DI darbuotojo vis dar nėra, o Klientas įvykdė visas 4.1 punkto sąlygas, krei grąžina Klientui visą už DI diegimo projektą sumokėtą sumą (avansą ir kitus pagal Sutartį krei sumokėtus mokėjimus) per 14 kalendorinių dienų nuo Kliento reikalavimo gavimo į Kliento nurodytą banko sąskaitą. Negrąžinami Kliento tiesiogiai tretiesiems asmenims sumokėti mokesčiai (DI modelių API, platformų prenumeratos).</p>
+<p>5.4. Grąžinus pinigus Sutartis laikoma nutraukta, krei per 5 darbo dienas išjungia įdiegtus sprendimus Kliento aplinkoje (nebent Klientas raštu prašo juos palikti), o Klientas atšaukia krei prieigas. Klientas neturi teisės toliau naudoti krei sukurtos konfiguracijos, už kurią pinigai grąžinti, nebent šalys raštu susitaria kitaip.</p>
+<p>5.5. Garantijos priemonės yra išimtinė Kliento teisių gynimo priemonė dėl DI darbuotojo neveikimo Garantijos laikotarpiu; kiti nuostoliai neatlyginami, išskyrus imperatyvių teisės normų numatytus atvejus.</p>
+
+<h3>6. Automatinis taikymas</h3>
+<p>6.1. Garantija taikoma be diskusijų: jeigu 4.1 punkto sąlygos įvykdytos ir 45 dieną nėra Veikiančio DI darbuotojo, krei neginčija Kliento reikalavimo, nereikalauja papildomų įrodymų ar paaiškinimų ir neiškelia papildomų sąlygų, o grąžina pinigus 5.3 punkte nustatyta tvarka.</p>
+<p>6.2. Vienintelis tikrinimas, kurį krei atlieka, yra 4.1 punkto sąlygų įvykdymo faktas pagal 4.2 punkte nurodytus objektyvius šaltinius ir 7 skyriaus išimčių nebuvimas. Kilus nesutarimui dėl žurnalų duomenų, abejonė aiškinama Kliento naudai.</p>
+
+<h3>7. Išimtys</h3>
+<p>7.1. Garantija netaikoma, jeigu Veikiančio DI darbuotojo nėra dėl bent vienos iš šių priežasčių:</p>
+<ul>
+<li>Klientas nesuteikė, atšaukė ar apribojo Žemėlapyje nurodytas prieigas ir duomenis arba pateikė juos po Žemėlapyje nustatyto termino;</li>
+<li>Klientas Garantijos laikotarpiu pakeitė sutartą apimtį: pakeitė DI darbuotojo užduotį, sistemą, į kurią integruojama, KPI, arba prašė papildomų funkcijų, neįtrauktų į Žemėlapį, be raštu suderinto termino pratęsimo;</li>
+<li>trečiųjų šalių įrankių gedimai, API pakeitimai, paslaugų nutraukimas, limitų ar kainų pokyčiai, dėl kurių DI darbuotojas negali veikti, jeigu krei per protingą laiką pasiūlė alternatyvą, o Klientas jos nepriėmė;</li>
+<li>Kliento darbuotojai sąmoningai nenaudojo DI darbuotojo, nors jis buvo paleistas ir veikė, arba Klientas pats pakeitė ar išjungė konfigūraciją;</li>
+<li>nenugalimos jėgos aplinkybės (Paslaugų teikimo taisyklių 14 skyrius);</li>
+<li>Klientas vėlavo atsiskaityti pagal Sutartį ilgiau kaip 14 dienų.</li>
+</ul>
+<p>7.2. Taikydama išimtį krei privalo raštu nurodyti konkrečią priežastį ir ją pagrindžiančius įrašus (žurnalus, susirašinėjimą). Išimtys aiškinamos siaurai.</p>
+
+<h3>8. Kaip pasinaudoti garantija</h3>
+<p>8.1. Klientas reikalavimą pateikia raštu el. paštu [El. paštas] ne vėliau kaip per 5 darbo dienas po 45 Garantijos laikotarpio dienos. Reikalavime nurodoma: Sutarties data ar numeris, pareiškimas, kad Veikiančio DI darbuotojo nėra, ir banko sąskaita pinigams grąžinti. Papildomų dokumentų pridėti nereikia: krei pati patikrina 4.1 punkto sąlygas pagal turimus įrašus.</p>
+<p>8.2. krei per 5 darbo dienas nuo reikalavimo gavimo raštu patvirtina grąžinimą arba nurodo 7 skyriuje numatytą išimtį su pagrindimu. Nesant atsakymo per šį terminą, reikalavimas laikomas patvirtintu.</p>
+<p>8.3. Pinigai grąžinami per 14 kalendorinių dienų nuo reikalavimo gavimo. krei išrašo kreditinę sąskaitą faktūrą.</p>
+<p>8.4. Reikalavimą pateikus vėliau nei 8.1 punkte nurodytas terminas, garantija netaikoma, tačiau Klientas išsaugo kitas Sutartyje ir teisės aktuose numatytas teises.</p>
+
+<h3>9. Ginčai</h3>
+<p>9.1. Nesutarimai dėl garantijos taikymo sprendžiami derybomis per 14 dienų; nepavykus, Paslaugų teikimo taisyklių 16 skyriuje nustatyta tvarka pagal Lietuvos Respublikos teisę.</p>
+
+<h3>10. Pakeitimai</h3>
+<p>10.1. krei gali keisti Garantijos sąlygas būsimoms Sutartims. Sudarytai Sutarčiai taikoma jos sudarymo metu galiojusi redakcija.</p>
+
+<h3>11. Kontaktai</h3>
+<p>[ĮMONĖS PAVADINIMAS], juridinio asmens kodas [Įmonės kodas], [Adresas]. El. paštas: [El. paštas].</p>
+</article>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/" style="color:#fff"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="30" width="13" height="13" rx="3.2" fill="#9A4A2E"/><rect x="17.5" y="17.5" width="13" height="13" rx="3.2" fill="#C15F3C"/><rect x="30" y="5" width="13" height="13" rx="3.2" fill="#D97757"/></svg><span class="wm">kre<span class="dot">i</span></span></a>
+        <p class="tag">Tavo DI partneris, kol tapsi savarankiškas.</p>
+        <p>Statome, diegiame ir perduodame DI darbuotojus tikroms Lietuvos įmonėms. Sistema lieka tavo.</p>
+      </div>
+      <div><h5>Puslapis</h5><ul><li><a href="/#sektoriai">Sektoriai</a></li><li><a href="/#kaip">Kaip dirbam</a></li><li><a href="/#komanda">Komanda</a></li><li><a href="/#irodymai">Garantija</a></li><li><a href="/#kainos">Kelias</a></li><li><a href="/#duk">DUK</a></li></ul></div>
+      <div><h5>Teisinė informacija</h5><ul>
+        <!-- TODO:ANTANAS privacy / terms / guarantee-terms - įrašyti URL -->
+        <li><a href="/#">Privatumo politika</a></li><li><a href="/#">Taisyklės ir sąlygos</a></li><li><a href="/#">Garantijos sąlygos</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 krei · Lietuva · krei.lt</span><span>DI darbuotojai tavo verslui</span></div>
+  </div>
+</footer>
+
+</body>
+</html>
