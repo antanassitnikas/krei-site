@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /teisine.html
+Sitemap: https://krei.lt/sitemap.xml

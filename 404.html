@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>krei · Istorijos</title>
-<meta name="description" content="Tikros įmonės, tikri skaičiai: kaip DI darbuotojai perėmė administravimą, klientų aptarnavimą, pardavimų analizę ir pasiūlymų rengimą.">
-<link rel="canonical" href="https://krei.lt/istorijos.html">
+<title>krei · Puslapis nerastas</title>
+<meta name="description" content="krei kartu su tavo komanda per 5 dienas paleidžia pirmuosius DI darbuotojus, o per 30 dienų komanda juos valdo pati. Sistema lieka tavo. Rezultatų garantija, kurios Lietuvoje nesiūlo niekas.">
+<link rel="canonical" href="https://krei.lt/">
 <meta name="theme-color" content="#0A0A0A">
 <meta property="og:type" content="website"><meta property="og:locale" content="lt_LT"><meta property="og:site_name" content="krei">
-<meta property="og:title" content="krei · Istorijos"><meta property="og:description" content="Tikros įmonės, tikri skaičiai: kaip DI darbuotojai perėmė administravimą, klientų aptarnavimą, pardavimų analizę ir pasiūlymų rengimą."><meta property="og:url" content="https://krei.lt/istorijos.html"><meta property="og:image" content="https://krei.lt/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="krei · Istorijos"><meta name="twitter:description" content="Tikros įmonės, tikri skaičiai: kaip DI darbuotojai perėmė administravimą, klientų aptarnavimą, pardavimų analizę ir pasiūlymų rengimą."><meta name="twitter:image" content="https://krei.lt/og-card.png">
+<meta property="og:title" content="krei · DI darbuotojai verslui"><meta property="og:description" content="krei kartu su tavo komanda per 5 dienas paleidžia pirmuosius DI darbuotojus, o per 30 dienų komanda juos valdo pati. Sistema lieka tavo. Rezultatų garantija, kurios Lietuvoje nesiūlo niekas."><meta property="og:url" content="https://krei.lt/"><meta property="og:image" content="https://krei.lt/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="krei · DI darbuotojai verslui"><meta name="twitter:description" content="krei kartu su tavo komanda per 5 dienas paleidžia pirmuosius DI darbuotojus, o per 30 dienų komanda juos valdo pati. Sistema lieka tavo. Rezultatų garantija, kurios Lietuvoje nesiūlo niekas."><meta name="twitter:image" content="https://krei.lt/og-card.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,7 +65,7 @@ h3{font-weight:400;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.03em;line-h
 .nav-links{display:flex;gap:28px;font-size:14px;font-weight:500}
 .nav-links a{text-decoration:none;color:rgba(255,255,255,.82)}
 .nav-links a:hover{color:#fff}
-.nav .btn{background:var(--ember);color:#fff;border-color:var(--ember);padding:11px 20px}
+.nav .btn{background:var(--ember);color:#fff;border-color:var(--ember);padding:11px 18px;text-transform:uppercase;letter-spacing:.07em;font-size:12.5px;font-weight:600}
 .nav .btn:hover{background:var(--ember-bright);border-color:var(--ember-bright);color:#fff}
 .nav.light{background:rgba(251,250,248,.97);border-bottom-color:var(--line);color:var(--ink)}
 .nav.light .nav-links a{color:var(--muted)}.nav.light .nav-links a:hover{color:var(--ink)}
@@ -90,6 +90,8 @@ h3{font-weight:400;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.03em;line-h
 .curve .here-t{font-family:var(--display);font-weight:400;font-size:25px;letter-spacing:-.02em}
 .hero .wm-in{font-family:var(--serif);font-weight:600;font-size:1.12em;color:#fff;letter-spacing:-.01em}
 .hero .wm-in .dot{color:var(--ember-bright)}
+.wm-in.ink{font-family:var(--serif);font-weight:600;font-size:1.12em;color:var(--ink);letter-spacing:-.01em}
+.wm-in.ink .dot{color:var(--ember)}
 /* LOGO MARQUEE - bespalviai, judantys */
 .logos-row{display:block;margin:44px 0 0}
 .logos-row .lbl{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500;margin-bottom:18px}
@@ -98,7 +100,23 @@ h3{font-weight:400;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.03em;line-h
 .logos-row:hover .logos-track{animation-play-state:paused}
 .logos-track img{height:30px;width:auto;max-width:150px;object-fit:contain;opacity:.55;filter:grayscale(1);display:block}
 @keyframes marquee{to{transform:translateX(calc(-100% - 64px))}}
-/* PATIRTIES JUOSTA - social proof po hero */
+/* KOMANDA */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px}
+.team-5{grid-template-columns:repeat(5,1fr);gap:22px}
+.person .li-link{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--ember-deep);text-decoration:none}
+.person .li-link:hover{text-decoration:underline}
+.person .li-todo{color:var(--faint)}
+@media(max-width:1180px){.team-5{grid-template-columns:repeat(3,1fr)}}
+.person .ava{width:100%;aspect-ratio:1;background:var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:300;font-size:48px;letter-spacing:-.04em;color:var(--stone);margin-bottom:18px;background-size:cover;background-position:center 20%}
+.person .ava::after{content:attr(data-i)}
+.person .ava.photo::after{content:none}
+.person h3{font-size:18px;font-weight:500;letter-spacing:-.02em}
+.person .r{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-deep);font-weight:600;margin:4px 0 10px}
+.person p{font-size:13.5px;color:var(--muted);line-height:1.5}
+#komanda .stats{margin-top:64px}
+@media(max-width:860px){.team,.team-5{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.team{grid-template-columns:1fr}}
+/* PATIRTIES JUOSTA - social proof po hero (nebenaudojama) */
 .cred{padding:clamp(48px,6vw,84px) 0;border-bottom:1px solid var(--line)}
 .cred-lead{font-family:var(--display);font-weight:300;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.035em;line-height:1.15;max-width:26ch}
 .cred .stats{margin-top:36px;border-top:none;padding-top:0}
@@ -117,7 +135,32 @@ section.dark .label{color:var(--ember-bright)}
 .stat .n .u{color:var(--ember)}
 .stat .l{font-size:14px;color:var(--muted);margin-top:10px;max-width:24ch;line-height:1.45}
 
-/* ATVEJAI - rail + Prieš/Po kortelė (2026-09-03) */
+/* ATVEJAI santrauka - 5 eilutės su viena plytele */
+.mini{margin-top:56px;border-bottom:1px solid var(--line)}
+.mini-row{display:grid;grid-template-columns:44px 1fr auto;gap:36px;align-items:start;padding:32px 0;border-top:1px solid var(--line);text-decoration:none;color:inherit;transition:background .2s var(--ease)}
+.mini-row:hover .txt b{color:var(--ember-deep)}
+.mini-row .no{font-family:var(--body);font-size:12px;letter-spacing:.1em;color:var(--ember);font-weight:500;font-variant-numeric:tabular-nums;align-self:start;padding-top:8px}
+.mini-row.soon .no{color:var(--faint)}
+.mini-row .txt b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(19px,1.9vw,24px);letter-spacing:-.03em;line-height:1.15;transition:color .2s var(--ease)}
+.mini-row .txt .who-line{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);margin-top:8px}
+.mini-row .txt .who-line img{width:28px;height:28px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.mini-row .txt .who-line b{display:inline;font-family:var(--body);font-weight:600;font-size:13.5px;letter-spacing:0;line-height:1.4;color:var(--ink)}
+.mini-row .txt .who-line .li{color:var(--ember-deep);font-weight:600;cursor:pointer}
+.mini-row .txt .who-line .li:hover{text-decoration:underline}
+.mini-row .txt .bp{display:grid;grid-template-columns:44px 1fr;gap:14px;color:var(--muted);font-size:15px;margin-top:10px;max-width:70ch;line-height:1.5}
+.mini-row .txt .bp em{font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--stone);padding-top:4px}
+.mini-row .txt .bp.po{color:var(--ink);font-weight:500}
+.mini-row .txt .bp.po em{color:var(--ember-deep)}
+.mini-row .txt .more{display:inline-block;margin-top:12px;font-size:13.5px;font-weight:600;color:var(--ember-deep)}
+.mini-row .tile-sub{display:block;font-family:var(--body);font-size:12.5px;color:var(--muted);margin-top:12px;letter-spacing:0;white-space:normal;max-width:22ch;margin-left:auto;line-height:1.45}
+.mini-row .tile{font-family:var(--display);font-weight:300;font-size:clamp(30px,3vw,42px);letter-spacing:-.045em;line-height:1;text-align:right;min-width:200px;white-space:nowrap;padding-top:4px}
+.mini-row .tile i{font-style:normal;color:var(--ember);font-size:.5em;letter-spacing:-.02em}
+.mini-row .tile small{display:block;font-family:var(--body);font-size:12px;color:var(--stone);margin-top:8px;letter-spacing:0;white-space:normal;max-width:18ch;margin-left:auto}
+.mini-cta{margin-top:32px}
+.stats-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.mini-row{grid-template-columns:32px 1fr;gap:10px 16px}.mini-row .tile{grid-column:2;text-align:left;min-width:0}.mini-row .tile small,.mini-row .tile-sub{margin-left:0}.stats-3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.stats-3{grid-template-columns:1fr}}
+/* ATVEJAI - rail + Prieš/Po kortelė (naudojama krei-istorijos puslapyje) */
 .cases-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;margin-top:56px;align-items:start}
 .case-rail{display:flex;flex-direction:column;border-top:1px solid var(--line);position:sticky;top:90px;align-self:start}
 .case-rail button{display:grid;grid-template-columns:36px 1fr auto;gap:18px;align-items:center;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);border-left:2px solid transparent;padding:26px 8px 26px 14px;font-family:var(--display);font-weight:300;font-size:clamp(20px,2vw,27px);letter-spacing:-.03em;color:var(--stone);cursor:pointer;transition:color .2s var(--ease),border-color .2s var(--ease)}
@@ -132,11 +175,6 @@ section.dark .label{color:var(--ember-bright)}
 .case.on{display:block}
 .case-tag{font-size:13.5px;font-weight:500;color:var(--stone);letter-spacing:.01em;display:flex;align-items:center;gap:10px;margin-bottom:26px}
 .case-tag .dot{width:8px;height:8px;background:var(--ember);flex:none}
-.person-tag{display:flex;align-items:center;gap:12px;margin:-10px 0 24px;font-size:14px;color:var(--muted)}
-.person-tag img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;filter:grayscale(1)}
-.person-tag b{color:var(--ink);font-weight:600}
-.person-tag a{color:var(--ember-deep);text-decoration:none;font-weight:600}
-
 .ba{padding:0 0 26px}
 .ba+.ba{border-top:1px solid var(--line);padding-top:26px}
 .pill{display:inline-block;font-family:var(--body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--stone);background:var(--paper-2);padding:7px 12px;margin-bottom:14px}
@@ -236,7 +274,11 @@ section.dark .label{color:var(--ember-bright)}
 .prob-prose .punch{font-family:var(--display);font-weight:400;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em;color:var(--ink);line-height:1.25;margin:26px 0}
 
 /* PARTNERIS - 5 stulpeliai be kortelių */
-.roles{display:grid;grid-template-columns:repeat(5,1fr);gap:32px;margin-top:64px}
+.roles{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:72px;position:relative;padding-top:38px}
+.roles::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--ember);opacity:.45}
+.role{position:relative}
+.role::before{content:"";position:absolute;left:0;top:-38px;width:15px;height:15px;border-radius:50%;background:var(--ember)}
+@media(max-width:1024px){.roles::before,.role::before{display:none}.roles{padding-top:0}}
 .role h3{font-size:18px;font-weight:500;letter-spacing:-.02em;margin-bottom:10px}
 .role .no{font-family:var(--display);font-weight:300;font-size:15px;letter-spacing:.06em;color:var(--ember);margin-bottom:14px;font-variant-numeric:tabular-nums}
 .role p{font-size:14.5px;color:var(--muted)}
@@ -250,11 +292,17 @@ section.dark .label{color:var(--ember-bright)}
 .prin .txt h2 .acc{color:var(--ember-bright)}
 .prin .txt p{color:rgba(255,255,255,.72);margin-top:24px;max-width:48ch}
 .prin .txt p .acc{color:var(--ember-bright)}
-.prin-list{list-style:none;display:flex;flex-direction:column}
-.prin-list li{padding:18px 0;border-top:1px solid var(--line-dark);font-family:var(--display);font-weight:300;font-size:clamp(18px,1.8vw,23px);letter-spacing:-.025em;line-height:1.25;display:flex;gap:16px}
-.prin-list li:last-child{border-bottom:1px solid var(--line-dark)}
-.prin-list li .no{font-family:var(--body);font-size:12px;letter-spacing:.1em;color:var(--ember-bright);font-weight:500;flex:none;padding-top:7px;font-variant-numeric:tabular-nums}
-.prin-list li b{font-weight:500;color:#fff}
+.prin-list{display:flex;flex-direction:column}
+.prin-item{border-top:1px solid var(--line-dark)}
+.prin-item:last-child{border-bottom:1px solid var(--line-dark)}
+.prin-item summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;padding:18px 0;font-family:var(--display);font-weight:300;font-size:clamp(18px,1.8vw,23px);letter-spacing:-.025em;line-height:1.25;color:rgba(255,255,255,.88)}
+.prin-item summary::-webkit-details-marker{display:none}
+.prin-item summary .no{font-family:var(--body);font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.45);font-weight:500;padding-top:7px;font-variant-numeric:tabular-nums;transition:color .2s var(--ease)}
+.prin-item[open] summary .no,.prin-item summary:hover .no{color:var(--ember-bright)}
+.prin-item[open] summary{color:#fff}
+.prin-item summary b{font-weight:500;color:#fff}
+.prin-item p{padding:0 0 22px 50px;color:rgba(255,255,255,.66);font-size:15px;line-height:1.6;max-width:56ch}
+@media(max-width:560px){.prin-item p{padding-left:0}}
 
 /* ĮRODYMAI, NE PAŽADAI */
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
@@ -292,8 +340,52 @@ section.dark .label{color:var(--ember-bright)}
 .guar ol li::before{content:"(" counter(c) ")";font-family:var(--display);color:var(--ember);font-weight:500;flex:none}
 .guar .pub{margin-top:22px;font-weight:600;font-size:14.5px}
 .guar .b .btn{margin-top:26px}
+.guar.single{grid-template-columns:1fr;max-width:860px;margin-left:auto;margin-right:auto}
+.guar.single .a{border-right:0}
+.guar.single .g-body{max-width:60ch}
+.guar .pub a{color:var(--ember-deep)}
 
-/* FORMATAI - numeruotas sąrašas be kainų (2026-09-03) */
+/* PASIŪLYMAS - offer kortelė */
+.offer{margin-top:56px;border:2px solid var(--ember);background:var(--panel);padding:clamp(26px,3.5vw,44px)}
+.offer-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
+.offer-head .label{margin-bottom:0}
+.offer-note{font-size:13.5px;color:var(--muted)}
+.offer-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:48px}
+.offer-k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--stone);margin-bottom:12px}
+.offer-list{list-style:none;display:flex;flex-direction:column}
+.offer-list li{display:block;position:relative;padding:12px 0 12px 26px;border-top:1px solid var(--line);font-size:15px;color:var(--muted);line-height:1.5}
+.offer-list li:last-child{border-bottom:1px solid var(--line)}
+.offer-list li::before{content:"✓";color:var(--ember);font-weight:700;position:absolute;left:0;top:12px}
+.offer-list li b{color:var(--ink);font-weight:600}
+.offer-side{border-left:1px solid var(--line);padding-left:40px;display:flex;flex-direction:column}
+.offer-side p{font-size:15px;color:var(--ink);margin-bottom:22px;line-height:1.55}
+.offer-side .offer-k{margin-bottom:8px}
+.offer-side .btn{align-self:flex-start;margin-top:auto}
+.offer-side .micro{margin-top:10px}
+.ladder-head{margin-top:72px;display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:baseline}
+.ladder-head p{color:var(--muted);font-size:16px;max-width:60ch}
+.ladder-head .label{margin-bottom:0}
+.step .tag{position:absolute;top:-11px;left:18px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#fff;background:var(--ember);padding:4px 9px}
+.step.hi{border-color:var(--ember);box-shadow:0 0 0 1px var(--ember)}
+.step.core .tag{background:var(--ink)}
+@media(max-width:860px){.offer-grid{grid-template-columns:1fr;gap:28px}.offer-side{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px}.ladder-head{grid-template-columns:1fr;gap:10px}}
+/* KELIAS - laiptai su kylančiais blokais (logo motyvas) */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:56px;align-items:stretch}
+.step{border:1px solid var(--line);background:var(--panel);padding:26px 22px 28px;display:flex;flex-direction:column;position:relative}
+.step .blocks{display:flex;gap:4px;align-items:flex-end;height:34px;margin-bottom:22px}
+.step .blocks i{display:block;width:12px;height:12px;background:var(--ember)}
+.step .blocks i:nth-child(2){height:16px}.step .blocks i:nth-child(3){height:20px}.step .blocks i:nth-child(4){height:26px}.step .blocks i:nth-child(5){height:32px}
+.step .no{font-family:var(--body);font-size:11.5px;letter-spacing:.12em;color:var(--stone);font-weight:500;font-variant-numeric:tabular-nums}
+.step h3{font-size:clamp(19px,1.6vw,22px);font-weight:500;letter-spacing:-.025em;line-height:1.15;margin:8px 0 6px}
+.step .meta{font-size:12.5px;color:var(--ember-deep);font-weight:600;letter-spacing:.01em;margin-bottom:18px}
+.step dl{margin:0;display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.step dt{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:600;margin-bottom:3px}
+.step dd{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+.step dd:last-child{color:var(--ink)}
+@media(max-width:1180px){.steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+/* FORMATAI (senas sąrašas, nebenaudojamas) */
 .formats{margin-top:56px;border-top:1px solid var(--line)}
 .fmt{display:grid;grid-template-columns:56px 1fr 1.15fr;gap:32px;padding:38px 0;border-bottom:1px solid var(--line);align-items:start}
 .fmt .no{font-family:var(--body);font-size:12px;letter-spacing:.1em;color:var(--ember);font-weight:500;padding-top:9px;font-variant-numeric:tabular-nums}
@@ -353,23 +445,37 @@ section.dark .label{color:var(--ember-bright)}
 .confirm h3{font-size:22px;margin-bottom:12px}
 .confirm p{color:rgba(255,255,255,.72);font-size:15px}
 .confirm p b{color:#fff}
-.form-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;max-width:1000px;margin:64px auto 0}
+.form-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;max-width:1000px;margin:48px auto 0}
 .form-intro{grid-column:1 / -1;font-family:var(--display);font-weight:400;font-size:19px;letter-spacing:-.02em;border-top:1px solid var(--line-dark);padding-top:26px}
 .form-wrap{border:1px solid var(--line-dark);padding:30px}
 .field{margin-bottom:16px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.field .opt{font-weight:400;color:rgba(255,255,255,.45)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.35)}
+@media(max-width:560px){.f2{grid-template-columns:1fr}}
 .field label{display:block;font-weight:500;font-size:12.5px;color:rgba(255,255,255,.7);margin-bottom:6px;letter-spacing:.02em}
 .field input,.field textarea,.field select{width:100%;background:var(--ink-2);border:1px solid rgba(255,255,255,.18);border-radius:0;padding:12px 14px;color:var(--paper);font-family:var(--body);font-size:15px}
 .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--ember-bright)}
-.field textarea{resize:vertical;min-height:78px}
+.field textarea{resize:vertical;min-height:110px}
 .field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D97757' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
 .form-side h3{font-size:20px;font-weight:400;margin-bottom:18px}
 .form-side .fs{display:flex;gap:11px;margin-bottom:14px;color:rgba(255,255,255,.72);font-size:14.5px}
 .form-side .fs::before{content:"✓";color:var(--ember-bright);font-weight:600}
+.consent{display:flex;gap:10px;align-items:flex-start;flex-wrap:nowrap;font-size:13px;color:rgba(255,255,255,.7);margin:6px 0 16px;line-height:1.45}
+.consent input{margin-top:3px;accent-color:var(--ember);flex:none}
+.consent span{flex:1;min-width:0}
+.consent a{color:#fff}
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;background:var(--ink);color:var(--paper);border:1px solid var(--line-dark);padding:16px 18px;display:none;gap:16px;align-items:center;flex-wrap:wrap;font-size:13.5px;max-width:860px;margin:0 auto}
+.cookie.on{display:flex}
+.cookie p{flex:1;min-width:240px;margin:0;color:rgba(255,255,255,.8)}
+.cookie a{color:#fff}
+.cookie .btn{padding:10px 16px;font-size:13px}
+.cookie .btn-line{color:var(--paper);border-color:rgba(255,255,255,.6)}
 .form-msg{display:none;border:1px solid var(--ember);padding:14px;color:#fff;margin-bottom:16px;font-size:14px}
 
 /* FOOTER - daugiastulpis */
 footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;border-top:1px solid var(--line-dark)}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
 .foot .tag{font-family:var(--display);font-weight:300;font-size:22px;letter-spacing:-.03em;color:#fff;margin:16px 0 10px;max-width:22ch}
 .foot p{font-size:14px;max-width:36ch}
 .foot h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500;margin-bottom:14px}
@@ -377,6 +483,45 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;bord
 .foot a{text-decoration:none;color:rgba(255,255,255,.75)}
 .foot a:hover{color:#fff}
 .foot-bottom{margin-top:48px;padding-top:20px;border-top:1px solid var(--line-dark);font-size:12.5px;color:rgba(255,255,255,.45);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+
+/* SEKCIJŲ RITMAS - kaitaliojami fonai, viršutinės linijos, ember akcentas prie label */
+section.alt{background:var(--paper-2)}
+main>section{border-top:1px solid var(--line)}
+main>section.dark{border-top:0}
+.center .label{display:inline-flex;align-items:center;gap:10px}
+.center .label::before{content:"";width:8px;height:8px;background:var(--ember)}
+.center h2{margin-top:6px}
+/* MOBILE - kompaktiškiau, be kreivės, aiškios sekcijos */
+@media(max-width:860px){
+  section{padding:56px 0}
+  .curve,.hero-foot{display:none}
+  .hero .wrap{padding-top:40px;padding-bottom:36px}
+  .hero{min-height:auto}
+  .hero h1{font-size:clamp(34px,9.5vw,44px)}
+  .hero .sub{margin:20px 0 22px;font-size:16px}
+  .logos-row{margin-top:28px}
+  h2{font-size:clamp(30px,8vw,40px)}
+  .lead{font-size:16px;margin-top:14px}
+  .mini-row{padding:22px 0}
+  .mini-row .txt b{font-size:19px}
+  .mini-row .txt .bp{grid-template-columns:40px 1fr;gap:10px;font-size:14.5px}
+  .mini-row .tile{font-size:34px;margin-top:6px}
+  .prob-grid{gap:28px;margin-top:32px}
+  .prob-list li{font-size:16px;padding:12px 0}
+  .roles{gap:24px;margin-top:36px}
+  .prin{gap:36px}
+  .prin .txt h2{font-size:clamp(30px,8vw,40px)}
+  .team{gap:18px;margin-top:32px}
+  .person .ava{margin-bottom:12px}
+  .steps{margin-top:32px}
+  .faq{margin-top:28px}
+  .form-grid{margin-top:32px;gap:24px}
+  .form-wrap{padding:20px}
+  .book .wrap>.label+h2{font-size:clamp(28px,7.6vw,36px)}
+  .foot{gap:28px}
+  .cookie{left:10px;right:10px;bottom:10px;padding:14px}
+}
 
 /* MOTION */
 @media(prefers-reduced-motion:no-preference){
@@ -391,7 +536,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;bord
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
 
 @media(max-width:1024px){
-  .roles{grid-template-columns:repeat(3,1fr)}
+  .roles{grid-template-columns:repeat(2,1fr)}
   .foot{grid-template-columns:1fr 1fr}
 }
 @media(max-width:860px){
@@ -415,295 +560,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;bord
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 body{padding-bottom:env(safe-area-inset-bottom)}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "krei", "url": "https://krei.lt", "logo": "https://krei.lt/apple-touch-icon.png", "description": "DI darbuotojai Lietuvos įmonėms: pirmas per 5 dienas, komanda valdo pati per 30 dienų.", "areaServed": "LT", "sameAs": []}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "krei", "url": "https://krei.lt", "logo": "https://krei.lt/apple-touch-icon.png", "description": "DI darbuotojai Lietuvos įmonėms: pirmas per 5 dienas, komanda valdo pati per 30 dienų.", "areaServed": "LT", "sameAs": []}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kiek tai kainuoja?", "acceptedAnswer": {"@type": "Answer", "text": "Kiekvienas projektas yra unikalus. Kaina priklauso nuo projekto sudėtingumo ir apimties. Susisiek, ir pateiksim individualų pasiūlymą, pritaikytą tavo poreikiams, prieš bet kokį mokėjimą."}}, {"@type": "Question", "name": "Kaip pradėti bendradarbiavimą?", "acceptedAnswer": {"@type": "Answer", "text": "Užpildyk formą svetainėje arba parašyk el. paštu. Surengsim strateginį pokalbį, kurio metu aptarsim tavo poreikius ir galimybes, ir išeisi su konkrečiu planu."}}, {"@type": "Question", "name": "Jau bandėm ChatGPT, nieko nepakeitė. Kuo čia kitaip?", "acceptedAnswer": {"@type": "Answer", "text": "Teisingai, įrankis pats iš savęs nieko nepakeičia. Todėl diegiam ne įrankį, o veikiantį darbo procesą, kurį tavo komanda realiai naudoja, arba grąžinam pinigus."}}, {"@type": "Question", "name": "Ar čia ne kursai?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Kursai duoda žinias be sistemos, o mes paliekame veikiančią sistemą tavo versle ir komandą, kuri moka ją valdyti. Skirtumas: po mūsų kažkas realiai dirba."}}, {"@type": "Question", "name": "Ar reikia programuotojų ar techninių žinių?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Didžioji dalis DI darbuotojų statoma be nė vienos kodo eilutės. Dirbame su ta komanda, kurią jau turi, nieko samdyti nereikia."}}, {"@type": "Question", "name": "Ar paskui būsiu prisirišęs prie jūsų?", "acceptedAnswer": {"@type": "Answer", "text": "Atvirkščiai, garantija ir yra nepriklausomybė: po 30 dienų sistema veikia be mūsų, o tęsti ar ne, tavo pasirinkimas, atšaukiamas per mėnesį."}}, {"@type": "Question", "name": "Neturiu tam laiko.", "acceptedAnswer": {"@type": "Answer", "text": "Priklauso nuo formato. Jei diegiam mes, iš tavęs reikia kelių valandų sprendimams ir prieigoms, visa kita daro tavo paskirtas žmogus kartu su mumis. Jei nori valdyti pats, pirmos dienos yra darbas, ne pirkinys, ir tai pasakom iš karto."}}, {"@type": "Question", "name": "Kas su mūsų duomenų saugumu?", "acceptedAnswer": {"@type": "Answer", "text": "Sistemos veikia tavo aplinkoje, duomenys niekada nenaudojami modelių apmokymui, DPA prieš pradedant. Saugumo ribas sutariame raštu dar prieš pirmą sesiją."}}]}</script>
 </head>
 <body>
-<!-- krei · Istorijos - atskiras puslapis su pilnomis Prieš/Po istorijomis ir atsiliepimais (2026-09-03). Dizaino sistema ta pati kaip pagrindinio. -->
-
-
-
-
-
-
-
-
-<style>
-.nav.light{position:sticky}
-.stories-head{padding:clamp(72px,9vw,120px) 0 clamp(80px,10.5vw,152px)}
-.testi{max-width:900px;margin:0 auto}
-.testi blockquote{font-family:var(--display);font-weight:300;font-size:clamp(26px,3.2vw,44px);letter-spacing:-.04em;line-height:1.15;color:var(--ink);border-left:3px solid var(--ember);padding-left:clamp(20px,3vw,40px);margin:48px 0 22px}
-.testi .who{font-size:15px;color:var(--muted);padding-left:clamp(23px,3vw,43px)}
-.testi .who b{color:var(--ink);font-weight:600}
-.testi .ctx{margin-top:40px;font-size:15px;color:var(--muted);max-width:60ch;padding-left:clamp(23px,3vw,43px)}
-.cases.stories-head .cases-grid{margin-top:64px}
-</style>
-<a id="top"></a>
-<header>
-<nav class="nav light" id="nav" aria-label="Pagrindinė navigacija">
-  <div class="wrap">
-    <a class="logo" href="/" aria-label="krei, į puslapio pradžią">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 48 48" fill="none" role="img" aria-label="krei ženklas: trys kylantys blokai"><rect x="5" y="30" width="13" height="13" rx="3.2" fill="#9A4A2E"/><rect x="17.5" y="17.5" width="13" height="13" rx="3.2" fill="#C15F3C"/><rect x="30" y="5" width="13" height="13" rx="3.2" fill="#D97757"/></svg>
-      <span class="wm">kre<span class="dot">i</span></span>
-    </a>
-    <div class="nav-links"><a href="/">← Pagrindinis</a><a href="#atvejai">Atvejai</a><a href="#atsiliepimai">Atsiliepimai</a></div>
-    <a href="/#pokalbis" class="btn">Strateginis pokalbis →</a>
-  </div>
-</nav>
-</header>
-<main>
-<div id="atvejai"></div>
-<!-- ATVEJAI - "Tikros įmonės. Tikri skaičiai." Prieš / Po / rezultatas. 01-04 tikros istorijos (patvirtinta 2026-09-03), 05 pavyzdinis scenarijus be matavimų. -->
-<section id="sektoriai" class="center cases stories-head">
-  <div class="wrap">
-    <span class="label">Atvejai</span>
-    <h2>Tikros įmonės. <span class="w">Tikri skaičiai.</span></h2>
-    <p class="lead">Šeši darbai, kuriuos DI darbuotojai perėmė iš žmonių. Kaip buvo prieš, kaip yra dabar ir ką tai davė versle. Penkios istorijos su patvirtintais skaičiais ir vienas scenarijus, pažymėtas atskirai.</p>
-
-    <div class="cases-grid" style="text-align:left">
-      <nav class="case-rail" aria-label="Atvejai">
-        <button type="button" class="on" data-case="c6"><span class="no">01</span><span class="t">Pardavimai ir dokumentai</span><span class="arr">→</span></button>
-        <button type="button" data-case="c1"><span class="no">02</span><span class="t">Procesų automatizavimas</span><span class="arr">→</span></button>
-        <button type="button" data-case="c3"><span class="no">03</span><span class="t">Marketingas ir pardavimai</span><span class="arr">→</span></button>
-        <button type="button" data-case="c4"><span class="no">04</span><span class="t">Statyba ir pramonė</span><span class="arr">→</span></button>
-        <button type="button" data-case="c2"><span class="no">05</span><span class="t">Klientų aptarnavimas</span><span class="arr">→</span></button>
-        <button type="button" data-case="c5"><span class="no">06</span><span class="t">Transportas ir logistika</span><span class="arr">→</span></button>
-      </nav>
-
-      <div class="case-panel">
-        <article class="case on" id="c6">
-          <p class="case-tag"><span class="dot"></span>Eldeko · High-ticket pardavimai statybų sektoriuje · per 1,5 mėnesio</p>
-          <div class="person-tag"><img loading="lazy" decoding="async" src="/img/0c3eb2f162.jpg" alt="Marius Kanevičius" width="44" height="44"><span><b>Marius Kanevičius</b> · verslo plėtros vadovas · <a href="https://www.linkedin.com/in/marius-kanevi%C4%8Dius/" target="_blank" rel="noopener">LinkedIn ↗</a></span></div>
-          <div class="ba"><span class="pill">Prieš</span><p class="before">Marius parduoda projektus nuo €100 000 iki €500 000. „Aš esu pardavėjas, man patinka uždarinėti." Bet už kiekvieno sandorio slypėjo dokumentacija: audito dokumentas 3–4 dienos rankomis, sutartys, buhalterija, CRM. Tas laikas ėjo tiesiai iš pardavimų. Metus bandė ChatGPT ir dešimt kitų įrankių, kurie nesikalbėjo tarpusavyje.</p></div>
-          <div class="ba"><span class="pill po">Po</span><p class="after">Penkių DI agentų komanda vienoje sistemoje, kuriai deleguoja kaip žmonėms: prikelia atšalusią klientų bazę, paruošia derybų analizę, rašo sutartis ir audito dokumentus, tvarko buhalteriją ir CRM, suplanuoja komandos keliones. Kai pastebi klaidą, pamoko, ir kitą kartą jos nebėra.</p></div>
-          <div class="case-stats">
-            <div><b>€200 000</b><span>pirmas sandoris, kurį agentai rado atšalusioje bazėje ir paruošė</span></div>
-            <div><b>10 <span class="u">min.</span></b><span>audito dokumentui, anksčiau 3–4 dienos. Auditorius grąžino be pastabų</span></div>
-            <div><b>~80 <span class="u">val./mėn.</span></b><span>atgauta, apie 4 val. per dieną stabiliai</span></div>
-          </div>
-          <p class="essence">„Aš vienas, bet dabar tarsi turėčiau keturis žmones, kurie dirba tą patį darbą. Esi direktorius ir valdai savo darbuotojus." Streso mažiau, sandorių daugiau: komanda vyksta į Olandiją, dar keli kontraktai derinami.</p>
-          <div class="mock">
-            <div class="mock-head"><span class="mock-ic" aria-hidden="true"></span><b>Mariaus agentų komanda</b><span class="mock-src">5 agentai</span><span class="mock-chip">Kasdien</span></div>
-            <div class="kv">
-              <div class="kv-row"><span class="k">Bazės agentas</span><span class="v">Analizuoja senus kontaktus, primena, kam seniai neskambinta, palaiko ryšį. <b>Rado €200 000 sandorį.</b></span></div>
-              <div class="kv-row"><span class="k">Derybų agentas</span><span class="v">Pirminė kliento analizė ir visas derybų pasiruošimas iki pokalbio eigos.</span></div>
-              <div class="kv-row"><span class="k">Dokumentų agentas</span><span class="v">Sutartys, audito dokumentai, buhalterija, CRM. <b>3–4 d. → 10 min.</b></span></div>
-              <div class="kv-row"><span class="k">Logistikos agentas</span><span class="v">Komandos kelionė ir projekto planas. Olandija suplanuota sistemos.</span></div>
-              <div class="kv-row"><span class="k">Kur veikia</span><span class="v">Telefone ir kompiuteryje, visada po ranka.</span></div>
-            </div>
-            <p class="mock-foot">Skaičiai ir citatos iš pokalbio su Mariumi Kanevičiumi, 2026 m. rugsėjis.</p>
-          </div>
-          <a class="case-cta" href="/#pokalbis">Noriu to savo versle →</a>
-          <span class="case-no" aria-hidden="true">01</span>
-        </article>
-        <article class="case" id="c1">
-          <p class="case-tag"><span class="dot"></span>Silart Beauty Academy · Administravimas</p>
-          <div class="person-tag"><img loading="lazy" decoding="async" src="/img/560f635e24.jpg" alt="Silva Šiaučiūnaitė" width="44" height="44"><span><b>Silva Šiaučiūnaitė</b> · įkūrėja · <a href="https://www.linkedin.com/in/silvasiauciunaite/" target="_blank" rel="noopener">LinkedIn ↗</a></span></div>
-
-          <div class="ba">
-            <span class="pill">Prieš</span>
-            <p class="before">Vadovė buvo įmonės administratorė. 932 laiškai per du mėnesius, kiekviena registracija rankomis po 20–25 minutes, apie 21 valanda per savaitę darbams, kurie tik išlaiko verslą, bet jo neaugina. Plėtra, reklama, naujų darbuotojų paieška mėnesių mėnesiais stovėjo eilėje. O klientai, kurie laukdavo atsakymo 3–5 dienas, parašydavo „jau radau kitur".</p>
-          </div>
-          <div class="ba">
-            <span class="pill po">Po</span>
-            <p class="after">Administravimą perėmė sistema: atsako į užklausas visuose komunikacijos kanaluose, registruoja studentus į 17 mokytojų kalendorius, siunčia informaciją, priminimus ir po-kursų laiškus, sutikrina banko įplaukas, paruošia atsiskaitymus su mokytojomis. Vadovei liko tai, ką gali tik ji: sprendimai, išimtys, derybos ir verslo vystymas.</p>
-          </div>
-
-          <div class="case-stats">
-            <div><b>2,3<span class="u">×</span></b><span>pajamos, palyginus su tuo pačiu laikotarpiu pernai. Didžiausi pardavimų skaičiai įmonės istorijoje</span></div>
-            <div><b>0</b><span>naujų darbuotojų</span></div>
-            <div><b>109 <span class="u">€/mėn.</span></b><span>vietoj administratorių, kuriuos reikėtų mokyti</span></div>
-          </div>
-
-          <p class="essence">Valandų nesumažėjo. Pasikeitė, kam jos skirtos: vietoj išlaikymo, į plėtrą ir sprendimus. Iš to ir atėjo daugiau nei dvigubos pajamos.</p>
-
-          <div class="mock">
-            <div class="mock-head"><span class="mock-ic" aria-hidden="true"></span><b>Apyvarta, 2026 prieš 2025</b><span class="mock-src">Finansų apskaita</span><span class="mock-chip">Kas mėnesį</span></div>
-            <div class="bars" role="img" aria-label="Apyvarta 2026 prieš 2025: gegužė 2,0 karto, birželis 1,5, liepa 1,5, rugpjūtis 2,3">
-              <div class="bar-row"><span class="m">Gegužė</span><span class="tr"><i style="width:87%"></i><i class="ly" style="width:43.5%"></i></span><span class="k">2,0×</span></div>
-              <div class="bar-row"><span class="m">Birželis</span><span class="tr"><i style="width:65%"></i><i class="ly" style="width:43.5%"></i></span><span class="k">1,5×</span></div>
-              <div class="bar-row"><span class="m">Liepa</span><span class="tr"><i style="width:65%"></i><i class="ly" style="width:43.5%"></i></span><span class="k">1,5×</span></div>
-              <div class="bar-row hi"><span class="m">Rugpjūtis</span><span class="tr"><i style="width:100%"></i><i class="ly" style="width:43.5%"></i></span><span class="k">2,3×</span></div>
-            </div>
-            <p class="mock-foot">Ember juosta 2026, pilka tas pats mėnuo 2025. Tikslios sumos įmonės prašymu neskelbiamos.</p>
-          </div>
-
-          <a class="case-cta" href="/#pokalbis">Noriu to savo versle →</a>
-          <span class="case-no" aria-hidden="true">02</span>
-        </article>
-
-        <article class="case" id="c2">
-          <p class="case-tag"><span class="dot"></span>1 597 darbuotojų įmonė · rezultatai per 3 mėn.</p>
-          <div class="ba"><span class="pill">Prieš</span><p class="before">Didelis užklausų srautas, ilgas laukimo laikas ir pardavėjai, kurie pusę dienos atsakinėja į tuos pačius klausimus vietoj pardavimo. Aptarnavimo kaštai augo kartu su srautu, o ne su pajamomis.</p></div>
-          <div class="ba"><span class="pill po">Po</span><p class="after">Autonominis DI agentas perima pirmą kontaktą visuose kanaluose: atsako į standartines užklausas iškart, surenka trūkstamą informaciją, o sudėtingus atvejus perduoda žmogui su paruošta santrauka. Pardavėjai gauna tik tuos pokalbius, kuriuose reikia pardavėjo.</p></div>
-          <div class="case-stats">
-            <div><b>+24<span class="u">%</span></b><span>pardavimai per 3 mėnesius</span></div>
-            <div><b>−70<span class="u">%</span></b><span>kliento laukimo laikas</span></div>
-            <div><b>32 <span class="u">val./mėn.</span></b><span>atlaisvinta pardavėjams</span></div>
-          </div>
-          <p class="essence">Aptarnavimo ir pardavimų kaštai sumažėjo 25 %, o pardavėjai grįžo prie pardavimo. Matuota per tris mėnesius.</p>
-          <div class="mock">
-            <div class="mock-head"><span class="mock-ic" aria-hidden="true"></span><b>Klientų užklausos</b><span class="mock-src">DI agentas</span><span class="mock-chip">Visi kanalai</span></div>
-            <div class="chat">
-              <div class="msg in"><span class="who">Klientas · 21:47</span>Laba, ar galiu pakeisti planą nuo kito mėnesio ir kiek tai kainuos?</div>
-              <div class="msg out"><span class="who">DI agentas · 21:47</span>Taip, galite. Nuo spalio 1 d. planas „Verslas+" kainuotų 34,90 €/mėn., dabartinis 29,90 €. Pakeitimas nemokamas. Patvirtinti dabar?</div>
-              <div class="msg in"><span class="who">Klientas · 21:48</span>Taip, patvirtinu.</div>
-              <div class="msg sys">Užklausa išspręsta be žmogaus · vakaro laukimas 0 min.</div>
-            </div>
-            <p class="mock-foot">Perduota žmogui: 1 iš 12 vakaro pokalbių, su paruošta santrauka.</p>
-          </div>
-          <a class="case-cta" href="/#pokalbis">Noriu to savo versle →</a>
-          <span class="case-no" aria-hidden="true">05</span>
-        </article>
-
-        <article class="case" id="c3">
-          <p class="case-tag"><span class="dot"></span>Finansiškai Raštingi įmonių grupė · 2025 Q2 → 2026 Q1</p>
-          <div class="person-tag"><img loading="lazy" decoding="async" src="/img/6864e32c70.jpg" alt="Artūras Rimkus" width="44" height="44"><span><b>Artūras Rimkus</b> · CEO · <a href="https://www.linkedin.com/in/arturas-rimkus/" target="_blank" rel="noopener">LinkedIn ↗</a></span></div>
-          <div class="ba"><span class="pill">Prieš</span><p class="before">Kodėl klientai perka, o kodėl atsisako, niekas nežinojo pagal duomenis. Marketingas ir pardavimai turėjo skirtingus atsakymus. Reklamos rašytos spėjant, pardavimų skriptai tobulinti iš nuojautos, o dešimtys pokalbių per savaitę likdavo neperklausyti.</p></div>
-          <div class="ba"><span class="pill po">Po</span><p class="after">DI sujungia visus vieno kliento susitikimų įrašus į vieną „pirkėjo bylą" ir įvertina visą pirkimo ciklą: kodėl pirko arba kodėl ne, prieštaravimai, abejonės, tikslai, kritinės spragos ir galimybės, kiekvieno susitikimo apibendrinimas. Kiekvienas pokalbis įvertinamas pagal pardavimo kokybės kriterijus automatiškai, kasdien. Vadovai mato skaičius ir faktus, ne nuomones.</p></div>
-          <div class="case-stats">
-            <div><b>5<span class="u">×</span></b><span>vidutinė pardavimo vertė už tuos pačius marketingo kaštus: €2 000 → €10 000</span></div>
-            <div><b>+30<span class="u">%</span></b><span>pardavimų konversija</span></div>
-            <div><b>100<span class="u">%</span></b><span>susitikimų įvertinta objektyviai (buvo 0)</span></div>
-          </div>
-          <p class="essence">Aukštesnės kokybės klientai per 6–8 mėnesius, su tuo pačiu reklamos biudžetu. Pasikeitė ne pinigai, o žinojimas, kam ir ką sakyti.</p>
-          <div class="mock">
-            <div class="mock-head"><span class="mock-ic" aria-hidden="true"></span><b>Pirkėjo byla · klientas #0418</b><span class="mock-src">Fathom + CRM</span><span class="mock-chip">4 susitikimai</span></div>
-            <div class="kv">
-              <div class="kv-row"><span class="k">Išvada</span><span class="v"><b>Pirko.</b> Lemiamas veiksnys: aiškus planas su skaičiais 3-iame susitikime, ne grąžos pažadas.</span></div>
-              <div class="kv-row"><span class="k">Prieštaravimai (2)</span><span class="v">„Reikia pasitarti su žmona" · „Ar tai ne per rizikinga dabar?"</span></div>
-              <div class="kv-row"><span class="k">Spraga skripte (1)</span><span class="v">Rizikos klausimas atsakytas tik 2-ame susitikime. Turėtų būti 1-ame.</span></div>
-              <div class="kv-row"><span class="k">Kokybės balas</span><span class="v"><b>5,2 / 6</b> · silpniausias kriterijus: kito žingsnio fiksavimas</span></div>
-            </div>
-            <p class="mock-foot">Byla sugeneruota automatiškai kitą rytą po paskutinio susitikimo.</p>
-          </div>
-          <a class="case-cta" href="/#pokalbis">Noriu to savo versle →</a>
-          <span class="case-no" aria-hidden="true">03</span>
-        </article>
-
-        <article class="case" id="c4">
-          <p class="case-tag"><span class="dot"></span>statybos ir pramonės įmonė · 45 darbuotojai</p>
-          <div class="ba"><span class="pill">Prieš</span><p class="before">Sąmatas skaičiavo ranka, pasiūlymus rašė po vieną, atsakymas klientui užtrukdavo 2 dienas. Per tas dvi dienas klientas jau gaudavo tris kitus pasiūlymus.</p></div>
-          <div class="ba"><span class="pill po">Po</span><p class="after">Vadybininkas įveda faktus apie objektą į skaičiuoklę: plotas, darbai, terminai, medžiagos, klientas. DI darbuotojas paruošia individualų pasiūlymą PDF formatu per 10 minučių pagal įmonės įkainius ir šablonus, jei reikia, išsiunčia klientui ir paruošia sutartį. Vadybininkas tik peržiūri ir patvirtina.</p></div>
-          <div class="case-stats">
-            <div><b>~60 <span class="u">val./mėn.</span></b><span>sutaupyta vadovų laiko pasikartojančioms užduotims</span></div>
-            <div><b>2 d. → <span class="u">10 min.</span></b><span>nuo užklausos iki pasiūlymo</span></div>
-            <div><b>0</b><span>pavėluotų pasiūlymų per savaitę</span></div>
-          </div>
-          <p class="essence">Vadovų laikas grįžta plėtrai ir sprendimams. Pasiūlymas išeina tą pačią valandą, kai klientas dar lygina.</p>
-          <div class="mock">
-            <div class="mock-head"><span class="mock-ic" aria-hidden="true"></span><b>Pasiūlymas.pdf</b><span class="mock-src">PDF</span><span class="mock-chip">Paruošta</span></div>
-            <div class="doc">
-              <div class="doc-top"><div><b>UAB „Pavyzdys"</b><span>Gavėjas: UAB „Logista"</span></div><div class="r"><span class="doc-tag">Pasiūlymas</span><span>Nr. PAS-2026-0418</span><span>2026-06-18</span></div></div>
-              <div class="doc-row"><span>Projektavimo darbai</span><span class="q">×1</span><span class="s">1 400 €</span></div>
-              <div class="doc-row"><span>Gamyba pagal specifikaciją</span><span class="q">×18</span><span class="s">5 760 €</span></div>
-              <div class="doc-row"><span>Montavimas objekte</span><span class="q">×1</span><span class="s">980 €</span></div>
-              <div class="doc-row"><span>Pristatymas</span><span class="q">×1</span><span class="s">260 €</span></div>
-              <div class="doc-row"><span>Garantinė priežiūra, 12 mėn.</span><span class="q">×1</span><span class="s">420 €</span></div>
-              <div class="doc-sum"><span>Tarpinė suma</span><span>8 820 €</span></div>
-              <div class="doc-sum"><span>PVM 21 %</span><span>1 852,20 €</span></div>
-              <div class="doc-sum total"><span>Iš viso</span><span>10 672,20 €</span></div>
-            </div>
-            <p class="mock-foot">Sugeneruota iš 5 faktų skaičiuoklėje · sutartis paruošta tame pačiame paleidime.</p>
-          </div>
-          <a class="case-cta" href="/#pokalbis">Noriu to savo versle →</a>
-          <span class="case-no" aria-hidden="true">04</span>
-        </article>
-
-        <article class="case" id="c5">
-          <p class="case-tag"><span class="dot soon"></span>pavyzdinis scenarijus · ką pastatytume transporto įmonei</p>
-          <div class="ba"><span class="pill">Prieš</span><p class="before">CMR, sąskaitos, užsakymai: dokumentų krūva, kurią kasdien visą dieną suvedinėja žmonės. Klaidos kopijuojant, dispečerinė laukia duomenų, apskaita vėluoja.</p></div>
-          <div class="ba"><span class="pill po">Po</span><p class="after">DI darbuotojas perskaito kiekvieną dokumentą, sukelia duomenis į sistemą ir 8:00 paruošia dispečerinei rytinę suvestinę be nė vieno rankinio įvedimo. Neatitikimus pažymi, o ne tyliai praleidžia. Žmonės grįžta prie krovinių.</p></div>
-          <div class="case-stats">
-            <div><b>0</b><span>rankinių įvedimų</span></div>
-            <div><b>8:00</b><span>suvestinė dispečerinei, kasdien</span></div>
-            <div><b>0</b><span>klaidų kopijuojant</span></div>
-          </div>
-          <p class="essence">Dokumentai sistemoje dar prieš pirmą kavą. Kiek valandų tai atlaisvina tavo įmonėje, suskaičiuojam pokalbyje.</p>
-          <div class="mock">
-            <div class="mock-head"><span class="mock-ic" aria-hidden="true"></span><b>Kasdienė dokumentų suvestinė</b><span class="mock-src">Kasdien</span><span class="mock-chip">Aktyvi</span></div>
-            <div class="log">
-              <div class="log-chip">08:00 kas rytą</div>
-              <div class="log-check">Surinkti CMR, sąskaitas ir užsakymus iš el. pašto</div>
-              <div class="log-check">Sukelti duomenis į sistemą, pažymėti neatitikimus</div>
-              <div class="log-check">Išsiųsti suvestinę dispečerinei</div>
-              <div class="log-row"><span>06-18</span><span class="ok">įvykdyta</span><span>suvestinė 08:02</span><span class="flag">1 neatitikimas</span></div>
-              <div class="log-row"><span>06-17</span><span class="ok">įvykdyta</span><span>suvestinė 08:01</span><span class="flag">0 neatitikimų</span></div>
-              <div class="log-row"><span>06-16</span><span class="ok">įvykdyta</span><span>suvestinė 08:03</span><span class="flag">2 neatitikimai</span></div>
-            </div>
-            <p class="mock-foot">Scenarijus. Skaičiai tavo įmonei atsiranda po pirmos savaitės žurnalo, ne iš pažado.</p>
-          </div>
-          <a class="case-cta" href="/#pokalbis">Noriu to savo versle →</a>
-          <span class="case-no" aria-hidden="true">06</span>
-        </article>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</section>
-
-<script>
-/* Atvejų juosta: paspaudus rail mygtuką rodomas atitinkamas .case */
-(function(){
-  var rail=document.querySelector('.case-rail'); if(!rail) return;
-  rail.addEventListener('click',function(e){
-    var b=e.target.closest('button[data-case]'); if(!b||b.disabled) return;
-    rail.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
-    document.querySelectorAll('.case').forEach(function(c){c.classList.toggle('on',c.id===b.dataset.case);});
-  });
-})();
-</script>
-
-
-
-<!-- ATSILIEPIMAI - tik realūs, su vardu. Nauji pridedami čia. -->
-<section id="atsiliepimai" class="center" style="padding-top:0">
-  <div class="wrap">
-    <span class="label">Atsiliepimai</span>
-    <h2>Ką sako tie, <span class="w">kurie jau dirba taip.</span></h2>
-    <div class="testi" style="text-align:left">
-      <blockquote>„Nesitikėk, kad turėsi daugiau laisvo laiko. Aš jo neturiu. Bet dabar per tą patį laiką padarau dvigubai daugiau, ir nė viena klientė nebelieka be atsakymo vien todėl, kad man tą dieną nebeliko valandų."</blockquote>
-      <p class="who"><b>Silva Šiaučiūnaitė</b> · įkūrėja, Silart Beauty Academy · <a href="https://www.linkedin.com/in/silvasiauciunaite/" target="_blank" rel="noopener">LinkedIn</a></p>
-      <p class="ctx">Sistema veikia nuo 2026 liepos. Rugpjūčio apyvarta 2,3× didesnė nei tą patį mėnesį pernai, didžiausias mėnuo įmonės istorijoje. Komanda nepasikeitė. Silva pati sako, kad augimo negalima priskirti vien sistemai: tuo pačiu metu perdaryta svetainė ir reklama. Ką galima teigti pagrįstai: srautas išaugo dvigubai, o aptarnavo jį tas pats vienas žmogus.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA - atgal į pagrindinio pokalbį -->
-<section class="dark on-dark center">
-  <div class="wrap">
-    <span class="label">Strateginis pokalbis</span>
-    <h2>Pažiūrėkim, kokie 3 DI darbuotojai <span class="w">greičiausiai atsipirktų tavo versle.</span></h2>
-    <p class="lead">30 minučių, be įsipareigojimų. Išeisi su konkrečiu žemėlapiu, net jei nedirbsime kartu.</p>
-    <p style="margin-top:36px"><a href="/#pokalbis" class="btn btn-ember">Strateginis pokalbis →</a></p>
-  </div>
-</section>
-</main>
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <a class="logo" href="/" style="color:#fff"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="30" width="13" height="13" rx="3.2" fill="#9A4A2E"/><rect x="17.5" y="17.5" width="13" height="13" rx="3.2" fill="#C15F3C"/><rect x="30" y="5" width="13" height="13" rx="3.2" fill="#D97757"/></svg><span class="wm">kre<span class="dot">i</span></span></a>
-        <p class="tag">Tavo DI partneris, kol tapsi savarankiškas.</p>
-        <p>Kuriame ir diegiame DI darbuotojus Lietuvos įmonėms. Sistema lieka tavo.</p>
-      </div>
-      <div><h5>Puslapis</h5><ul><li><a href="/#sektoriai">Istorijos</a></li><li><a href="/#kaip">Kaip dirbam</a></li><li><a href="/#komanda">Komanda</a></li><li><a href="/#irodymai">Garantija</a></li><li><a href="/#kainos">Kelias</a></li><li><a href="/#duk">DUK</a></li></ul></div>
-      <div><h5>Teisinė informacija</h5><ul>
-        <!-- Teisinė informacija: atskiras artefaktas (projektai, teisininko peržiūra) -->
-        <li><a href="/teisine.html#privatumas">Privatumo politika</a></li><li><a href="/teisine.html#slapukai">Slapukų politika</a></li><li><a href="/teisine.html#taisykles">Taisyklės ir sąlygos</a></li><li><a href="/teisine.html#garantija">Garantijos sąlygos</a></li></ul></div>
-    </div>
-    <div class="foot-bottom"><span>© 2026 krei · Lietuva · krei.lt</span><span>DI darbuotojai tavo verslui</span></div>
-  </div>
-</footer>
-<script>
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if(!('IntersectionObserver' in window)) return;
-  var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{threshold:.06});
-  var els=document.querySelectorAll('main section .wrap');
-  els.forEach(function(el){ el.classList.add('reveal'); io.observe(el); });
-  setTimeout(function(){ els.forEach(function(el){ el.classList.add('in'); }); },2000);
-})();
-</script>
+<main style="min-height:70vh;display:flex;align-items:center"><div class="wrap"><span class="label" style="color:#9A4A2E">404</span><h2 style="font-family:Inter Tight,sans-serif;font-weight:300;font-size:clamp(36px,6vw,72px);letter-spacing:-.045em;line-height:.98">Šito puslapio nėra. <span style="font-weight:500">Bet DI darbuotojai yra.</span></h2><p style="margin-top:20px"><a class="btn btn-ember" href="/">Į pagrindinį →</a></p></div></main>
 </body>
 </html>
