@@ -13,7 +13,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap"></noscript>
 <style>
 :root{
   --paper:#FBFAF8; --paper-2:#F3EFE9; --panel:#FFFFFF;
@@ -409,6 +409,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;bord
 @media(max-width:560px){
   .stats,.roles,.foot{grid-template-columns:1fr}
 }
+.foot .h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500;margin-bottom:14px}
 
 /* PROD: mobile ergonomics */
 @media(max-width:860px){.field input,.field textarea,.field select{font-size:16px}.btn{min-height:44px}.nav .btn{min-height:40px}.case-rail button,.faq summary,.prin-item summary{min-height:44px}}
@@ -687,8 +688,8 @@ body{padding-bottom:env(safe-area-inset-bottom)}
         <p class="tag">Tavo DI partneris, kol tapsi savarankiškas.</p>
         <p>Kuriame ir diegiame DI darbuotojus Lietuvos įmonėms. Sistema lieka tavo.</p>
       </div>
-      <div><h5>Puslapis</h5><ul><li><a href="/#sektoriai">Istorijos</a></li><li><a href="/#kaip">Kaip dirbam</a></li><li><a href="/#komanda">Komanda</a></li><li><a href="/#irodymai">Garantija</a></li><li><a href="/#kainos">Kelias</a></li><li><a href="/#duk">DUK</a></li></ul></div>
-      <div><h5>Teisinė informacija</h5><ul>
+      <div><p class="h5">Puslapis</p><ul><li><a href="/#sektoriai">Istorijos</a></li><li><a href="/#kaip">Kaip dirbam</a></li><li><a href="/#komanda">Komanda</a></li><li><a href="/#irodymai">Garantija</a></li><li><a href="/#kainos">Kelias</a></li><li><a href="/#duk">DUK</a></li></ul></div>
+      <div><p class="h5">Teisinė informacija</p><ul>
         <!-- Teisinė informacija: atskiras artefaktas (projektai, teisininko peržiūra) -->
         <li><a href="/teisine.html#privatumas">Privatumo politika</a></li><li><a href="/teisine.html#slapukai">Slapukų politika</a></li><li><a href="/teisine.html#taisykles">Taisyklės ir sąlygos</a></li><li><a href="/teisine.html#garantija">Garantijos sąlygos</a></li></ul></div>
     </div>

@@ -13,7 +13,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap"></noscript>
 <style>
 :root{
   --paper:#FBFAF8; --paper-2:#F3EFE9; --panel:#FFFFFF;
@@ -523,6 +523,14 @@ main>section.dark{border-top:0}
   .cookie{left:10px;right:10px;bottom:10px;padding:14px}
 }
 
+/* A11Y: kontrastas smulkiam tekstui, tap targets, footer heading */
+.mini-row .no,.role .no,.step .no,.faq summary::after,.fmt .no{color:var(--ember-deep)}
+.mini-row .tile i,.tile .u,.stat .n .u,.case-stats b .u,.mini-row .tile .u{color:var(--ember-deep)}
+.prin-item summary .no{color:rgba(255,255,255,.72)}
+.nav .btn{font-size:13.5px;font-weight:700;background:var(--ember-deep);border-color:var(--ember-deep)}
+.nav .btn:hover{background:var(--ember);border-color:var(--ember)}
+.mini-row .txt .who-line .li{display:inline-block;padding:8px 6px;margin:-8px -2px}
+.foot .h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500;margin-bottom:14px}
 /* MOTION */
 @media(prefers-reduced-motion:no-preference){
   .hero h1,.hero .sub,.hero-cta,.curve{animation:rise .8s var(--ease) both}
@@ -755,7 +763,7 @@ function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
       <div class="person"><div class="ava photo" style="background-image:url(/img/b827da7eb3.jpg)" role="img" aria-label="Antanas Sitnikas"></div><h3>Antanas Sitnikas</h3><p class="r">Strategija ir augimas</p><p>Tarptautinio finansų verslo bendrasavininkas. WhiteBridge AI bendraįkūrėjas, pardavė verslą. Vadovavo pardavimų ir marketingo komandoms, buvęs statybų įmonės COO. Pradėjo pardavimuose (TOP 1 % Lietuvoje).</p><a class="li-link" href="https://www.linkedin.com/in/antanas-sitnikas/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
       <div class="person"><div class="ava photo" style="background-image:url(/img/ee4e352df5.jpg)" role="img" aria-label="Deividas Koncius"></div><h3>Deividas Koncius</h3><p class="r">Mokymai ir diegimas</p><p>Dešimtmetis skaitmeninio ugdymo ir DI srityje. Lektorius, pravedęs šimtus mokymų ir išmokęs tūkstančius profesionalų. Moko įmones naudotis DI įrankiais ir agentais, kad komanda turėtų laiko plėtrai.</p><a class="li-link" href="https://www.linkedin.com/in/deividas-koncius/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
       <div class="person"><div class="ava photo" style="background-image:url(/img/eb09af4d49.jpg)" role="img" aria-label="Irmantas Motiejūnas"></div><h3>Irmantas Motiejūnas</h3><p class="r">Inžinerija</p><p>Šešiolikos metų inžinerijos veteranas. Kūrė įrankius Google ir Microsoft, WhiteBridge AI bendraįkūrėjas ir CTO. Per karjerą sukūrė daugiau nei 200 paruoštų naudoti įrankių ir sprendimų. Stato sistemas, kurios veikia be jo.</p></div>
-      <div class="person"><div class="ava photo" style="background-image:url(/img/7c6b017396.jpg)" role="img" aria-label="Nojus Bakanas"></div><h3>Nojus Bakanas</h3><p class="r">Rinkodara ir pardavimų DI</p><p>Užaugino Sintra.ai nuo 0 iki $12M pajamų ir 40 000+ klientų per pirmus 12 mėnesių. Mushi agentūros įkūrėjas. Su krei padeda įmonėms augti per rinkodarą ir pardavimų DI.</p><a class="li-link" href="https://www.linkedin.com/in/nojusbakanas/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+      <div class="person"><div class="ava photo" style="background-image:url(/img/6483c1c074.jpg)" role="img" aria-label="Nojus Bakanas"></div><h3>Nojus Bakanas</h3><p class="r">Rinkodara ir pardavimų DI</p><p>Padėjo užauginti Sintra AI nuo $0 iki $12M metinių pajamų per 12 mėnesių. Įkūrė Mushi agentūrą, kurioje padėjo užauginti Holo AI nuo $0 iki $1M metinių pajamų per 8 mėnesius.</p><a class="li-link" href="https://www.linkedin.com/in/nojusbakanas/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
       <div class="person"><div class="ava photo" style="background-image:url(/img/7868340b6d.jpg)" role="img" aria-label="Lukas Cimalonskas"></div><h3>Lukas Cimalonskas</h3><p class="r">Pirmas pokalbis ir palyda</p><p>Kasdien seka, kas DI automatizacijų rinkoje realiai veikia, ir perkelia tai į klientų procesus. DI darbuotojus įdiegė statybų, pramonės ir logistikos įmonėse: nuėmė rutiną, atlaisvino valandas, padėjo uždirbti daugiau.</p><a class="li-link" href="https://www.linkedin.com/in/lukascimalonskas/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
     </div>
     <div class="stats" style="text-align:left">
@@ -877,8 +885,8 @@ function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
         <p class="tag">Tavo DI partneris, kol tapsi savarankiškas.</p>
         <p>Kuriame ir diegiame DI darbuotojus Lietuvos įmonėms. Sistema lieka tavo.</p>
       </div>
-      <div><h5>Puslapis</h5><ul><li><a href="#sektoriai">Istorijos</a></li><li><a href="#kaip">Kaip dirbam</a></li><li><a href="#komanda">Komanda</a></li><li><a href="#irodymai">Garantija</a></li><li><a href="#kainos">Kelias</a></li><li><a href="#duk">DUK</a></li></ul></div>
-      <div><h5>Teisinė informacija</h5><ul>
+      <div><p class="h5">Puslapis</p><ul><li><a href="#sektoriai">Istorijos</a></li><li><a href="#kaip">Kaip dirbam</a></li><li><a href="#komanda">Komanda</a></li><li><a href="#irodymai">Garantija</a></li><li><a href="#kainos">Kelias</a></li><li><a href="#duk">DUK</a></li></ul></div>
+      <div><p class="h5">Teisinė informacija</p><ul>
         <!-- Teisinė informacija: atskiras artefaktas (projektai, teisininko peržiūra) -->
         <li><a href="/teisine.html#privatumas">Privatumo politika</a></li><li><a href="/teisine.html#slapukai">Slapukų politika</a></li><li><a href="/teisine.html#taisykles">Taisyklės ir sąlygos</a></li><li><a href="/teisine.html#garantija">Garantijos sąlygos</a></li></ul></div>
     </div>
