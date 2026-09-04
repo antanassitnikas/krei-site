@@ -383,10 +383,10 @@ footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;bord
   .hero h1,.hero .sub,.hero-cta,.curve{animation:rise .8s var(--ease) both}
   .hero .sub{animation-delay:.1s}.hero-cta{animation-delay:.18s}.curve{animation-delay:.25s}
   .curve rect{transform-origin:bottom;animation:grow .9s var(--ease) both}
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
+  .reveal{transform:translateY(12px);transition:transform .6s var(--ease)}
+  .reveal.in{transform:none}
 }
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
 @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
 

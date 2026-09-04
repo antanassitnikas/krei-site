@@ -531,15 +531,21 @@ main>section.dark{border-top:0}
 .nav .btn:hover{background:var(--ember);border-color:var(--ember)}
 .mini-row .txt .who-line .li{display:inline-block;padding:8px 6px;margin:-8px -2px}
 .foot .h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500;margin-bottom:14px}
+/* A11Y 2: mygtukai ir smulkūs užrašai tamsiame fone */
+.btn-ember,.form-wrap .btn-ember{background:var(--ember-deep);border-color:var(--ember-deep);font-size:13.5px;font-weight:700}
+.btn-ember:hover{background:var(--ember);border-color:var(--ember)}
+.field .opt{color:rgba(255,255,255,.7)}
+.foot-bottom{color:rgba(255,255,255,.65)}
+.consent{color:rgba(255,255,255,.8)}
 /* MOTION */
 @media(prefers-reduced-motion:no-preference){
-  .hero h1,.hero .sub,.hero-cta,.curve{animation:rise .8s var(--ease) both}
+  .hero h1,.hero .sub,.hero-cta,.curve{animation:rise .6s var(--ease) both}
   .hero .sub{animation-delay:.1s}.hero-cta{animation-delay:.18s}.curve{animation-delay:.25s}
   .curve rect{transform-origin:bottom;animation:grow .9s var(--ease) both}
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-  .reveal.in{opacity:1;transform:none}
+  .reveal{transform:translateY(12px);transition:transform .6s var(--ease)}
+  .reveal.in{transform:none}
 }
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
 @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto}}
 
