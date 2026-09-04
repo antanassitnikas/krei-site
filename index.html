@@ -449,7 +449,7 @@ section.dark .label{color:var(--ember-bright)}
 .form-intro{grid-column:1 / -1;font-family:var(--display);font-weight:400;font-size:19px;letter-spacing:-.02em;border-top:1px solid var(--line-dark);padding-top:26px}
 .form-wrap{border:1px solid var(--line-dark);padding:30px}
 .field{margin-bottom:16px}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;align-items:end}
 .field .opt{font-weight:400;color:rgba(255,255,255,.45)}
 .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.35)}
 @media(max-width:560px){.f2{grid-template-columns:1fr}}
@@ -855,7 +855,7 @@ function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
           <div class="f2">
             <div class="field"><label for="f-dsk">Darbuotojų skaičius</label>
               <select id="f-dsk" name="darbuotoju_sk" required><option value="" disabled selected>Pasirink…</option><option>Privatus asmuo / Individuali veikla</option><option>1–10 darbuotojų</option><option>11–50 darbuotojų</option><option>51–200 darbuotojų</option><option>201–1000 darbuotojų</option><option>1000+ darbuotojų</option></select></div>
-            <div class="field"><label for="f-pajamos">Įmonės metinės pajamos <span class="opt">(neprivaloma)</span></label>
+            <div class="field"><label for="f-pajamos">Metinės pajamos <span class="opt">(neprivaloma)</span></label>
               <select id="f-pajamos" name="pajamos"><option value="" selected>Pasirink…</option><option>iki €100 000</option><option>€100 000 – €500 000</option><option>€500 000 – €1 mln.</option><option>€1 – 5 mln.</option><option>€5 mln. +</option><option>Nenoriu nurodyti</option></select></div>
           </div>
           <div class="field"><label for="f-sektorius">Sektorius</label>
@@ -871,9 +871,9 @@ function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
       </div>
       <div class="form-side">
         <h3>Ką išsineši iš 30 minučių</h3>
-        <div class="fs">Tavo procesų žemėlapį: kur kasdien nuteka valandos, klaidos ir pinigai</div>
-        <div class="fs">3 konkrečius DI darbuotojus tavo verslui, su eile, kuris atsipirks pirmiausia</div>
-        <div class="fs">Skaičius: kiek valandų per mėnesį ir kiek eurų jie atgautų</div>
+        <div class="fs">Tavo procesų žemėlapį: kur kasdien prarandate valandas ir pinigus</div>
+        <div class="fs">3 konkrečius DI darbuotojus tavo verslui, su prioritetais, kuris atsipirks pirmiausia</div>
+        <div class="fs">Skaičius: kiek valandų ir pinigų per mėnesį DI atgautų</div>
         <div class="fs">Realų pavyzdį iš tavo sektoriaus, kaip tai jau veikia kitoje įmonėje</div>
         <div class="fs">Planą pirmoms 5 dienoms, net jei nedirbsim kartu</div>
       </div>
