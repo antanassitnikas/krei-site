@@ -475,7 +475,7 @@ section.dark .label{color:var(--ember-bright)}
 
 /* FOOTER - daugiastulpis */
 footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;border-top:1px solid var(--line-dark)}
-.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
 .foot .tag{font-family:var(--display);font-weight:300;font-size:22px;letter-spacing:-.03em;color:#fff;margin:16px 0 10px;max-width:22ch}
 .foot p{font-size:14px;max-width:36ch}
 .foot h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500;margin-bottom:14px}
@@ -567,6 +567,31 @@ main>section.dark{border-top:0}
 }
 @media(max-width:560px){
   .stats,.roles,.foot{grid-template-columns:1fr}
+}
+/* Kontaktai: matomi */
+.contact-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:22px auto 0}
+.contact-row a{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#fff;text-decoration:none;font-size:17px;font-weight:600;letter-spacing:-.01em;background:rgba(255,255,255,.04)}
+.contact-row a svg{width:18px;height:18px;color:var(--ember-bright);flex:none}
+.contact-row a:hover{border-color:var(--ember-bright);background:rgba(217,119,87,.12)}
+.form-side .direct{margin-top:28px;padding-top:22px;border-top:1px solid var(--line-dark)}
+.form-side .direct p{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:12px}
+.form-side .direct a{display:block;color:#fff;text-decoration:none;font-size:20px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.form-side .direct a:hover{color:var(--ember-bright)}
+.foot .contact a{display:block;font-size:18px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:-.01em}
+.foot .contact a:hover{color:var(--ember-bright)}
+/* Mobile: prilipęs CTA apačioje */
+.mcta{display:none}
+@media(max-width:900px){
+  .nav .btn{display:none}
+  .nav .wrap{height:58px}
+  body{padding-top:58px;padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+  html{scroll-padding-top:58px}
+  .mcta{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,10,10,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line-dark);transform:translateY(0);transition:transform .25s ease}
+  .mcta.hide{transform:translateY(110%)}
+  .mcta .btn{flex:1;justify-content:center;background:var(--ember-deep);border-color:var(--ember-deep);color:#fff;padding:15px 16px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;text-align:center}
+  .mcta .tel{flex:none;width:52px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);border-radius:6px;color:#fff}
+  .mcta .tel svg{width:20px;height:20px}
+  .contact-row a{width:100%;justify-content:center}
 }
 
 /* PROD: mobile ergonomics */

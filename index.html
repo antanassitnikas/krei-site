@@ -475,7 +475,7 @@ section.dark .label{color:var(--ember-bright)}
 
 /* FOOTER - daugiastulpis */
 footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 40px;border-top:1px solid var(--line-dark)}
-.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
 .foot .tag{font-family:var(--display);font-weight:300;font-size:22px;letter-spacing:-.03em;color:#fff;margin:16px 0 10px;max-width:22ch}
 .foot p{font-size:14px;max-width:36ch}
 .foot h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500;margin-bottom:14px}
@@ -568,6 +568,31 @@ main>section.dark{border-top:0}
 @media(max-width:560px){
   .stats,.roles,.foot{grid-template-columns:1fr}
 }
+/* Kontaktai: matomi */
+.contact-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:22px auto 0}
+.contact-row a{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#fff;text-decoration:none;font-size:17px;font-weight:600;letter-spacing:-.01em;background:rgba(255,255,255,.04)}
+.contact-row a svg{width:18px;height:18px;color:var(--ember-bright);flex:none}
+.contact-row a:hover{border-color:var(--ember-bright);background:rgba(217,119,87,.12)}
+.form-side .direct{margin-top:28px;padding-top:22px;border-top:1px solid var(--line-dark)}
+.form-side .direct p{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:12px}
+.form-side .direct a{display:block;color:#fff;text-decoration:none;font-size:20px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.form-side .direct a:hover{color:var(--ember-bright)}
+.foot .contact a{display:block;font-size:18px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:-.01em}
+.foot .contact a:hover{color:var(--ember-bright)}
+/* Mobile: prilipęs CTA apačioje */
+.mcta{display:none}
+@media(max-width:900px){
+  .nav .btn{display:none}
+  .nav .wrap{height:58px}
+  body{padding-top:58px;padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+  html{scroll-padding-top:58px}
+  .mcta{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,10,10,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line-dark);transform:translateY(0);transition:transform .25s ease}
+  .mcta.hide{transform:translateY(110%)}
+  .mcta .btn{flex:1;justify-content:center;background:var(--ember-deep);border-color:var(--ember-deep);color:#fff;padding:15px 16px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;text-align:center}
+  .mcta .tel{flex:none;width:52px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);border-radius:6px;color:#fff}
+  .mcta .tel svg{width:20px;height:20px}
+  .contact-row a{width:100%;justify-content:center}
+}
 
 /* PROD: mobile ergonomics */
 @media(max-width:860px){.field input,.field textarea,.field select{font-size:16px}.btn{min-height:44px}.nav .btn{min-height:40px}.case-rail button,.faq summary,.prin-item summary{min-height:44px}}
@@ -621,6 +646,7 @@ function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
     <a href="#pokalbis" class="btn">Strateginis pokalbis →</a>
   </div>
 </nav>
+<div class="mcta" id="mcta"><a class="tel" href="tel:+37060304727" aria-label="Skambinti +370 603 04727"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></svg></a><a class="btn" href="#pokalbis">Strateginis pokalbis →</a></div>
 
 <!-- HERO - copy v2 (2026-09-03): capacity headline + leadership-partner sub. Variant B (?v=b) keičia tik ember dalį. -->
 <div class="hero on-dark">
@@ -837,7 +863,8 @@ function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
   <div class="wrap">
     <span class="label">Strateginis pokalbis</span>
     <h2>Pažiūrėkim, kokie 3 DI darbuotojai <span class="w">greičiausiai atsipirktų tavo versle.</span></h2>
-    <p class="lead">30 minučių, be įsipareigojimų. Išeisi su konkrečiu žemėlapiu, net jei nedirbsime kartu. Palik kontaktus, parašyk <a href="mailto:info@krei.lt" style="color:#fff;font-weight:600">info@krei.lt</a> arba skambink <a href="tel:+37060304727" style="color:#fff;font-weight:600">+370 603 04727</a>. Laiką sutarsim per vieną darbo dieną.</p>
+    <p class="lead">30 minučių, be įsipareigojimų. Išeisi su konkrečiu žemėlapiu, net jei nedirbsime kartu. Palik kontaktus formoje arba susisiek tiesiogiai.</p>
+    <div class="contact-row"><a href="mailto:info@krei.lt"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>info@krei.lt</a><a href="tel:+37060304727"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></svg>+370 603 04727</a></div>
     <div class="form-grid" id="pokalbis-forma" style="text-align:left">
       <p class="form-intro">Užpildyk formą. Kuo daugiau papasakosi, tuo konkretesnis bus pokalbis.</p>
       <div class="form-wrap">
@@ -874,8 +901,10 @@ function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
         <div class="fs">Tavo procesų žemėlapį: kur kasdien prarandate valandas ir pinigus</div>
         <div class="fs">3 konkrečius DI darbuotojus tavo verslui, su prioritetais, kuris atsipirks pirmiausia</div>
         <div class="fs">Skaičius: kiek valandų ir pinigų per mėnesį DI atgautų</div>
+        <div class="fs">Augimo potencialą: kur DI padėtų pritraukti daugiau klientų, parduoti daugiau ir uždirbti daugiau, ne tik sutaupyti valandas</div>
         <div class="fs">Realų pavyzdį iš tavo sektoriaus, kaip tai jau veikia kitoje įmonėje</div>
         <div class="fs">Planą pirmoms 5 dienoms, net jei nedirbsim kartu</div>
+        <div class="direct"><p>Arba tiesiogiai</p><a href="mailto:info@krei.lt">info@krei.lt</a><a href="tel:+37060304727">+370 603 04727</a></div>
       </div>
     </div>
   </div>
@@ -890,8 +919,8 @@ function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
         <a class="logo" href="#top" style="color:#fff"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="5" y="30" width="13" height="13" rx="3.2" fill="#9A4A2E"/><rect x="17.5" y="17.5" width="13" height="13" rx="3.2" fill="#C15F3C"/><rect x="30" y="5" width="13" height="13" rx="3.2" fill="#D97757"/></svg><span class="wm">kre<span class="dot">i</span></span></a>
         <p class="tag">Tavo DI partneris, kol tapsi savarankiškas.</p>
         <p>Kuriame ir diegiame DI darbuotojus Lietuvos įmonėms. Sistema lieka tavo.</p>
-        <p><a href="mailto:info@krei.lt" style="color:#fff;font-weight:600">info@krei.lt</a><br><a href="tel:+37060304727" style="color:#fff;font-weight:600">+370 603 04727</a></p>
-      </div>
+        </div>
+      <div class="contact"><p class="h5">Kontaktai</p><a href="mailto:info@krei.lt">info@krei.lt</a><a href="tel:+37060304727">+370 603 04727</a><p style="font-size:13px;color:rgba(255,255,255,.55);max-width:none">Atsakom per vieną darbo dieną.</p></div>
       <div><p class="h5">Puslapis</p><ul><li><a href="#sektoriai">Istorijos</a></li><li><a href="#kaip">Kaip dirbam</a></li><li><a href="#komanda">Komanda</a></li><li><a href="#irodymai">Garantija</a></li><li><a href="#kainos">Kelias</a></li><li><a href="#duk">DUK</a></li></ul></div>
       <div><p class="h5">Teisinė informacija</p><ul>
         <!-- Teisinė informacija: atskiras artefaktas (projektai, teisininko peržiūra) -->
@@ -912,6 +941,8 @@ document.addEventListener('keydown',function(e){ if(e.key!=='Enter') return; var
 /* Nav: tamsus ant hero, šviesus toliau */
 (function(){
   var nav=document.getElementById('nav'), hero=document.querySelector('.hero');
+  var mcta=document.getElementById('mcta'), book=document.getElementById('pokalbis');
+  if(mcta&&book){ new IntersectionObserver(function(es){ es.forEach(function(e){ mcta.classList.toggle('hide', e.isIntersecting); }); },{threshold:.05}).observe(book); }
   if(!('IntersectionObserver' in window)||!hero) return;
   new IntersectionObserver(function(es){ es.forEach(function(e){ nav.classList.toggle('light', !e.isIntersecting); }); },{threshold:.02}).observe(hero);
 })();
