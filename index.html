@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="facebook-domain-verification" content="446pzfd5sfujdewpy6pg35rz8m190z">
 <title>krei · DI darbuotojai verslui</title>
 <meta name="description" content="krei kartu su tavo komanda per 5 dienas paleidžia pirmuosius DI darbuotojus, o per 30 dienų komanda juos valdo pati. Sistema lieka tavo. Rezultatų garantija, kurios Lietuvoje nesiūlo niekas.">
 <link rel="canonical" href="https://krei.lt/">
@@ -600,6 +601,93 @@ main>section.dark{border-top:0}
 body{padding-bottom:env(safe-area-inset-bottom)}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "krei", "url": "https://krei.lt", "logo": "https://krei.lt/apple-touch-icon.png", "description": "DI darbuotojai Lietuvos įmonėms: pirmas per 5 dienas, komanda valdo pati per 30 dienų.", "email": "info@krei.lt", "telephone": "+37060304727", "areaServed": "LT", "sameAs": []}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kiek tai kainuoja?", "acceptedAnswer": {"@type": "Answer", "text": "Kiekvienas projektas yra unikalus. Kaina priklauso nuo projekto sudėtingumo ir apimties. Susisiek, ir pateiksim individualų pasiūlymą, pritaikytą tavo poreikiams, prieš bet kokį mokėjimą."}}, {"@type": "Question", "name": "Kaip pradėti bendradarbiavimą?", "acceptedAnswer": {"@type": "Answer", "text": "Užpildyk formą svetainėje, parašyk info@krei.lt arba skambink +370 603 04727. Surengsim strateginį pokalbį, kurio metu aptarsim tavo poreikius ir galimybes, ir išeisi su konkrečiu planu."}}, {"@type": "Question", "name": "Jau bandėm ChatGPT, nieko nepakeitė. Kuo čia kitaip?", "acceptedAnswer": {"@type": "Answer", "text": "Teisingai, įrankis pats iš savęs nieko nepakeičia. Todėl diegiam ne įrankį, o veikiantį darbo procesą, kurį tavo komanda realiai naudoja, arba grąžinam pinigus."}}, {"@type": "Question", "name": "Ar čia ne kursai?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Kursai duoda žinias be sistemos, o mes paliekame veikiančią sistemą tavo versle ir komandą, kuri moka ją valdyti. Skirtumas: po mūsų kažkas realiai dirba."}}, {"@type": "Question", "name": "Ar reikia programuotojų ar techninių žinių?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Didžioji dalis DI darbuotojų statoma be nė vienos kodo eilutės. Dirbame su ta komanda, kurią jau turi, nieko samdyti nereikia."}}, {"@type": "Question", "name": "Ar paskui būsiu prisirišęs prie jūsų?", "acceptedAnswer": {"@type": "Answer", "text": "Atvirkščiai, garantija ir yra nepriklausomybė: po 30 dienų sistema veikia be mūsų, o tęsti ar ne, tavo pasirinkimas, atšaukiamas per mėnesį."}}, {"@type": "Question", "name": "Neturiu tam laiko.", "acceptedAnswer": {"@type": "Answer", "text": "Priklauso nuo formato. Jei diegiam mes, iš tavęs reikia kelių valandų sprendimams ir prieigoms, visa kita daro tavo paskirtas žmogus kartu su mumis. Jei nori valdyti pats, pirmos dienos yra darbas, ne pirkinys, ir tai pasakom iš karto."}}, {"@type": "Question", "name": "Kas su mūsų duomenų saugumu?", "acceptedAnswer": {"@type": "Answer", "text": "Sistemos veikia tavo aplinkoje, duomenys niekada nenaudojami modelių apmokymui, DPA prieš pradedant. Saugumo ribas sutariame raštu dar prieš pirmą sesiją."}}]}</script>
+<script>/* krei.lt tracking: Meta Pixel (browser) + Conversions API relay (server, per Apps Script).
+   Kiekvienas event'as turi event_id -> Meta dedup'ina browser + server kopijas.
+   Inlinina build-site.py i kiekvieno puslapio <head>. Redaguoti CIA, ne site/. */
+(function(){
+  var PIXEL_ID = '1570772297296067';
+  var RELAY = 'https://script.google.com/macros/s/AKfycbya91jlBB1fbY5fzc5uEH9rhqlb4cUxulHQjgScdFKFZtWVDRMsXy4MzCalymG1zq6AOw/exec';
+  var HOST = /(^|\.)krei\.lt$/.test(location.hostname);
+
+  function uid(){ return 'k' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10); }
+  function cookie(n){ var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : ''; }
+  function fbc(){
+    var c = cookie('_fbc'); if (c) return c;
+    var q = null; try { q = new URLSearchParams(location.search).get('fbclid'); } catch (e) {}
+    if (q) { c = 'fb.1.' + Date.now() + '.' + q; try { document.cookie = '_fbc=' + c + ';path=/;max-age=7776000;domain=.krei.lt;SameSite=Lax;Secure'; } catch (e) {} }
+    return c || '';
+  }
+  function relay(name, params, id, extra){
+    if (!HOST || !RELAY) return;
+    try {
+      var payload = { type: 'event', event_name: name, event_id: id, event_time: Math.floor(Date.now() / 1000),
+        event_source_url: location.href, referrer: document.referrer || '', fbp: cookie('_fbp'), fbc: fbc(),
+        ua: navigator.userAgent, lang: navigator.language || '', custom_data: params || {} };
+      if (extra) for (var k in extra) payload[k] = extra[k];
+      var body = JSON.stringify(payload);
+      if (navigator.sendBeacon) navigator.sendBeacon(RELAY, new Blob([body], { type: 'text/plain;charset=utf-8' }));
+      else fetch(RELAY, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body });
+    } catch (e) {}
+  }
+  function pixel(name, params, id, custom){
+    try { if (window.fbq) fbq(custom ? 'trackCustom' : 'track', name, params || {}, { eventID: id }); } catch (e) {}
+  }
+  /* kreiTrack(name, params, opts) -> event_id. opts: {id, custom, browserOnly, serverOnly} */
+  window.kreiTrack = function(name, params, opts){
+    opts = opts || {}; var id = opts.id || uid();
+    if (!opts.serverOnly) pixel(name, params, id, opts.custom);
+    if (!opts.browserOnly) relay(name, params, id);
+    return id;
+  };
+  window.kreiFbData = function(){ return { fbp: cookie('_fbp'), fbc: fbc(), ua: navigator.userAgent, url: location.href, referrer: document.referrer || '' }; };
+  window.kreiUid = uid;
+
+  /* Meta Pixel base code */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+
+  /* PageView: browser iskart, server kai atsiranda _fbp (iki 3 s) */
+  var pvId = uid(); pixel('PageView', {}, pvId);
+  (function waitFbp(n){ if (cookie('_fbp') || n <= 0) relay('PageView', {}, pvId); else setTimeout(function(){ waitFbp(n - 1); }, 300); })(10);
+
+  function ready(fn){ if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  ready(function(){
+    var path = location.pathname;
+
+    /* ViewContent: istorijos puslapis + case rail pasirinkimas pagrindiniame */
+    if (/istorijos/.test(path)) kreiTrack('ViewContent', { content_name: 'Istorijos', content_category: 'case_study', content_type: 'page' });
+    document.addEventListener('click', function(e){
+      var b = e.target.closest && e.target.closest('.case-rail button');
+      if (b) kreiTrack('ViewContent', { content_name: (b.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80), content_category: 'case_study', content_type: 'case' });
+    });
+
+    /* Contact: telefono / el. pasto paspaudimai */
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href^="tel:"],a[href^="mailto:"]');
+      if (!a) return;
+      var method = a.getAttribute('href').indexOf('tel:') === 0 ? 'phone' : 'email';
+      kreiTrack('Contact', { contact_method: method, content_name: 'Strateginis pokalbis' });
+    });
+
+    /* FormStart (custom): pirmas fokusas formoje */
+    var form = document.getElementById('leadForm'), started = false;
+    if (form) form.addEventListener('focusin', function(){ if (started) return; started = true; kreiTrack('FormStart', { content_name: 'Strateginis pokalbis' }, { custom: true }); });
+
+    /* Lead: aciu puslapis su ?eid= (browser puse; server puse siuncia Apps Script su tuo paciu event_id) */
+    if (/aciu/.test(path)) {
+      var eid = null; try { eid = new URLSearchParams(location.search).get('eid'); } catch (e) {}
+      if (eid && /^k[a-z0-9]{8,}$/.test(eid)) {
+        var key = 'krei_lead_' + eid, seen = false; try { seen = !!sessionStorage.getItem(key); sessionStorage.setItem(key, '1'); } catch (e) {}
+        if (!seen) kreiTrack('Lead', { content_name: 'Strateginis pokalbis', currency: 'EUR', value: 0 }, { id: eid, browserOnly: true });
+      }
+    }
+  });
+})();
+</script>
 </head>
 <body>
 <!-- TODO:ANTANAS og-image - 1200×630 ink/ember kortelė:
@@ -608,21 +696,8 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 
 
 
-<!-- TODO:ANTANAS pixel - įrašyti Meta Pixel ID žemiau. -->
-<script>
-var PIXEL_ID = ""; /* TODO:ANTANAS pixel */
-function kreiConsent(){ try{ return localStorage.getItem('krei_cookie'); }catch(e){ return null; } }
-function kreiInitPixel(){ if(!PIXEL_ID || window.fbq) return;
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', PIXEL_ID); fbq('track', 'PageView');
-}
-kreiInitPixel(); /* be sutikimo juostos kol kas (2026-09-04); PIXEL_ID tuščias, kol Antanas neįrašys */
-function kreiTrack(evt){ try{ if(window.fbq){ fbq('track', evt); } }catch(e){} }
-</script>
+<!-- Tracking (Meta Pixel + CAPI relay) įterpia build-site.py iš tracking.js. Artefakte tracking nėra. -->
+
 
 
 
@@ -954,10 +1029,14 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   if(data.svetaine){ this.reset(); return; } delete data.svetaine;
   data.sutikimas = !!data.sutikimas; data.variant = window.__kreiVariant || 'g'; data.puslapis = location.href; data.timestamp = new Date().toISOString();
   var btn = this.querySelector('button[type=submit]'); if(btn){ btn.disabled = true; btn.textContent = 'Siunčiama…'; }
+  /* Meta CAPI: event_id + fbp/fbc/UA keliauja į Apps Script, kuris siunčia Lead serverio puse; /aciu.html?eid= šauna tą patį Lead naršyklėje (dedup) */
+  var eid = (window.kreiUid ? kreiUid() : 'k'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));
+  data.event_id = eid; try{ var fb = window.kreiFbData ? kreiFbData() : {}; data.fbp = fb.fbp||''; data.fbc = fb.fbc||''; data.ua = fb.ua||navigator.userAgent; data.referrer = fb.referrer||''; }catch(e){}
   try{
     var msg = document.getElementById('formMsg');
     if(FORM_ENDPOINT){
       await fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
+      if(/(^|\.)krei\.lt$/.test(location.hostname)){ location.href = '/aciu.html?eid=' + eid; return; }
       kreiTrack('Lead');
     }else{
       console.log('LEAD (be backend):', data);
