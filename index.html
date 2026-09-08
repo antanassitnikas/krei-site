@@ -1048,7 +1048,10 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   try{
     var msg = document.getElementById('formMsg');
     if(FORM_ENDPOINT){
-      await fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
+      /* fire-and-forget: nelaukiam Apps Script atsakymo (Sheet + laiškas + CAPI užtrunka 3-8 s), peradresuojam iškart */
+      var body = JSON.stringify(data), sent = false;
+      try{ if(navigator.sendBeacon){ sent = navigator.sendBeacon(FORM_ENDPOINT, new Blob([body],{type:'text/plain;charset=utf-8'})); } }catch(err){}
+      if(!sent){ fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:body}).catch(function(){}); }
       if(/(^|\.)krei\.lt$/.test(location.hostname)){ location.href = '/aciu.html?eid=' + eid; return; }
       kreiTrack('Lead');
     }else{
