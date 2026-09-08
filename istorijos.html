@@ -436,8 +436,11 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     if (q) { c = 'fb.1.' + Date.now() + '.' + q; try { document.cookie = '_fbc=' + c + ';path=/;max-age=7776000;domain=.krei.lt;SameSite=Lax;Secure'; } catch (e) {} }
     return c || '';
   }
-  function relay(name, params, id, extra){
+  /* relay laukia _fbp (fbevents.js turi susikurti slapuka) iki ~3 s; be fbp Meta atmeta serverio event'a */
+  function relay(name, params, id, extra, tries){
     if (!HOST || !RELAY) return;
+    tries = tries == null ? 10 : tries;
+    if (!cookie('_fbp') && tries > 0) { setTimeout(function(){ relay(name, params, id, extra, tries - 1); }, 300); return; }
     try {
       var payload = { type: 'event', event_name: name, event_id: id, event_time: Math.floor(Date.now() / 1000),
         event_source_url: location.href, referrer: document.referrer || '', fbp: cookie('_fbp'), fbc: fbc(),
@@ -470,8 +473,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   fbq('init', PIXEL_ID);
 
   /* PageView: browser iskart, server kai atsiranda _fbp (iki 3 s) */
-  var pvId = uid(); pixel('PageView', {}, pvId);
-  (function waitFbp(n){ if (cookie('_fbp') || n <= 0) relay('PageView', {}, pvId); else setTimeout(function(){ waitFbp(n - 1); }, 300); })(10);
+  var pvId = uid(); pixel('PageView', {}, pvId); relay('PageView', {}, pvId);
 
   function ready(fn){ if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
   ready(function(){
