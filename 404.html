@@ -610,6 +610,14 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   var HOST = /(^|\.)krei\.lt$/.test(location.hostname);
 
   function uid(){ return 'k' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10); }
+  /* external_id: pastovus first-party lankytojo ID (localStorage), tas pats browser + server pusėje */
+  function extId(){ try { var v = localStorage.getItem('krei_uid'); if (!v) { v = 'u' + uid().slice(1) + Math.random().toString(36).slice(2, 8); localStorage.setItem('krei_uid', v); } return v; } catch (e) { return ''; } }
+  /* test_event_code: ?fbtest=TESTxxxxx -> sessionStorage -> keliauja į serverio event'us (Events Manager „Test events") */
+  function testCode(){ try { var q = new URLSearchParams(location.search).get('fbtest'); if (q) sessionStorage.setItem('krei_fbtest', q); return sessionStorage.getItem('krei_fbtest') || ''; } catch (e) { return ''; } }
+  /* client IP: Apps Script jo nemato, todėl naršyklė pasiima iš ipify (CORS ok) ir perduoda serveriui; cache sessionStorage */
+  var IP = ''; try { IP = sessionStorage.getItem('krei_ip') || ''; } catch (e) {}
+  var ipReady = IP ? Promise.resolve(IP) : fetch('https://api64.ipify.org?format=json', { mode: 'cors' }).then(function(r){ return r.json(); }).then(function(j){ IP = (j && j.ip) || ''; try { sessionStorage.setItem('krei_ip', IP); } catch (e) {} return IP; }).catch(function(){ return ''; });
+  setTimeout(function(){ ipReady = Promise.resolve(IP); }, 2500); /* max 2.5 s laukimo IP, po to siunčiam be jo */
   function cookie(n){ var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : ''; }
   function fbc(){
     var c = cookie('_fbc'); if (c) return c;
@@ -622,15 +630,15 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     if (!HOST || !RELAY) return;
     tries = tries == null ? 10 : tries;
     if (!cookie('_fbp') && tries > 0) { setTimeout(function(){ relay(name, params, id, extra, tries - 1); }, 300); return; }
-    try {
+    ipReady.then(function(){ try {
       var payload = { type: 'event', event_name: name, event_id: id, event_time: Math.floor(Date.now() / 1000),
         event_source_url: location.href, referrer: document.referrer || '', fbp: cookie('_fbp'), fbc: fbc(),
-        ua: navigator.userAgent, lang: navigator.language || '', custom_data: params || {} };
+        ua: navigator.userAgent, lang: navigator.language || '', ip: IP, external_id: extId(), test_event_code: testCode(), custom_data: params || {} };
       if (extra) for (var k in extra) payload[k] = extra[k];
       var body = JSON.stringify(payload);
       if (navigator.sendBeacon) navigator.sendBeacon(RELAY, new Blob([body], { type: 'text/plain;charset=utf-8' }));
       else fetch(RELAY, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body });
-    } catch (e) {}
+    } catch (e) {} });
   }
   function pixel(name, params, id, custom){
     try { if (window.fbq) fbq(custom ? 'trackCustom' : 'track', name, params || {}, { eventID: id }); } catch (e) {}
@@ -642,7 +650,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     if (!opts.browserOnly) relay(name, params, id);
     return id;
   };
-  window.kreiFbData = function(){ return { fbp: cookie('_fbp'), fbc: fbc(), ua: navigator.userAgent, url: location.href, referrer: document.referrer || '' }; };
+  window.kreiFbData = function(){ return { fbp: cookie('_fbp'), fbc: fbc(), ua: navigator.userAgent, url: location.href, referrer: document.referrer || '', ip: IP, external_id: extId(), test_event_code: testCode() }; };
   window.kreiUid = uid;
 
   /* Meta Pixel base code */
@@ -651,7 +659,9 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', PIXEL_ID);
+  var am = { external_id: extId() };
+  try { var lead = JSON.parse(sessionStorage.getItem('krei_lead_am') || 'null'); if (lead && /aciu/.test(location.pathname)) { for (var k in lead) if (lead[k]) am[k] = lead[k]; } } catch (e) {}
+  fbq('init', PIXEL_ID, am);
 
   /* PageView: browser iskart, server kai atsiranda _fbp (iki 3 s) */
   var pvId = uid(); pixel('PageView', {}, pvId); relay('PageView', {}, pvId);
