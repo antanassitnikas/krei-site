@@ -14,8 +14,14 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="krei · Teisinė informacija"><meta name="twitter:description" content="Privatumo politika, slapukų politika, paslaugų taisyklės ir rezultatų garantijos sąlygos."><meta name="twitter:image" content="https://krei.lt/og-card.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="robots" content="noindex">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter+Tight:wght@300;400;500&family=Inter:wght@400;500;600&display=swap"></noscript>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/inter-tight-300.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
+<style>@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/fraunces-600.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/inter-tight-300.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-tight-400.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-tight-500.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/inter-500.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2')}</style>
 <style>
 :root{
   --paper:#FBFAF8; --paper-2:#F3EFE9; --panel:#FFFFFF;
@@ -536,10 +542,10 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     if (q) { c = 'fb.1.' + Date.now() + '.' + q; try { document.cookie = '_fbc=' + c + ';path=/;max-age=7776000;domain=.krei.lt;SameSite=Lax;Secure'; } catch (e) {} }
     return c || '';
   }
-  /* relay laukia _fbp (fbevents.js turi susikurti slapuka) iki ~3 s; be fbp Meta atmeta serverio event'a */
+  /* relay laukia _fbp (fbevents.js turi susikurti slapuka) iki ~7,5 s (skriptas keliamas po load); be fbp Meta atmeta serverio event'a */
   function relay(name, params, id, extra, tries){
     if (!HOST || !RELAY) return;
-    tries = tries == null ? 10 : tries;
+    tries = tries == null ? 25 : tries; /* iki ~7,5 s: pixel keliamas po load */
     if (!cookie('_fbp') && tries > 0) { setTimeout(function(){ relay(name, params, id, extra, tries - 1); }, 300); return; }
     ipReady.then(function(){ try {
       var payload = { type: 'event', event_name: name, event_id: id, event_time: Math.floor(Date.now() / 1000),
@@ -565,11 +571,16 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   window.kreiUid = uid;
 
   /* Meta Pixel base code */
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  /* Stub iškart (fbq() kvietimai eina į eilę), o pats fbevents.js (~190 KB) keliamas tik po window.load,
+     kad neblokuotų pirmo atvaizdavimo. Eilė išsišauna, kai skriptas užsikrauna. */
+  !function(f,n){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];}(window);
+  function loadPixel(){ if (window.__kreiPixelLoaded) return; window.__kreiPixelLoaded = true;
+    var t=document.createElement('script'); t.async=true; t.src='https://connect.facebook.net/en_US/fbevents.js';
+    var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t,s); }
+  if (document.readyState === 'complete') setTimeout(loadPixel, 0);
+  else { window.addEventListener('load', function(){ setTimeout(loadPixel, 0); }); setTimeout(loadPixel, 4000); }
   var am = { external_id: extId() };
   try { var lead = JSON.parse(sessionStorage.getItem('krei_lead_am') || 'null'); if (lead && /aciu/.test(location.pathname)) { for (var k in lead) if (lead[k]) am[k] = lead[k]; } } catch (e) {}
   fbq('init', PIXEL_ID, am);
@@ -723,7 +734,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 <li><strong>Svetainės talpinimo ir formų apdorojimo paslaugų teikėjas:</strong> GitHub, Inc. (GitHub Pages), JAV: statinis Svetainės talpinimas, serveriai JAV ir ES, perdavimas grindžiamas ES ir JAV duomenų privatumo sistema (DPF). Užklausų formos duomenys apdorojami per Google Apps Script ir saugomi Google Sheets (Google Ireland Limited).</li>
 <li><strong>Google Ireland Limited (Google Workspace):</strong> el. paštas, kalendorius, dokumentai, susitikimų platforma. Serveriai ES ir JAV.</li>
 <li><strong>Meta Platforms Ireland Limited (Meta Pixel, Meta reklamos):</strong> reklamos efektyvumo matavimas ir auditorijų formavimas, tik gavus jūsų sutikimą slapukų juostoje. Meta gali perduoti duomenis į JAV.</li>
-<li><strong>Google Ireland Limited (Google Analytics, Google Fonts):</strong> jeigu naudojame Google Analytics, tik gavus sutikimą. Google Fonts įkeliant šriftus jūsų IP adresas perduodamas Google serveriams.</li>
+<li><strong>Google Ireland Limited (Google Analytics):</strong> jeigu naudojame Google Analytics, tik gavus sutikimą. Svetainės šriftai talpinami pačioje Svetainėje, todėl užklausos Google Fonts serveriams nesiunčiamos.</li>
 <li><strong>Susitikimų rezervavimo įrankis:</strong> šiuo metu nenaudojamas; pokalbio laikas derinamas el. paštu arba telefonu.</li>
 <li><strong>Ryšių su klientais valdymo sistema (CRM):</strong> vidinė krei CRM sistema ir Google Workspace (Google Drive, Google Sheets), užklausų ir klientų kontaktų administravimui.</li>
 <li><strong>Buhalterinės apskaitos paslaugų teikėjas ir apskaitos programa:</strong> MB „Pelningumo sprendimai" (tvarko tik buhalterinės apskaitos ir sąskaitų duomenis; klientų užklausų ir CRM duomenų netvarko).</li>
@@ -834,8 +845,8 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 </ul>
 <p>Meta Pixel be sutikimo neįkeliamas. Davus sutikimą Meta gali gauti informaciją apie jūsų apsilankymą, peržiūrėtus puslapius ir atliktus veiksmus (pavyzdžiui, formos pateikimą) ir susieti ją su jūsų Meta paskyra. Meta gali perduoti duomenis į JAV pagal ES ir JAV duomenų privatumo sistemą. Meta duomenų politika: https://www.facebook.com/privacy/policy. Reklamos nustatymus galite keisti savo Meta paskyroje.</p>
 
-<p><strong>Google Fonts (ne slapukas)</strong></p>
-<p>Svetainėje naudojami Google Fonts šriftai, įkeliami iš Google serverių. Slapukai nenaudojami, tačiau įkeliant šriftą jūsų naršyklė siunčia užklausą Google (Google Ireland Limited), kuri gauna jūsų IP adresą ir techninę naršyklės informaciją. Teisinis pagrindas: teisėtas interesas užtikrinti vienodą Svetainės atvaizdavimą (BDAR 6 str. 1 d. f p.). [ALTERNATYVA: jeigu šriftai talpinami savo serveryje, šią pastraipą pašalinti.]</p>
+<p><strong>Šriftai (ne slapukas)</strong></p>
+<p>Svetainės šriftai talpinami pačioje Svetainėje (krei.lt), todėl juos įkeliant užklausos tretiesiems asmenims nesiunčiamos.</p>
 
 <h3>5. Kaip valdyti sutikimą</h3>
 <p><strong>5.1. Slapukų juosta.</strong> Pirmą kartą apsilankius Svetainėje rodoma slapukų juosta. Joje galite: sutikti su visais slapukais, atsisakyti visų nebūtinųjų arba pasirinkti kategorijas atskirai. Nebūtinieji slapukai nenustatomi, kol nesutinkate. Pasirinkimą galite bet kada pakeisti ar sutikimą atšaukti paspaudę nuorodą „Slapukų nustatymai" Svetainės apačioje. Sutikimo atšaukimas neturi įtakos iki atšaukimo atlikto tvarkymo teisėtumui.</p>
