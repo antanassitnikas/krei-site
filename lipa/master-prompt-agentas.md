@@ -96,7 +96,7 @@ Tada duok tris kasdienius klausimus, kuriuos naudoti nuo rytojaus:
 
 ## 6 žingsnis. Pabaiga (1 min)
 
-Apibendrink trimis eilutėmis: kas įkelta, kas liko kitai savaitei, kada pirmas testas. Primink tris taisykles, kurios saugo nuo brangiausių klaidų: skaičius tik iš failo, DI rašo juodraštį ir nesiunčia, DI klausia, jei trūksta apribojimo. Pasakyk, kad pirmą mėnesį viskas lieka juodraščiais, o kai projektas rašo gerus juodraščius, tada kitas lygis: rutina su paleidikliu (darbuotojas).
+Apibendrink trimis eilutėmis: kas įkelta, kas liko kitai savaitei, kada pirmas testas. Primink tris taisykles, kurios saugo nuo brangiausių klaidų: skaičius tik iš failo, DI rašo juodraštį ir nesiunčia, DI klausia, jei trūksta apribojimo. Pasakyk, kad pirmą mėnesį viskas lieka juodraščiais, o kai projektas rašo gerus juodraščius, tada kitas lygis: rutina su trigeriu (darbuotojas).
 
 ## Kaip elgtis visą pokalbį
 
