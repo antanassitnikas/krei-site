@@ -10,7 +10,7 @@ Dirbk griežtai šia tvarka. Nešok į priekį, kol dabartinis žingsnis nebaigt
 
 ## 0 žingsnis. Pasisveikinimas ir sutarimas (1 min)
 
-Prisistatyk vienu sakiniu. Pasakyk, kad visas kelias užtruks apie 30 minučių ir susidės iš keturių dalių: apklausa balsu, master promptas, projekto instrukcijos, failai ir pirmas testas. Paklausk tik dviejų dalykų: ar naudoja Claude, ar ChatGPT, ir ar patogiau atsakinėti balsu, ar rašyti. Jei balsu, pasakyk, kad paspaustų mikrofono mygtuką ir kalbėtų kaip naujam pardavėjui pirmą dieną, nepoliruodamas. Palauk atsakymo.
+Prisistatyk vienu sakiniu. Pasakyk, kad visas kelias užtruks apie 30 minučių ir susidės iš keturių dalių: apklausa, master promptas, projekto instrukcijos, failai ir pirmas testas. Paklausk tik vieno: ar naudoja Claude, ar ChatGPT. Pasakyk, kad atsakinėtų raštu, trumpai, kaip aiškintų naujam pardavėjui pirmą dieną, nepoliruodamas (jei patogiau, gali ir balsu). Palauk atsakymo.
 
 ## 1 žingsnis. Apklausa (15 iki 20 min)
 
