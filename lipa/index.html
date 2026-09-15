@@ -791,13 +791,13 @@ body{padding-bottom:env(safe-area-inset-bottom)}
 .lipa-files a:hover{color:var(--ember-deep)}
 .lipa-files a span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember-deep);white-space:nowrap;font-weight:600}
 .lipa-note{margin-top:16px;padding:14px;border-left:3px solid var(--ember);background:var(--ember-tint);color:var(--ink)!important;font-size:14.5px!important}
-.lipa-gifts{padding:0 0 clamp(48px,8vw,80px)}
+.lipa-gifts{padding:clamp(8px,2vw,16px) 0 clamp(80px,11vw,120px)}
 .lipa-list{list-style:none;margin:0;padding:0;counter-reset:g;border-top:1px solid var(--line)}
 .lipa-list li{counter-increment:g;display:grid;grid-template-columns:36px 1fr;gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--line)}
 .lipa-list li::before{content:"0" counter(g);grid-row:1 / span 2;font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ember);line-height:1.2}
 .lipa-list b{font-weight:600;font-size:16px;line-height:1.35}
 .lipa-list span{font-size:14px;color:var(--muted);line-height:1.5}
-.lipa-call{background:var(--ink);color:var(--paper);padding:clamp(44px,8vw,80px) 0}
+.lipa-call{background:var(--ink);color:var(--paper);padding:clamp(64px,10vw,104px) 0}
 .lipa-call h2{color:var(--paper)}
 .lipa-call .label{color:var(--ember-bright)}
 .lipa-call .sub{margin-top:12px;color:rgba(255,255,255,.72);font-size:15.5px}
@@ -820,7 +820,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   <div class="lipa-wrap">
     <span class="label">LiPA · 2026-09-17 · Klaipėda</span>
     <h1>Dėkui, kad buvai LiPA.</h1>
-    <p class="lipa-lead">Čia tai, ką rodžiau scenoje: master promptas ir instrukcijos, kaip per 30 min susikurti projektą, kuris žino tavo verslą (antras lygis), plius pokalbių audito kortelė ir demo darbuotojo procesas. Užpildyk formą ir gauk viską.</p>
+    <p class="lipa-lead">Čia tai, ką rodžiau scenoje: master promptas ir instrukcijos, kaip per 30 min susikurti projektą, kuris žino tavo verslą (antras lygis). Užpildyk formą ir gauk.</p>
   </div>
 </section>
 
@@ -832,7 +832,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
       <div class="lf"><label for="l-email">El. paštas</label><input id="l-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="vardas@imone.lt" required></div>
       <div class="lf"><label for="l-imone">Įmonė</label><input id="l-imone" type="text" name="imone" autocomplete="organization" placeholder="UAB „Pavyzdys“" required></div>
       <div class="lf"><label for="l-telefonas">Telefonas</label><input id="l-telefonas" type="tel" name="telefonas" autocomplete="tel" inputmode="tel" placeholder="+370 600 00000" required></div>
-      <label class="lipa-check"><input type="checkbox" name="wants_call" id="l-call"><span><b>Noriu 30 min strateginio pokalbio</b><small>Be įsipareigojimų. Susisieksim per vieną darbo dieną ir sutarsim laiką.</small></span></label>
+      <label class="lipa-check"><input type="checkbox" name="wants_call" id="l-call"><span><b>Noriu strateginio pokalbio (iki 1 val.)</b><small>Be įsipareigojimų. Susisieksim per vieną darbo dieną ir sutarsim laiką.</small></span></label>
       <button type="submit" class="btn btn-ember">Gauti medžiagą</button>
       <p class="lipa-micro">Paspaudęs sutinki, kad krei atsiųstų medžiagą šiuo el. paštu ir susisiektų šiuo numeriu, jei pažymėjai varnelę dėl pokalbio. <a href="/teisine.html#privatumas">Privatumo politika</a>.</p>
     </form>
@@ -842,11 +842,10 @@ body{padding-bottom:env(safe-area-inset-bottom)}
       <h2>Medžiaga išsiųsta į el. paštą.</h2>
       <p>Laiškas ateis per kelias minutes. Jei vėluoja, atsisiųsk čia:</p>
       <ul class="lipa-files">
-        <li><a href="/lipa/master-prompt.pdf" target="_blank" rel="noopener">Master promptas ir 2 lygio instrukcijos <span>PDF · 4 psl.</span></a></li>
-        <li><a href="/lipa/pokalbiu-audito-kortele.pdf" target="_blank" rel="noopener">Pokalbių audito kortelė <span>PDF · 1 psl.</span></a></li>
-        <li><a href="/lipa/darbuotojo-procesas.pdf" target="_blank" rel="noopener">Demo darbuotojo procesas žingsniais <span>PDF · 1 psl.</span></a></li>
+        <li><a href="/lipa/master-prompt-agentas.md" target="_blank" rel="noopener">DI asistentas: įklijuoji į Claude arba ChatGPT, jis viską padaro pats <span>MD · kopijuoti</span></a></li>
+        <li><a href="/lipa/master-prompt.pdf" target="_blank" rel="noopener">Master promptas ir antro lygio gidas <span>PDF · 4 psl.</span></a></li>
       </ul>
-      <p id="lipaCallNote" class="lipa-note" hidden>Varnelę matėm. Susisieksim per vieną darbo dieną ir sutarsim 30 min pokalbio laiką. Jei skubu: <a href="tel:+37060304727" style="color:inherit">+370 603 04727</a>.</p>
+      <p id="lipaCallNote" class="lipa-note" hidden>Varnelę matėm. Susisieksim per vieną darbo dieną ir sutarsim pokalbio laiką (iki 1 val.). Jei skubu: <a href="tel:+37060304727" style="color:inherit">+370 603 04727</a>.</p>
     </div>
   </div>
 </section>
@@ -855,9 +854,8 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   <div class="lipa-wrap">
     <span class="label">Ką gausi</span>
     <ol class="lipa-list">
-      <li><b>Master promptas ir 2 lygio instrukcijos</b><span>Apklausos promptas, master prompto skeletas, kokius failus ir aplankus įkelti pirmiausia, pirmas testas ir kasdieniai klausimai. Pasidarai per 30 min, be IT.</span></li>
-      <li><b>Pokalbių audito kortelė</b><span>1 psl. 5 klausimai DI kiekvienam pardavimo pokalbiui ir saugus sakinys skambučio pradžioje, kad įrašai atitiktų BDAR.</span></li>
-      <li><b>Demo darbuotojo procesas žingsniais</b><span>1 psl. Užklausa, klausimai, skaičiavimas, pasiūlymas PDF, laiškas, CRM įrašas. Ir taisyklė, kurią rutiną deleguoti pirmą.</span></li>
+      <li><b>DI asistentas, kuris viską padaro pats</b><span>Vienas tekstas, kurį įklijuoji į Claude arba ChatGPT. Jis tave apklausia po vieną klausimą, parašo master promptą ir projekto instrukcijas, pasako, kokius failus įkelti, ir duoda pirmą testą. Apie 30 min, be IT.</span></li>
+      <li><b>Master promptas ir antro lygio gidas</b><span>4 psl. PDF žmogui: apklausos promptas, instrukcijų blokas, failų sąrašas, kasdieniai klausimai ir penkios klaidos, kurias mato visi praktikai.</span></li>
     </ol>
   </div>
 </section>
@@ -866,12 +864,12 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   <div class="lipa-wrap">
     <span class="label">Strateginis pokalbis</span>
     <h2>Jei nori, kad tas projektas virstų darbuotoju.</h2>
-    <p class="sub">30 min, be įsipareigojimų. Išeini su:</p>
+    <p class="sub">Iki 1 val., be įsipareigojimų. Išeini su:</p>
     <ul class="lipa-vals">
+      <li>Augimo potencialu: kur DI padėtų pritraukti ir parduoti daugiau, ne tik sutaupyti</li>
       <li>Procesų žemėlapiu: kur kasdien prarandate valandas ir pinigus</li>
       <li>3 konkrečiais DI darbuotojais tavo verslui, su prioritetais, kuris atsipirks pirmiausia</li>
       <li>Skaičiais: kiek valandų ir pinigų per mėnesį DI atgautų</li>
-      <li>Augimo potencialu: kur DI padėtų pritraukti ir parduoti daugiau, ne tik sutaupyti</li>
       <li>Planu pirmoms 5 dienoms, net jei nedirbsim kartu</li>
     </ul>
     <button type="button" class="btn btn-line" id="lipaWant">Pažymėti varnelę formoje ↑</button>
@@ -902,7 +900,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e){
   var wants = !!data.wants_call;
   data.wants_call = wants; data.source = LIPA_SOURCE; data.type = 'lipa';
   /* Suderinamumas su Code.gs v4 (kol neįdiegta v5): tie patys laukai, kuriuos v4 rašo į „Užklausos“ */
-  data.saltinis = 'LiPA 2026-09-17'; data.tikslai = 'LiPA medžiaga. Nori 30 min strateginio pokalbio: ' + (wants ? 'TAIP' : 'ne'); data.sutikimas = true; data.variant = 'lipa';
+  data.saltinis = 'LiPA 2026-09-17'; data.tikslai = 'LiPA medžiaga. Nori strateginio pokalbio (iki 1 val.): ' + (wants ? 'TAIP' : 'ne'); data.sutikimas = true; data.variant = 'lipa';
   data.puslapis = location.href; data.timestamp = new Date().toISOString();
   var eid = (window.kreiUid ? kreiUid() : 'k' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
   data.event_id = eid;
