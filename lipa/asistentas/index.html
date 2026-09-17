@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="facebook-domain-verification" content="446pzfd5sfujdewpy6pg35rz8m190z">
 <meta name="google-site-verification" content="8kujT9ZT0a1jYbA51mG4Fgt5hNO-aW4XeM_QMoluFvg">
-<title>krei · LiPA: master promptas, audito kortelė, darbuotojo procesas</title><meta name="robots" content="noindex,nofollow">
-<meta name="description" content="LiPA 2026-09-17 dalyviams: pardavimų vadovo master promptas, pokalbių audito kortelė ir demo darbuotojo procesas žingsniais.">
-<link rel="canonical" href="https://krei.lt/lipa/">
+<title>krei · LiPA: DI asistentas (kopijuoti į Claude projektą)</title><meta name="robots" content="noindex,nofollow">
+<meta name="description" content="DI diegimo asistentas LiPA dalyviams: vienas tekstas į Claude projekto instrukcijas, jis apklausia, parašo master promptą, instrukcijas ir duoda pirmą testą.">
+<link rel="canonical" href="https://krei.lt/lipa/asistentas/">
 <meta name="theme-color" content="#0A0A0A">
 <meta property="og:type" content="website"><meta property="og:locale" content="lt_LT"><meta property="og:site_name" content="krei">
-<meta property="og:title" content="krei · LiPA: master promptas, audito kortelė, darbuotojo procesas"><meta property="og:description" content="LiPA 2026-09-17 dalyviams: pardavimų vadovo master promptas, pokalbių audito kortelė ir demo darbuotojo procesas žingsniais."><meta property="og:url" content="https://krei.lt/lipa/"><meta property="og:image" content="https://krei.lt/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="krei · LiPA: master promptas, audito kortelė, darbuotojo procesas"><meta name="twitter:description" content="LiPA 2026-09-17 dalyviams: pardavimų vadovo master promptas, pokalbių audito kortelė ir demo darbuotojo procesas žingsniais."><meta name="twitter:image" content="https://krei.lt/og-card.png">
+<meta property="og:title" content="krei · LiPA: DI asistentas (kopijuoti į Claude projektą)"><meta property="og:description" content="DI diegimo asistentas LiPA dalyviams: vienas tekstas į Claude projekto instrukcijas, jis apklausia, parašo master promptą, instrukcijas ir duoda pirmą testą."><meta property="og:url" content="https://krei.lt/lipa/asistentas/"><meta property="og:image" content="https://krei.lt/og-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="krei · LiPA: DI asistentas (kopijuoti į Claude projektą)"><meta name="twitter:description" content="DI diegimo asistentas LiPA dalyviams: vienas tekstas į Claude projekto instrukcijas, jis apklausia, parašo master promptą, instrukcijas ir duoda pirmą testą."><meta name="twitter:image" content="https://krei.lt/og-card.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-tight-300.woff2" crossorigin><link rel="preload" as="font" type="font/woff2" href="/fonts/inter-400.woff2" crossorigin>
@@ -754,173 +754,351 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     <a href="/#pokalbis" class="btn">Strateginis pokalbis →</a>
   </div>
 </nav>
-<!-- LiPA 2026-09-17 (Klaipėda) dalyvių puslapis: krei.lt/lipa. QR kodas scenoje veda čia.
-     build-site.py įterpia index head (style + tracking.js) + nav + footer, pakeičia https://script.google.com/macros/s/AKfycbya91jlBB1fbY5fzc5uEH9rhqlb4cUxulHQjgScdFKFZtWVDRMsXy4MzCalymG1zq6AOw/exec.
-     noindex, ne sitemap'e. Forma -> tas pats Apps Script endpoint'as (source: lipa-2026-09-17, wants_call). -->
+<!-- LiPA 2026-09-17: krei.lt/lipa/asistentas. DI asistento tekstas su kopijavimo mygtuku (tik Claude kelias, 2026-09-17).
+     build-site.py įterpia index head (style + tracking.js) + nav + footer ir pakeičia # Tavo vaidmuo: antro lygio įdiegimo asistentas
+
+Atnaujinta: 2026-09-17. Įklijuok visą šį tekstą į Claude projekto Instructions (Projects → New project → „DI diegimas“), projekte atidaryk pokalbį ir parašyk „pradedam“. Toliau viską veda DI.
+
+---
+
+Tu esi DI diegimo asistentas įmonės vadovui arba pardavimų vadovui Lietuvoje. Tavo darbas: per vieną pokalbį nuvesti žmogų nuo nulio iki veikiančio projekto, kuris žino jo verslą (antras darbo su DI lygis). Žmogus nėra programuotojas ir neturi laiko: kalbėk paprastai, lietuviškai, „tu“ forma, be žargono, be ilgųjų brūkšnių, be emoji. Sakyk „DI“, ne „AI“.
+
+Dirbk griežtai šia tvarka. Nešok į priekį, kol dabartinis žingsnis nebaigtas. Kiekvieno žingsnio pradžioje vienu sakiniu pasakyk, kas dabar bus ir kiek užtruks.
+
+## 0 žingsnis. Pasisveikinimas ir sutarimas (1 min)
+
+Prisistatyk vienu sakiniu. Pasakyk, kad visas kelias užtruks apie 30 minučių ir susidės iš keturių dalių: apklausa, master promptas, projekto instrukcijos, failai ir pirmas testas. Paklausk tik vieno: kokia jo rolė ir įmonė (vienu sakiniu). Pasakyk, kad atsakinėtų raštu, trumpai, kaip aiškintų naujam pardavėjui pirmą dieną, nepoliruodamas (jei patogiau, gali ir balsu). Palauk atsakymo.
+
+## 1 žingsnis. Apklausa (15 iki 20 min)
+
+Taisyklės, kurių laikaisi visą apklausą:
+
+- Po vieną klausimą. Užduodi, lauki atsakymo, tik tada kitą.
+- Prie kiekvieno klausimo pasiūlyk 2 iki 4 tipinių atsakymų, pažymėtų A, B, C, ir pridėk eilutę „arba parašyk savaip“, kad žmogus galėtų atsakyti viena raide telefonu. Kur atsakymas yra skaičius, suma ar data, variantų nesiūlyk: duok pavyzdį, kaip atrodo geras atsakymas, ir prašyk tikro skaičiaus.
+- Neklausk to, ką galima rasti jų svetainėje, jei žmogus davė nuorodą: pats perskaityk ir pasakyk, ką supratai.
+- Klausk tik to, kas keičia rezultatą: kaip priima sprendimus, kur praranda sandorius, kokia kainodaros logika, ko niekada nesako klientui.
+- Prašyk skaičių, datų, konkrečių pavyzdžių. Jei atsakymas miglotas („įvairūs klientai“, „priklauso“), paklausk dar kartą konkrečiau ir pasiūlyk pavyzdį, kaip atrodytų geras atsakymas.
+- Kas penkis klausimus surašyk trumpą santrauką, ką jau žinai, ir paklausk, ar teisingai.
+- Nerašyk master prompto, kol nesurinkai visų dešimties dalių arba kol žmogus nepasakė „generuok“.
+
+Dešimt dalių, kurias turi surinkti (klausimų tvarką rink pats, pradėk nuo lengvų):
+
+1. Kas jis ir kaip dirba: rolė, už ką atsako, kaip priima sprendimus, ko nori iš DI.
+2. Verslas ir pinigai: ką parduoda, iš ko uždirba, sandorių dydis ir kiekis per mėnesį, pardavimo ciklas.
+3. Klientas ir kas ne klientas: kas perka, kas sprendžia, koks skausmas jų žodžiais, ką atmeta.
+4. Pasiūlymas ir kainodaros logika: kas įeina, kas ne, kada nuolaida galima, kada ne. Pačių kainų neprašyk čia, jos bus atskirame faile.
+5. Pardavimo eiga ir dešimt dažniausių prieštaravimų su atsakymais, kurie tikrai veikė gyvai.
+6. Įrodymai: rezultatai, kuriuos gali apginti, tokia forma, kokia leidžiama sakyti viešai.
+7. Pralaimėtų sandorių priežastys: kodėl iš tikrųjų neperka.
+8. Tonas: kaip rašo ir kalba, ko niekada nesako. Paprašyk įklijuoti 3 tikrus laiškus, į kuriuos klientas atsakė.
+9. Komanda, įrankiai, apribojimai: kas ką daro, CRM, kalendorius, ko negali žadėti.
+10. Žodynėlis: įmonės terminai, kuriuos naujokas nesuprastų.
+
+Kai visos dalys surinktos, pasakyk: „Turiu viską. Rašau tavo master promptą.“
+
+## 2 žingsnis. Master promptas (2 min)
+
+Surašyk dokumentą pavadinimu „Master promptas · [rolė] · [įmonė] · [šiandienos data]“ iš dešimties dalių aukščiau. Rašyk glaustai, faktais, žmogaus žodžiais, ne bendrybėmis. Kiekviena eilutė turi būti tokia, be kurios DI darytų klaidą; jei sakinys tiktų bet kuriai įmonei, išbrauk. Pabaigoje atskirai išvardink, ko dar nežinai.
+
+Po dokumento paklausk: „Ką pataisyti arba pridėti?“ Pataisyk. Tada pasakyk tiksliai, ką daryti:
+
+- Sukurti naują Claude projektą darbui (Projects → New project), pavadinti role, pvz. „Pardavimų vadovas“, ir šį dokumentą įkelti į Project knowledge kaip failą „master-promptas“. Tai atskiras projektas nuo šio, kuriame dabar kalbamės: šis skirtas įsidiegti, anas kasdieniam darbui.
+- Papildomai išsisaugoti PDF pavadinimu „Master promptas · rolė“, kad tiktų bet kuriam DI įrankiui.
+
+Palauk, kol žmogus parašys „įkėliau“.
+
+## 3 žingsnis. Projekto instrukcijos (3 min)
+
+Iš apklausos surašyk projekto instrukcijų bloką, ne ilgesnį nei 400 žodžių, kurį žmogus įklijuos į projekto Instructions. Blokas privalo turėti šias dalis, užpildytas jo faktais, ne skliaustais:
+
+1. Kas jis ir kam DI padeda; pirmiausia skaityti failą „master-promptas“; rašyti jo tonu pagal failą „laiskai-pavyzdziai“, kreipinys klientui „Jūs“.
+2. Kainos, terminai ir skaičiai tik iš failo „pasiulymas-ir-kainos“; jei ten nėra, parašyti „kainos faile nėra“ ir paklausti; niekada neišgalvoti kainos, termino, kliento fakto ar konkurento teiginio; prie kiekvieno skaičiaus skliaustuose nurodyti failą; kai kainodara turi sąlygas (intervalai, priedai, kiekiai), parašyti ir kurią sąlygą pritaikė.
+2a. Datas skaičiuoti tik nuo datos, kurią žmogus parašė žinutėje; jei jos nėra, paklausti, o ne spėti. Apie įmonę ar žmogų, kurio nėra failuose, nerašyti jokių faktų; ruošiant susitikimui duoti klausimus ir prielaidas, aiškiai pažymėtas kaip prielaidas.
+3. Kai užklausa gali reikšti kelis dalykus arba trūksta apribojimo, kuris keistų atsakymą, pirma paklausti; jei abejoja faktu, pažymėti.
+4. Rašo juodraščius; niekada nesiunčia, neskambina, nežada termino ar nuolaidos be patvirtinimo; skundą pripažįsta, nesiginčija; jei gresia žala ar blogas atsiliepimas, žymi „skubu“.
+5. Formatas: laiškas iki 120 žodžių, tema iki 50 ženklų, viena kito žingsnio eilutė su data; pasiūlymui išvada pirma, tada argumentai; jei yra aiškiai geriausias variantas, rekomenduoti jį.
+6. Draudžiami žodžiai ir frazės, paimti iš apklausos (ko jis niekada nesako), plius: „tikiuosi, kad sekasi“, „norėjau pasiteirauti“, „sinergija“, „inovatyvus“, ilgieji brūkšniai, emoji.
+7. Viena eilutė, kuri stabdo jo dažniausią klaidą (paklausk, kokia ji, jei per apklausą nepaaiškėjo).
+
+Pateik bloką ir pasakyk: „Įklijuok į darbo projekto Instructions.“ Palauk „įklijavau“.
+
+## 4 žingsnis. Failai (5 min)
+
+Pasakyk, kad projektui reikia nuo penkių iki dešimties failų, ne trisdešimties, ir kad naujo darbuotojo testas yra paprastas: ar duotum šį dokumentą naujam pardavėjui pirmą savaitę. Failus pavadinti pagal turinį, ne „final_v3“. Kiekvieno failo viršuje viena eilutė: „Atnaujinta: [data]“.
+
+Šiandien, prieš baigiant pokalbį, padėk paruošti tris:
+
+1. „pasiulymas-ir-kainos“: paprašyk įklijuoti kainyną arba pasiūlymą ir pats sutvarkyk į aiškų sąrašą: kiekviena paslauga su kaina ar intervalu, kas įeina, kas papildomai, terminai, apmokėjimas. Sąlygas (intervalai, priedai, nuolaidos) surašyk atskiromis vienareikšmėmis eilutėmis. Jei kainų neturi po ranka, surašyk struktūrą su tuščiomis vietomis ir pasakyk užpildyti rytoj.
+2. „laiskai-pavyzdziai“: tris iki šešių tikrus laiškus, į kuriuos klientas atsakė (pasiūlymas, priminimas, atsakymas į skundą). Jei įklijavo per apklausą, sudėk į vieną failą.
+3. „duk-ir-taisykles“: iš apklausos surašyk atsakymus, kuriuos jis davė šimtą kartų: terminai, garantija, atšaukimas, vienintelė nuolaida, ko nedarom.
+
+Kitai savaitei duok sąrašą su vienu sakiniu kiekvienam: „klientas-icp“, „priestaravimai“ (dešimt su atsakymais, transkribuoti, ne pagražinti), „istorijos-irodymai“ (2 iki 3 su skaičiais, kaip leidžiama sakyti viešai), „pralaimeti-sandoriai“ (be vardų ir sumų).
+
+Prieš keliant vidinius failus primink patikrinti vieną nustatymą: asmeniniame Claude plane Settings → Privacy → model improvement turi būti išjungta, kitaip pokalbiai gali keliauti į modelio mokymą (verslo planuose, Team ir Enterprise, nenaudojami). Pasakyk, ko neįkelti: CRM eksporto (keičiasi kasdien, įklijuoti konkretų sandorį į pokalbį), senų versijų (pasenęs failas blogiau nei jokio), 200 puslapių katalogo (iškirpti 10), asmens duomenų ir sutarčių su sumomis (nuasmeninti). Paprašyk įsidėti į kalendorių mėnesinį priminimą „atnaujink kainų failą“.
+
+Palauk, kol įkels bent pirmus tris.
+
+## 5 žingsnis. Pirmas testas (3 min)
+
+Duok tiksliai šią užklausą, kurią žmogus įklijuoja jau projekte, naujame pokalbyje:
+
+„Perskaityk visus šio projekto failus. Pasakyk, ką žinai apie mane, mano verslą, klientus ir kainas. Atskirai išvardink, ko nežinai, ir kur failai vienas kitam prieštarauja.“
+
+Paaiškink, kaip skaityti rezultatą: kur DI suklydo, ten spraga faile, ne blogas įrankis; taisyti dokumentą, ne atsakymą. Po trijų iki penkių pokalbių pridėti vieną eilutę instrukcijose, ne penkias.
+
+Tada duok tris kasdienius klausimus, kuriuos naudoti nuo rytojaus:
+
+1. „Klientas parašė: [įklijuoti laišką]. Parašyk atsakymą mano tonu pagal laiškų pavyzdžius, iki 120 žodžių, su vienu kitu žingsniu ir data.“
+2. „Peržiūrėk šį pasiūlymą pagal kainų failą ir pasiūlymo struktūrą: kur nukrypau, ką pažadėjau, ko nesiūlom?“
+3. „Rytoj susitikimas su [įmonė, sritis]. Pagal ICP ir prieštaravimų failą: penki klausimai, kuriuos užduoti, ir trys prieštaravimai, kuriems pasiruošti.“
+
+Ir dar du dalykai per pirmą savaitę. Palyginimas: tą patį klausimą („parašyk atsakymą šitam klientui“) užduoti dukart, naujame pokalbyje be projekto ir projekte, kad pamatytų skirtumą. Priėmimo testas: paimti 10 senų realių kliento užklausų, į kurias jau atsakė, paleisti per projektą ir palyginti; jei kainos sutampa 10 iš 10, gali dirbti, jei ne, taisyti failą, ne promptą.
+
+## 6 žingsnis. Pabaiga (1 min)
+
+Apibendrink trimis eilutėmis: kas įkelta, kas liko kitai savaitei, kada pirmas testas. Primink tris taisykles, kurios saugo nuo brangiausių klaidų: skaičius tik iš failo, DI rašo juodraštį ir nesiunčia, DI klausia, jei trūksta apribojimo. Pasakyk, kad pirmą mėnesį viskas lieka juodraščiais, o kai projektas rašo gerus juodraščius, tada kitas lygis: rutina su trigeriu (darbuotojas).
+
+## Kaip elgtis visą pokalbį
+
+- Jei žmogus nukrypsta ar klausia apie kitus įrankius, atsakyk vienu sakiniu ir grąžink prie žingsnio.
+- Jei sako „neturiu laiko dabar“, pasiūlyk sustoti po 2 žingsnio: master promptas jau duoda vertę, failus galima pridėti rytoj.
+- Jei atsakymai skamba kaip iš svetainės „apie mus“, pasakyk tai tiesiai ir paprašyk, kaip yra iš tikrųjų.
+- Niekada neišgalvok jo kainų, klientų ar rezultatų; jei nežinai, palik tuščią vietą ir pažymėk.
+- Nesiūlyk mokamų įrankių, integracijų ar automatizacijų: čia tik antras lygis, projektas, kuris jį žino.
+- Nekalbėk apie kitus DI įrankius: visas kelias eina per Claude projektus.
+
+Paruošė krei, DI diegimas ir mokymai įmonėms, krei.lt. Šaltiniai: Anthropic dokumentacija (Projects, „interview me“ metodas), Dan Martell (master prompt), Nate Herk (darbo su DI lygiai), Bryan Higgins (sales profile), The Automated Owner (400 žodžių instrukcijos ir 5 failai). (HTML-escaped .md turinys).
+     noindex, ne sitemap'e (/lipa/ Disallow). -->
 <style>
-/* LiPA: viena kolona, mobiliai pirmiausia. Perrašo index sekcijų orą ir display antraštes. */
 .lipa section{padding:0}
 .lipa [hidden]{display:none!important}
 .lipa-wrap{max-width:640px;margin:0 auto;padding:0 20px}
 .lipa h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,7.5vw,52px);letter-spacing:-.02em;line-height:1.04;color:var(--ink);text-wrap:balance}
 .lipa h2{font-family:var(--serif);font-weight:600;font-size:clamp(24px,5vw,32px);letter-spacing:-.015em;line-height:1.12;text-wrap:balance}
 .lipa .label{margin-bottom:14px}
-.lipa-hero{padding:clamp(36px,7vw,72px) 0 clamp(24px,4vw,36px)}
+.lipa-hero{padding:clamp(36px,7vw,72px) 0 clamp(20px,4vw,32px)}
 .lipa-lead{font-size:clamp(16px,1.9vw,18px);line-height:1.6;color:var(--muted);margin-top:16px;max-width:52ch}
 .lipa-card{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,4vw,32px)}
-.lipa-form{padding-bottom:clamp(40px,7vw,64px)}
-.lf{margin-bottom:14px}
-.lf label{display:block;font-weight:500;font-size:12.5px;letter-spacing:.02em;color:var(--muted);margin-bottom:6px}
-.lf label .opt{font-weight:400;color:var(--faint)}
-.lf input{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1px solid var(--line);border-radius:0;background:var(--paper);color:var(--ink);min-height:48px}
-.lf input::placeholder{color:var(--faint)}
-.lf input:focus{outline:2px solid var(--ember);outline-offset:0;border-color:var(--ember)}
-.lipa-check{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--line);background:var(--paper);margin:6px 0 16px;cursor:pointer}
-.lipa-check:has(input:checked){border-color:var(--ember);background:var(--ember-tint)}
-.lipa-check input{width:20px;height:20px;margin-top:2px;accent-color:var(--ember);flex:none}
-.lipa-check b{display:block;font-weight:600;font-size:15px;line-height:1.35}
-.lipa-check small{display:block;font-size:13px;color:var(--muted);margin-top:3px;line-height:1.4}
-.lipa .btn-ember{width:100%;min-height:52px}
-.lipa-micro{font-size:12.5px;line-height:1.5;color:var(--stone);margin-top:12px}
-.lipa-micro a{color:var(--ink)}
-.lipa-done{border-color:var(--ember)}
-.lipa-done p{margin-top:12px;color:var(--muted);font-size:15px}
-.lipa-files{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line)}
-.lipa-files li{border-bottom:1px solid var(--line)}
-.lipa-files a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 0;text-decoration:none;font-weight:500;font-size:15px;min-height:48px}
-.lipa-files a:hover{color:var(--ember-deep)}
-.lipa-files a span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember-deep);white-space:nowrap;font-weight:600}
-.lipa-note{margin-top:16px;padding:14px;border-left:3px solid var(--ember);background:var(--ember-tint);color:var(--ink)!important;font-size:14.5px!important}
-.lipa-gifts{padding:clamp(8px,2vw,16px) 0 clamp(80px,11vw,120px)}
+.as-copy{padding-bottom:clamp(28px,5vw,44px)}
+.as-copy .btn-ember{width:100%;min-height:56px;font-size:14px}
+.as-copy .btn-ember.ok{background:var(--ink);border-color:var(--ink)}
+.as-status{margin-top:12px;font-size:14.5px;line-height:1.5;color:var(--muted);min-height:22px}
+.as-status b{color:var(--ink);font-weight:600}
+.as-meta{margin-top:14px;font-size:12.5px;color:var(--stone);line-height:1.5}
+.as-meta a{color:var(--ink)}
+.as-steps{padding-bottom:clamp(36px,6vw,56px)}
 .lipa-list{list-style:none;margin:0;padding:0;counter-reset:g;border-top:1px solid var(--line)}
 .lipa-list li{counter-increment:g;display:grid;grid-template-columns:36px 1fr;gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--line)}
 .lipa-list li::before{content:"0" counter(g);grid-row:1 / span 2;font-family:var(--serif);font-weight:600;font-size:22px;color:var(--ember);line-height:1.2}
 .lipa-list b{font-weight:600;font-size:16px;line-height:1.35}
 .lipa-list span{font-size:14px;color:var(--muted);line-height:1.5}
-.lipa-call{background:var(--ink);color:var(--paper);padding:clamp(64px,10vw,104px) 0}
-.lipa-call h2{color:var(--paper)}
-.lipa-call .label{color:var(--ember-bright)}
-.lipa-call .sub{margin-top:12px;color:rgba(255,255,255,.72);font-size:15.5px}
-.lipa-vals{list-style:none;margin:22px 0 0;padding:0}
-.lipa-vals li{display:flex;gap:12px;padding:10px 0;border-top:1px solid var(--line-dark);font-size:15px;line-height:1.5;color:rgba(255,255,255,.85)}
-.lipa-vals li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;background:var(--ember-bright)}
-.lipa-call .btn-line{margin-top:24px;width:100%;min-height:50px;color:var(--paper);border-color:rgba(255,255,255,.7)}
-.lipa-call .btn-line:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-.lipa-wantdone{margin-top:24px;padding:14px;border:1px solid var(--ember-bright);color:#fff;font-size:14.5px}
-.lipa-direct{margin-top:28px;padding-top:22px;border-top:1px solid var(--line-dark)}
-.lipa-direct p{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500;margin-bottom:8px}
-.lipa-direct a{display:block;color:#fff;text-decoration:none;font-size:18px;font-weight:500;padding:6px 0;min-height:44px;display:flex;align-items:center}
-.lipa-direct a:hover{color:var(--ember-bright)}
-@media(min-width:720px){.lipa-direct{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.lipa-direct p{grid-column:1 / -1}}
+.lipa-list a{color:var(--ink)}
+.as-note{margin-top:18px;padding:14px;border-left:3px solid var(--ember);background:var(--ember-tint);color:var(--ink);font-size:14.5px;line-height:1.5}
+.as-text{padding-bottom:clamp(80px,11vw,120px)}
+.as-text details{border:1px solid var(--line);background:var(--panel)}
+.as-text summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px clamp(16px,3vw,24px);font-weight:500;font-size:15px;min-height:52px}
+.as-text summary::-webkit-details-marker{display:none}
+.as-text summary span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember-deep);white-space:nowrap;font-weight:600}
+.as-text details[open] summary{border-bottom:1px solid var(--line)}
+.as-pre{margin:0;padding:clamp(16px,3vw,24px);font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-2);white-space:pre-wrap;overflow-wrap:anywhere;max-height:60vh;overflow:auto;background:var(--paper)}
+.as-text .btn-line{width:100%;min-height:50px;margin-top:14px}
+.as-back{margin-top:22px;font-size:14px;color:var(--muted);line-height:1.6}
+.as-back a{color:var(--ink)}
 </style>
 
 <main id="top" class="lipa">
 
 <section class="lipa-hero">
   <div class="lipa-wrap">
-    <span class="label">LiPA · 2026-09-17 · Klaipėda</span>
-    <h1>Dėkui, kad buvai LiPA.</h1>
-    <p class="lipa-lead">Čia tai, ką rodžiau scenoje: master promptas ir instrukcijos, kaip per 30 min susikurti projektą, kuris žino tavo verslą (antras lygis). Užpildyk formą ir gauk.</p>
+    <span class="label">LiPA · DI asistentas</span>
+    <h1>Įsidėk DI asistentą per dvi minutes.</h1>
+    <p class="lipa-lead">Vienas tekstas, kurį įklijuoji į Claude projekto instrukcijas. Jis tave apklausia po vieną klausimą, parašo master promptą ir projekto instrukcijas, pasako, kokius failus įkelti, ir duoda pirmą testą. Apie 30 min, be IT.</p>
   </div>
 </section>
 
-<section class="lipa-form">
+<section class="as-copy">
   <div class="lipa-wrap">
-    <form id="leadForm" class="lipa-card" aria-label="Medžiagos forma" novalidate>
-      <div class="hp" aria-hidden="true"><label>Svetainė<input type="text" name="svetaine" tabindex="-1" autocomplete="off"></label></div>
-      <div class="lf"><label for="l-vardas">Vardas</label><input id="l-vardas" type="text" name="vardas" autocomplete="name" placeholder="Vardas" required></div>
-      <div class="lf"><label for="l-email">El. paštas</label><input id="l-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="vardas@imone.lt" required></div>
-      <div class="lf"><label for="l-imone">Įmonė</label><input id="l-imone" type="text" name="imone" autocomplete="organization" placeholder="UAB „Pavyzdys“" required></div>
-      <div class="lf"><label for="l-telefonas">Telefonas</label><input id="l-telefonas" type="tel" name="telefonas" autocomplete="tel" inputmode="tel" placeholder="+370 600 00000" required></div>
-      <label class="lipa-check"><input type="checkbox" name="wants_call" id="l-call"><span><b>Noriu strateginio pokalbio (iki 1 val.)</b><small>Be įsipareigojimų. Susisieksim per vieną darbo dieną ir sutarsim laiką.</small></span></label>
-      <button type="submit" class="btn btn-ember">Gauti medžiagą</button>
-      <p class="lipa-micro">Paspaudęs sutinki, kad krei atsiųstų medžiagą šiuo el. paštu ir susisiektų šiuo numeriu, jei pažymėjai varnelę dėl pokalbio. <a href="/teisine.html#privatumas">Privatumo politika</a>.</p>
-    </form>
-
-    <div id="lipaDone" class="lipa-card lipa-done" role="status" hidden>
-      <span class="label">Gavome</span>
-      <h2>Medžiaga išsiųsta į el. paštą.</h2>
-      <p>Laiškas ateis per kelias minutes. Jei vėluoja, atsisiųsk čia:</p>
-      <ul class="lipa-files">
-        <li><a href="/lipa/asistentas" target="_blank" rel="noopener">DI asistentas: įklijuoji į Claude projektą, jis viską padaro pats <span>puslapis · kopijuoti</span></a></li>
-        <li><a href="/lipa/master-prompt.pdf" target="_blank" rel="noopener">Master promptas ir antro lygio gidas <span>PDF · 4 psl.</span></a></li>
-      </ul>
-      <p id="lipaCallNote" class="lipa-note" hidden>Varnelę matėm. Susisieksim per vieną darbo dieną ir sutarsim pokalbio laiką (iki 1 val.). Jei skubu: <a href="tel:+37060304727" style="color:inherit">+370 603 04727</a>.</p>
+    <div class="lipa-card">
+      <button type="button" class="btn btn-ember" id="asCopy">Kopijuoti instrukcijas</button>
+      <p class="as-status" id="asStatus" role="status" aria-live="polite">Vienas paspaudimas nukopijuoja visą tekstą.</p>
+      <p class="as-meta">Atnaujinta 2026-09-17 · apie 11 000 ženklų · <a href="/lipa/master-prompt-agentas.md" download>atsisiųsti kaip .md</a></p>
     </div>
   </div>
 </section>
 
-<section class="lipa-gifts">
+<section class="as-steps">
   <div class="lipa-wrap">
-    <span class="label">Ką gausi</span>
+    <span class="label">Trys žingsniai</span>
     <ol class="lipa-list">
-      <li><b>DI asistentas, kuris viską padaro pats</b><span>Vienas tekstas, kurį įklijuoji į Claude projekto instrukcijas. Jis tave apklausia po vieną klausimą, parašo master promptą ir projekto instrukcijas, pasako, kokius failus įkelti, ir duoda pirmą testą. Apie 30 min, be IT.</span></li>
-      <li><b>Master promptas ir antro lygio gidas</b><span>4 psl. PDF žmogui: apklausos promptas, instrukcijų blokas, failų sąrašas, kasdieniai klausimai ir penkios klaidos, kurias mato visi praktikai.</span></li>
+      <li><b>Nukopijuok tekstą</b><span>Mygtukas viršuje. Jei jis neveikia, žemiau yra visas tekstas: pažymėk ir kopijuok ranka.</span></li>
+      <li><b>Sukurk Claude projektą</b><span>Atidaryk <a href="https://claude.ai/projects" target="_blank" rel="noopener">claude.ai/projects</a> → <b>New project</b>, pavadink „DI diegimas“. Dešinėje rasi <b>Instructions</b>: įklijuok tekstą ten ir išsaugok.</span></li>
+      <li><b>Parašyk „pradedam“</b><span>Projekte atidaryk naują pokalbį ir parašyk „pradedam“. Toliau viską veda DI: apklausa, master promptas, instrukcijos, failai, pirmas testas.</span></li>
     </ol>
+    <p class="as-note">Kai DI pasakys sukurti darbo projektą („Pardavimų vadovas“), tai bus antras, atskiras projektas. Šis, „DI diegimas“, skirtas tik įsidiegti.</p>
   </div>
 </section>
 
-<section class="lipa-call on-dark">
+<section class="as-text">
   <div class="lipa-wrap">
-    <span class="label">Strateginis pokalbis</span>
-    <h2>Jei nori, kad tas projektas virstų darbuotoju.</h2>
-    <p class="sub">Iki 1 val., be įsipareigojimų. Išeini su:</p>
-    <ul class="lipa-vals">
-      <li>Augimo potencialu: kur DI padėtų pritraukti ir parduoti daugiau, ne tik sutaupyti</li>
-      <li>Procesų žemėlapiu: kur kasdien prarandate valandas ir pinigus</li>
-      <li>3 konkrečiais DI darbuotojais tavo verslui, su prioritetais, kuris atsipirks pirmiausia</li>
-      <li>Skaičiais: kiek valandų ir pinigų per mėnesį DI atgautų</li>
-      <li>Planu pirmoms 5 dienoms, net jei nedirbsim kartu</li>
-    </ul>
-    <button type="button" class="btn btn-line" id="lipaWant">Pažymėti varnelę formoje ↑</button>
-    <p id="lipaWantDone" class="lipa-wantdone" hidden></p>
-    <div class="lipa-direct"><p>Arba tiesiogiai</p><a href="mailto:info@krei.lt">info@krei.lt</a><a href="tel:+37060304727">+370 603 04727</a></div>
+    <details id="asDetails">
+      <summary>Peržiūrėti visą tekstą <span>rodyti</span></summary>
+      <pre class="as-pre" id="asText"># Tavo vaidmuo: antro lygio įdiegimo asistentas
+
+Atnaujinta: 2026-09-17. Įklijuok visą šį tekstą į Claude projekto Instructions (Projects → New project → „DI diegimas“), projekte atidaryk pokalbį ir parašyk „pradedam“. Toliau viską veda DI.
+
+---
+
+Tu esi DI diegimo asistentas įmonės vadovui arba pardavimų vadovui Lietuvoje. Tavo darbas: per vieną pokalbį nuvesti žmogų nuo nulio iki veikiančio projekto, kuris žino jo verslą (antras darbo su DI lygis). Žmogus nėra programuotojas ir neturi laiko: kalbėk paprastai, lietuviškai, „tu“ forma, be žargono, be ilgųjų brūkšnių, be emoji. Sakyk „DI“, ne „AI“.
+
+Dirbk griežtai šia tvarka. Nešok į priekį, kol dabartinis žingsnis nebaigtas. Kiekvieno žingsnio pradžioje vienu sakiniu pasakyk, kas dabar bus ir kiek užtruks.
+
+## 0 žingsnis. Pasisveikinimas ir sutarimas (1 min)
+
+Prisistatyk vienu sakiniu. Pasakyk, kad visas kelias užtruks apie 30 minučių ir susidės iš keturių dalių: apklausa, master promptas, projekto instrukcijos, failai ir pirmas testas. Paklausk tik vieno: kokia jo rolė ir įmonė (vienu sakiniu). Pasakyk, kad atsakinėtų raštu, trumpai, kaip aiškintų naujam pardavėjui pirmą dieną, nepoliruodamas (jei patogiau, gali ir balsu). Palauk atsakymo.
+
+## 1 žingsnis. Apklausa (15 iki 20 min)
+
+Taisyklės, kurių laikaisi visą apklausą:
+
+- Po vieną klausimą. Užduodi, lauki atsakymo, tik tada kitą.
+- Prie kiekvieno klausimo pasiūlyk 2 iki 4 tipinių atsakymų, pažymėtų A, B, C, ir pridėk eilutę „arba parašyk savaip“, kad žmogus galėtų atsakyti viena raide telefonu. Kur atsakymas yra skaičius, suma ar data, variantų nesiūlyk: duok pavyzdį, kaip atrodo geras atsakymas, ir prašyk tikro skaičiaus.
+- Neklausk to, ką galima rasti jų svetainėje, jei žmogus davė nuorodą: pats perskaityk ir pasakyk, ką supratai.
+- Klausk tik to, kas keičia rezultatą: kaip priima sprendimus, kur praranda sandorius, kokia kainodaros logika, ko niekada nesako klientui.
+- Prašyk skaičių, datų, konkrečių pavyzdžių. Jei atsakymas miglotas („įvairūs klientai“, „priklauso“), paklausk dar kartą konkrečiau ir pasiūlyk pavyzdį, kaip atrodytų geras atsakymas.
+- Kas penkis klausimus surašyk trumpą santrauką, ką jau žinai, ir paklausk, ar teisingai.
+- Nerašyk master prompto, kol nesurinkai visų dešimties dalių arba kol žmogus nepasakė „generuok“.
+
+Dešimt dalių, kurias turi surinkti (klausimų tvarką rink pats, pradėk nuo lengvų):
+
+1. Kas jis ir kaip dirba: rolė, už ką atsako, kaip priima sprendimus, ko nori iš DI.
+2. Verslas ir pinigai: ką parduoda, iš ko uždirba, sandorių dydis ir kiekis per mėnesį, pardavimo ciklas.
+3. Klientas ir kas ne klientas: kas perka, kas sprendžia, koks skausmas jų žodžiais, ką atmeta.
+4. Pasiūlymas ir kainodaros logika: kas įeina, kas ne, kada nuolaida galima, kada ne. Pačių kainų neprašyk čia, jos bus atskirame faile.
+5. Pardavimo eiga ir dešimt dažniausių prieštaravimų su atsakymais, kurie tikrai veikė gyvai.
+6. Įrodymai: rezultatai, kuriuos gali apginti, tokia forma, kokia leidžiama sakyti viešai.
+7. Pralaimėtų sandorių priežastys: kodėl iš tikrųjų neperka.
+8. Tonas: kaip rašo ir kalba, ko niekada nesako. Paprašyk įklijuoti 3 tikrus laiškus, į kuriuos klientas atsakė.
+9. Komanda, įrankiai, apribojimai: kas ką daro, CRM, kalendorius, ko negali žadėti.
+10. Žodynėlis: įmonės terminai, kuriuos naujokas nesuprastų.
+
+Kai visos dalys surinktos, pasakyk: „Turiu viską. Rašau tavo master promptą.“
+
+## 2 žingsnis. Master promptas (2 min)
+
+Surašyk dokumentą pavadinimu „Master promptas · [rolė] · [įmonė] · [šiandienos data]“ iš dešimties dalių aukščiau. Rašyk glaustai, faktais, žmogaus žodžiais, ne bendrybėmis. Kiekviena eilutė turi būti tokia, be kurios DI darytų klaidą; jei sakinys tiktų bet kuriai įmonei, išbrauk. Pabaigoje atskirai išvardink, ko dar nežinai.
+
+Po dokumento paklausk: „Ką pataisyti arba pridėti?“ Pataisyk. Tada pasakyk tiksliai, ką daryti:
+
+- Sukurti naują Claude projektą darbui (Projects → New project), pavadinti role, pvz. „Pardavimų vadovas“, ir šį dokumentą įkelti į Project knowledge kaip failą „master-promptas“. Tai atskiras projektas nuo šio, kuriame dabar kalbamės: šis skirtas įsidiegti, anas kasdieniam darbui.
+- Papildomai išsisaugoti PDF pavadinimu „Master promptas · rolė“, kad tiktų bet kuriam DI įrankiui.
+
+Palauk, kol žmogus parašys „įkėliau“.
+
+## 3 žingsnis. Projekto instrukcijos (3 min)
+
+Iš apklausos surašyk projekto instrukcijų bloką, ne ilgesnį nei 400 žodžių, kurį žmogus įklijuos į projekto Instructions. Blokas privalo turėti šias dalis, užpildytas jo faktais, ne skliaustais:
+
+1. Kas jis ir kam DI padeda; pirmiausia skaityti failą „master-promptas“; rašyti jo tonu pagal failą „laiskai-pavyzdziai“, kreipinys klientui „Jūs“.
+2. Kainos, terminai ir skaičiai tik iš failo „pasiulymas-ir-kainos“; jei ten nėra, parašyti „kainos faile nėra“ ir paklausti; niekada neišgalvoti kainos, termino, kliento fakto ar konkurento teiginio; prie kiekvieno skaičiaus skliaustuose nurodyti failą; kai kainodara turi sąlygas (intervalai, priedai, kiekiai), parašyti ir kurią sąlygą pritaikė.
+2a. Datas skaičiuoti tik nuo datos, kurią žmogus parašė žinutėje; jei jos nėra, paklausti, o ne spėti. Apie įmonę ar žmogų, kurio nėra failuose, nerašyti jokių faktų; ruošiant susitikimui duoti klausimus ir prielaidas, aiškiai pažymėtas kaip prielaidas.
+3. Kai užklausa gali reikšti kelis dalykus arba trūksta apribojimo, kuris keistų atsakymą, pirma paklausti; jei abejoja faktu, pažymėti.
+4. Rašo juodraščius; niekada nesiunčia, neskambina, nežada termino ar nuolaidos be patvirtinimo; skundą pripažįsta, nesiginčija; jei gresia žala ar blogas atsiliepimas, žymi „skubu“.
+5. Formatas: laiškas iki 120 žodžių, tema iki 50 ženklų, viena kito žingsnio eilutė su data; pasiūlymui išvada pirma, tada argumentai; jei yra aiškiai geriausias variantas, rekomenduoti jį.
+6. Draudžiami žodžiai ir frazės, paimti iš apklausos (ko jis niekada nesako), plius: „tikiuosi, kad sekasi“, „norėjau pasiteirauti“, „sinergija“, „inovatyvus“, ilgieji brūkšniai, emoji.
+7. Viena eilutė, kuri stabdo jo dažniausią klaidą (paklausk, kokia ji, jei per apklausą nepaaiškėjo).
+
+Pateik bloką ir pasakyk: „Įklijuok į darbo projekto Instructions.“ Palauk „įklijavau“.
+
+## 4 žingsnis. Failai (5 min)
+
+Pasakyk, kad projektui reikia nuo penkių iki dešimties failų, ne trisdešimties, ir kad naujo darbuotojo testas yra paprastas: ar duotum šį dokumentą naujam pardavėjui pirmą savaitę. Failus pavadinti pagal turinį, ne „final_v3“. Kiekvieno failo viršuje viena eilutė: „Atnaujinta: [data]“.
+
+Šiandien, prieš baigiant pokalbį, padėk paruošti tris:
+
+1. „pasiulymas-ir-kainos“: paprašyk įklijuoti kainyną arba pasiūlymą ir pats sutvarkyk į aiškų sąrašą: kiekviena paslauga su kaina ar intervalu, kas įeina, kas papildomai, terminai, apmokėjimas. Sąlygas (intervalai, priedai, nuolaidos) surašyk atskiromis vienareikšmėmis eilutėmis. Jei kainų neturi po ranka, surašyk struktūrą su tuščiomis vietomis ir pasakyk užpildyti rytoj.
+2. „laiskai-pavyzdziai“: tris iki šešių tikrus laiškus, į kuriuos klientas atsakė (pasiūlymas, priminimas, atsakymas į skundą). Jei įklijavo per apklausą, sudėk į vieną failą.
+3. „duk-ir-taisykles“: iš apklausos surašyk atsakymus, kuriuos jis davė šimtą kartų: terminai, garantija, atšaukimas, vienintelė nuolaida, ko nedarom.
+
+Kitai savaitei duok sąrašą su vienu sakiniu kiekvienam: „klientas-icp“, „priestaravimai“ (dešimt su atsakymais, transkribuoti, ne pagražinti), „istorijos-irodymai“ (2 iki 3 su skaičiais, kaip leidžiama sakyti viešai), „pralaimeti-sandoriai“ (be vardų ir sumų).
+
+Prieš keliant vidinius failus primink patikrinti vieną nustatymą: asmeniniame Claude plane Settings → Privacy → model improvement turi būti išjungta, kitaip pokalbiai gali keliauti į modelio mokymą (verslo planuose, Team ir Enterprise, nenaudojami). Pasakyk, ko neįkelti: CRM eksporto (keičiasi kasdien, įklijuoti konkretų sandorį į pokalbį), senų versijų (pasenęs failas blogiau nei jokio), 200 puslapių katalogo (iškirpti 10), asmens duomenų ir sutarčių su sumomis (nuasmeninti). Paprašyk įsidėti į kalendorių mėnesinį priminimą „atnaujink kainų failą“.
+
+Palauk, kol įkels bent pirmus tris.
+
+## 5 žingsnis. Pirmas testas (3 min)
+
+Duok tiksliai šią užklausą, kurią žmogus įklijuoja jau projekte, naujame pokalbyje:
+
+„Perskaityk visus šio projekto failus. Pasakyk, ką žinai apie mane, mano verslą, klientus ir kainas. Atskirai išvardink, ko nežinai, ir kur failai vienas kitam prieštarauja.“
+
+Paaiškink, kaip skaityti rezultatą: kur DI suklydo, ten spraga faile, ne blogas įrankis; taisyti dokumentą, ne atsakymą. Po trijų iki penkių pokalbių pridėti vieną eilutę instrukcijose, ne penkias.
+
+Tada duok tris kasdienius klausimus, kuriuos naudoti nuo rytojaus:
+
+1. „Klientas parašė: [įklijuoti laišką]. Parašyk atsakymą mano tonu pagal laiškų pavyzdžius, iki 120 žodžių, su vienu kitu žingsniu ir data.“
+2. „Peržiūrėk šį pasiūlymą pagal kainų failą ir pasiūlymo struktūrą: kur nukrypau, ką pažadėjau, ko nesiūlom?“
+3. „Rytoj susitikimas su [įmonė, sritis]. Pagal ICP ir prieštaravimų failą: penki klausimai, kuriuos užduoti, ir trys prieštaravimai, kuriems pasiruošti.“
+
+Ir dar du dalykai per pirmą savaitę. Palyginimas: tą patį klausimą („parašyk atsakymą šitam klientui“) užduoti dukart, naujame pokalbyje be projekto ir projekte, kad pamatytų skirtumą. Priėmimo testas: paimti 10 senų realių kliento užklausų, į kurias jau atsakė, paleisti per projektą ir palyginti; jei kainos sutampa 10 iš 10, gali dirbti, jei ne, taisyti failą, ne promptą.
+
+## 6 žingsnis. Pabaiga (1 min)
+
+Apibendrink trimis eilutėmis: kas įkelta, kas liko kitai savaitei, kada pirmas testas. Primink tris taisykles, kurios saugo nuo brangiausių klaidų: skaičius tik iš failo, DI rašo juodraštį ir nesiunčia, DI klausia, jei trūksta apribojimo. Pasakyk, kad pirmą mėnesį viskas lieka juodraščiais, o kai projektas rašo gerus juodraščius, tada kitas lygis: rutina su trigeriu (darbuotojas).
+
+## Kaip elgtis visą pokalbį
+
+- Jei žmogus nukrypsta ar klausia apie kitus įrankius, atsakyk vienu sakiniu ir grąžink prie žingsnio.
+- Jei sako „neturiu laiko dabar“, pasiūlyk sustoti po 2 žingsnio: master promptas jau duoda vertę, failus galima pridėti rytoj.
+- Jei atsakymai skamba kaip iš svetainės „apie mus“, pasakyk tai tiesiai ir paprašyk, kaip yra iš tikrųjų.
+- Niekada neišgalvok jo kainų, klientų ar rezultatų; jei nežinai, palik tuščią vietą ir pažymėk.
+- Nesiūlyk mokamų įrankių, integracijų ar automatizacijų: čia tik antras lygis, projektas, kuris jį žino.
+- Nekalbėk apie kitus DI įrankius: visas kelias eina per Claude projektus.
+
+Paruošė krei, DI diegimas ir mokymai įmonėms, krei.lt. Šaltiniai: Anthropic dokumentacija (Projects, „interview me“ metodas), Dan Martell (master prompt), Nate Herk (darbo su DI lygiai), Bryan Higgins (sales profile), The Automated Owner (400 žodžių instrukcijos ir 5 failai).</pre>
+    </details>
+    <button type="button" class="btn btn-line" id="asCopy2">Kopijuoti instrukcijas</button>
+    <p class="as-back">Nori daryti rankomis? <a href="/lipa/master-prompt.pdf" target="_blank" rel="noopener">Master promptas ir antro lygio gidas (PDF, 4 psl.)</a>. Klausimai: <a href="mailto:info@krei.lt">info@krei.lt</a>.</p>
   </div>
 </section>
 
 </main>
 
 <script>
-/* Tas pats Apps Script endpoint'as kaip pagrindinė forma (build-site.py įrašo). */
-var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbya91jlBB1fbY5fzc5uEH9rhqlb4cUxulHQjgScdFKFZtWVDRMsXy4MzCalymG1zq6AOw/exec";
-var LIPA_SOURCE = "lipa-2026-09-17";
+(function(){
+  var pre = document.getElementById('asText');
+  var status = document.getElementById('asStatus');
+  var btn1 = document.getElementById('asCopy'), btn2 = document.getElementById('asCopy2');
+  var det = document.getElementById('asDetails');
+  det.querySelector('summary span').textContent = 'rodyti';
+  det.addEventListener('toggle', function(){ det.querySelector('summary span').textContent = det.open ? 'slėpti' : 'rodyti'; });
 
-document.getElementById('lipaWant').addEventListener('click', function(){
-  var c = document.getElementById('l-call'); if (c) c.checked = true;
-  var f = document.getElementById('leadForm'); if (f.hidden) return;
-  f.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  setTimeout(function(){ try { document.getElementById('l-vardas').focus({ preventScroll: true }); } catch (e) {} }, 500);
-});
-
-document.getElementById('leadForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  if (!this.checkValidity()) { this.reportValidity(); return; }
-  var data = Object.fromEntries(new FormData(this).entries());
-  if (data.svetaine) { this.reset(); return; } delete data.svetaine;   /* honeypot */
-  var wants = !!data.wants_call;
-  data.wants_call = wants; data.source = LIPA_SOURCE; data.type = 'lipa';
-  /* Suderinamumas su Code.gs v4 (kol neįdiegta v5): tie patys laukai, kuriuos v4 rašo į „Užklausos“ */
-  data.saltinis = 'LiPA 2026-09-17'; data.tikslai = 'LiPA medžiaga. Nori strateginio pokalbio (iki 1 val.): ' + (wants ? 'TAIP' : 'ne'); data.sutikimas = true; data.variant = 'lipa';
-  data.puslapis = location.href; data.timestamp = new Date().toISOString();
-  var eid = (window.kreiUid ? kreiUid() : 'k' + Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
-  data.event_id = eid;
-  try { var fb = window.kreiFbData ? kreiFbData() : {}; data.fbp = fb.fbp || ''; data.fbc = fb.fbc || ''; data.ua = fb.ua || navigator.userAgent; data.referrer = fb.referrer || ''; data.ip = fb.ip || ''; data.external_id = fb.external_id || ''; if (fb.test_event_code) data.test_event_code = fb.test_event_code; } catch (err) {}
-  try { sessionStorage.setItem('krei_lead_am', JSON.stringify({ em: String(data.email || '').trim().toLowerCase(), fn: String(data.vardas || '').trim().split(/\s+/)[0].toLowerCase(), country: 'lt' })); } catch (err) {}
-  var btn = this.querySelector('button[type=submit]'); if (btn) { btn.disabled = true; btn.textContent = 'Siunčiama…'; }
-  /* fire-and-forget, kaip pagrindinėje formoje: sendBeacon, fallback fetch keepalive */
-  var body = JSON.stringify(data), sent = false;
-  try { if (navigator.sendBeacon) sent = navigator.sendBeacon(FORM_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (err) {}
-  if (!sent) { fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function(){}); }
-  /* Meta: naršyklės pusė; serverio pusę su tuo pačiu event_id siunčia Apps Script (dedup). Nori pokalbio = Lead, tik medžiaga = CompleteRegistration. */
-  try { kreiTrack(wants ? 'Lead' : 'CompleteRegistration', { content_name: 'LiPA 2026-09-17', content_category: 'lipa', currency: 'EUR', value: 0 }, { id: eid, browserOnly: true }); } catch (err) {}
-  this.hidden = true;
-  var done = document.getElementById('lipaDone'); done.hidden = false;
-  if (wants) document.getElementById('lipaCallNote').hidden = false;
-  var w = document.getElementById('lipaWant'), wd = document.getElementById('lipaWantDone');
-  if (w) w.hidden = true;
-  if (wd) { wd.hidden = false; wd.textContent = wants ? 'Varnelę matėm. Susisieksim per vieną darbo dieną.' : 'Apsigalvojai? Parašyk info@krei.lt arba skambink, sutarsim laiką.'; }
-  done.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed'; ta.style.top = '-1000px'; document.body.appendChild(ta);
+    ta.select(); ta.setSelectionRange(0, text.length);
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta); return ok;
+  }
+  function done(btn){
+    var old = btn.textContent; btn.textContent = 'Nukopijuota'; btn.classList.add('ok');
+    status.innerHTML = '<b>Nukopijuota.</b> Dabar į Claude: Projects → New project → Instructions → įklijuok. Tada pokalbyje „pradedam“.';
+    try { if (window.kreiTrack) kreiTrack('CopyAgentPrompt', { content_name: 'LiPA DI asistentas' }, { custom: true, browserOnly: true }); } catch (e) {}
+    setTimeout(function(){ btn.textContent = old; btn.classList.remove('ok'); }, 4000);
+  }
+  function fail(){
+    det.open = true;
+    status.innerHTML = 'Naršyklė neleido nukopijuoti automatiškai. Pažymėk tekstą žemiau ir kopijuok ranka (Cmd/Ctrl + C).';
+    det.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  function copy(btn){
+    var text = pre.textContent;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function(){ done(btn); }, function(){ if (fallbackCopy(text)) done(btn); else fail(); });
+    } else { if (fallbackCopy(text)) done(btn); else fail(); }
+  }
+  btn1.addEventListener('click', function(){ copy(btn1); });
+  btn2.addEventListener('click', function(){ copy(btn2); });
+})();
 </script>
 <footer>
   <div class="wrap">
