@@ -509,8 +509,10 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   if (/^AW-/.test(AW_ID)) { gtag('js', new Date()); gtag('config', AW_ID); }
   function loadGtag(){ if (window.__kreiGtagLoaded || !/^AW-/.test(AW_ID)) return; window.__kreiGtagLoaded = true;
     var g=document.createElement('script'); g.async=true; g.src='https://www.googletagmanager.com/gtag/js?id='+AW_ID; document.head.appendChild(g); }
-  if (document.readyState === 'complete') setTimeout(loadGtag, 0);
-  else { window.addEventListener('load', function(){ setTimeout(loadGtag, 0); }); setTimeout(loadGtag, 4000); }
+  /* gtag.js keliamas IŠKART (async, neblokuoja pirmo atvaizdavimo): reikalinga Google tag'o detekcijai
+     ("website is missing a Google tag" atsiranda, kai skriptas deferrintas už window.load) ir patikimai
+     /aciu.html page-load konversijai (deferrintas 4 s krovimas pameta konversiją, jei žmogus greitai išeina). */
+  loadGtag();
 
   var am = { external_id: extId() };
   try { var lead = JSON.parse(sessionStorage.getItem('krei_lead_am') || 'null'); if (lead && /aciu/.test(location.pathname)) { for (var k in lead) if (lead[k]) am[k] = lead[k]; } } catch (e) {}
