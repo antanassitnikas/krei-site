@@ -673,6 +673,18 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   window.kreiFbData = function(){ return { fbp: cookie('_fbp'), fbc: fbc(), ua: navigator.userAgent, url: location.href, referrer: document.referrer || '', ip: IP, external_id: extId(), test_event_code: testCode() }; };
   window.kreiUid = uid;
 
+  /* Istorijų atribucija (v6, 2026-09-19): „ar istorijos parduoda?" -> localStorage krei_ist (90 d.):
+     seen (pirmas vizitas), views (vizitų sk.), cases (peržiūrėti atvejai), cta (paskutinis „Strateginis pokalbis" paspaudimas istorijose).
+     Forma landinge prideda: mate_istorijas (matė bet kada) + istorijos_kelias (atėjo į formą TIESIAI iš istorijų: CTA <30 min arba referrer /istorijos). */
+  function ist(){ try { var o = JSON.parse(localStorage.getItem('krei_ist') || 'null') || {}; if (o.seen && Date.now() - o.seen > 90 * 864e5) o = {}; return o; } catch (e) { return {}; } }
+  function istSave(o){ try { localStorage.setItem('krei_ist', JSON.stringify(o)); } catch (e) {} }
+  window.kreiIstorijos = function(){
+    var o = ist(), now = Date.now();
+    var viaCta = !!o.cta && now - o.cta < 30 * 60e3, viaRef = /krei\.lt\/istorijos/.test(document.referrer || '');
+    return { mate: !!o.seen, kada: o.seen ? new Date(o.seen).toISOString() : '', vizitai: o.views || 0, atvejai: (o.cases || []).join(', '),
+      kelias: (viaCta || viaRef), kelias_kaip: viaCta ? 'cta' : (viaRef ? 'referrer' : '') };
+  };
+
   /* Meta Pixel base code */
   /* Stub iškart (fbq() kvietimai eina į eilę), o pats fbevents.js (~190 KB) keliamas tik po window.load,
      kad neblokuotų pirmo atvaizdavimo. Eilė išsišauna, kai skriptas užsikrauna. */
@@ -707,10 +719,24 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     var path = location.pathname;
 
     /* ViewContent: istorijos puslapis + case rail pasirinkimas pagrindiniame */
-    if (/istorijos/.test(path)) kreiTrack('ViewContent', { content_name: 'Istorijos', content_category: 'case_study', content_type: 'page' });
+    var onIst = /istorijos/.test(path);
+    if (onIst) {
+      kreiTrack('ViewContent', { content_name: 'Istorijos', content_category: 'case_study', content_type: 'page' });
+      var o = ist(); o.seen = o.seen || Date.now(); o.views = (o.views || 0) + 1; o.last = Date.now(); istSave(o);
+    }
     document.addEventListener('click', function(e){
       var b = e.target.closest && e.target.closest('.case-rail button');
-      if (b) kreiTrack('ViewContent', { content_name: (b.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80), content_category: 'case_study', content_type: 'case' });
+      if (!b) return;
+      var name = (b.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+      kreiTrack('ViewContent', { content_name: name, content_category: 'case_study', content_type: 'case' });
+      if (onIst) { var o = ist(); o.cases = o.cases || []; if (o.cases.indexOf(name) < 0 && o.cases.length < 12) o.cases.push(name); istSave(o); }
+    });
+    /* IstorijosCTA (custom): „Strateginis pokalbis" paspaustas istorijų puslapyje -> žmogus eina į formą IŠ istorijų */
+    if (onIst) document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href*="#pokalbis"]');
+      if (!a) return;
+      var o = ist(); o.cta = Date.now(); istSave(o);
+      kreiTrack('IstorijosCTA', { content_name: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60), content_category: 'case_study', cases_viewed: (o.cases || []).length }, { custom: true });
     });
 
     /* Contact: telefono / el. pasto paspaudimai */

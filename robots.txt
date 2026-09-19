@@ -3,5 +3,4 @@ Allow: /
 Disallow: /teisine.html
 Disallow: /aciu.html
 Disallow: /lipa/
-Disallow: /pasiulymas/
 Sitemap: https://krei.lt/sitemap.xml

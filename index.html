@@ -673,6 +673,18 @@ body{padding-bottom:env(safe-area-inset-bottom)}
   window.kreiFbData = function(){ return { fbp: cookie('_fbp'), fbc: fbc(), ua: navigator.userAgent, url: location.href, referrer: document.referrer || '', ip: IP, external_id: extId(), test_event_code: testCode() }; };
   window.kreiUid = uid;
 
+  /* Istorijų atribucija (v6, 2026-09-19): „ar istorijos parduoda?" -> localStorage krei_ist (90 d.):
+     seen (pirmas vizitas), views (vizitų sk.), cases (peržiūrėti atvejai), cta (paskutinis „Strateginis pokalbis" paspaudimas istorijose).
+     Forma landinge prideda: mate_istorijas (matė bet kada) + istorijos_kelias (atėjo į formą TIESIAI iš istorijų: CTA <30 min arba referrer /istorijos). */
+  function ist(){ try { var o = JSON.parse(localStorage.getItem('krei_ist') || 'null') || {}; if (o.seen && Date.now() - o.seen > 90 * 864e5) o = {}; return o; } catch (e) { return {}; } }
+  function istSave(o){ try { localStorage.setItem('krei_ist', JSON.stringify(o)); } catch (e) {} }
+  window.kreiIstorijos = function(){
+    var o = ist(), now = Date.now();
+    var viaCta = !!o.cta && now - o.cta < 30 * 60e3, viaRef = /krei\.lt\/istorijos/.test(document.referrer || '');
+    return { mate: !!o.seen, kada: o.seen ? new Date(o.seen).toISOString() : '', vizitai: o.views || 0, atvejai: (o.cases || []).join(', '),
+      kelias: (viaCta || viaRef), kelias_kaip: viaCta ? 'cta' : (viaRef ? 'referrer' : '') };
+  };
+
   /* Meta Pixel base code */
   /* Stub iškart (fbq() kvietimai eina į eilę), o pats fbevents.js (~190 KB) keliamas tik po window.load,
      kad neblokuotų pirmo atvaizdavimo. Eilė išsišauna, kai skriptas užsikrauna. */
@@ -707,10 +719,24 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     var path = location.pathname;
 
     /* ViewContent: istorijos puslapis + case rail pasirinkimas pagrindiniame */
-    if (/istorijos/.test(path)) kreiTrack('ViewContent', { content_name: 'Istorijos', content_category: 'case_study', content_type: 'page' });
+    var onIst = /istorijos/.test(path);
+    if (onIst) {
+      kreiTrack('ViewContent', { content_name: 'Istorijos', content_category: 'case_study', content_type: 'page' });
+      var o = ist(); o.seen = o.seen || Date.now(); o.views = (o.views || 0) + 1; o.last = Date.now(); istSave(o);
+    }
     document.addEventListener('click', function(e){
       var b = e.target.closest && e.target.closest('.case-rail button');
-      if (b) kreiTrack('ViewContent', { content_name: (b.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80), content_category: 'case_study', content_type: 'case' });
+      if (!b) return;
+      var name = (b.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+      kreiTrack('ViewContent', { content_name: name, content_category: 'case_study', content_type: 'case' });
+      if (onIst) { var o = ist(); o.cases = o.cases || []; if (o.cases.indexOf(name) < 0 && o.cases.length < 12) o.cases.push(name); istSave(o); }
+    });
+    /* IstorijosCTA (custom): „Strateginis pokalbis" paspaustas istorijų puslapyje -> žmogus eina į formą IŠ istorijų */
+    if (onIst) document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href*="#pokalbis"]');
+      if (!a) return;
+      var o = ist(); o.cta = Date.now(); istSave(o);
+      kreiTrack('IstorijosCTA', { content_name: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60), content_category: 'case_study', cases_viewed: (o.cases || []).length }, { custom: true });
     });
 
     /* Contact: telefono / el. pasto paspaudimai */
@@ -1081,6 +1107,8 @@ document.getElementById('leadForm').addEventListener('submit', async function(e)
   var eid = (window.kreiUid ? kreiUid() : 'k'+Date.now().toString(36)+Math.random().toString(36).slice(2,10));
   data.event_id = eid; try{ var at = window.kreiAttr ? kreiAttr() : {}; ['gclid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){ if(at[k]) data[k] = at[k]; }); if(at.landing) data.landing = at.landing; }catch(e){} /* Google Ads / UTM atribucija -> Sheet */
   try{ var fb = window.kreiFbData ? kreiFbData() : {}; data.fbp = fb.fbp||''; data.fbc = fb.fbc||''; data.ua = fb.ua||navigator.userAgent; data.referrer = fb.referrer||''; data.ip = fb.ip||''; data.external_id = fb.external_id||''; if(fb.test_event_code) data.test_event_code = fb.test_event_code; }catch(e){}
+  /* Istorijų atribucija (2026-09-19): ar leadas matė /istorijos ir ar į formą atėjo tiesiai iš jų -> Sheet stulpeliai X–AB */
+  try{ var ist = window.kreiIstorijos ? kreiIstorijos() : null; if(ist){ data.mate_istorijas = ist.mate ? 'TAIP' : 'NE'; data.istorijos_kelias = ist.kelias ? 'TAIP' : 'NE'; data.istorijos_kelias_kaip = ist.kelias_kaip||''; data.istorijos_kada = ist.kada||''; data.istorijos_vizitai = ist.vizitai||0; data.istorijos_atvejai = ist.atvejai||''; } }catch(e){}
   try{ var nm = String(data.vardas||'').trim().split(/\s+/); sessionStorage.setItem('krei_lead_am', JSON.stringify({ em: String(data.email||'').trim().toLowerCase(), ph: (function(d){ if(d.length===9&&d.charAt(0)==='8') d='370'+d.slice(1); if(d.length===8&&d.charAt(0)==='6') d='370'+d; return d; })(String(data.telefonas||'').replace(/\D/g,'')), fn: (nm[0]||'').toLowerCase(), ln: nm.slice(1).join(' ').toLowerCase(), country: 'lt' })); }catch(e){}
   try{
     var msg = document.getElementById('formMsg');
