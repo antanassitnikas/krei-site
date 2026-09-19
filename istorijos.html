@@ -546,7 +546,7 @@ body{padding-bottom:env(safe-area-inset-bottom)}
     document.addEventListener('click', function(e){
       var b = e.target.closest && e.target.closest('.case-rail button');
       if (!b) return;
-      var name = (b.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+      var name = (b.textContent || '').replace(/\s+/g, ' ').replace(/^\s*\d+\s*/, '').replace(/[→›»]\s*$/, '').trim().slice(0, 80); /* „02Procesų automatizavimas→" -> „Procesų automatizavimas" */
       kreiTrack('ViewContent', { content_name: name, content_category: 'case_study', content_type: 'case' });
       if (onIst) { var o = ist(); o.cases = o.cases || []; if (o.cases.indexOf(name) < 0 && o.cases.length < 12) o.cases.push(name); istSave(o); }
     });
