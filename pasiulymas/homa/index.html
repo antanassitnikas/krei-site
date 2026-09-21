@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>krei × HOMA pasiūlymas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#FBFAF8; --panel:#F5EEE7; --tint:#F4E7DF;
+    --ink:#191411; --ink-soft:#3B322C; --muted:#78716C; --faint:#A8A29E;
+    --hairline:#E7E3DD; --hairline-strong:#D6D3D0;
+    --ember:#C15F3C; --ember-bright:#D97757; --ember-deep:#9A4A2E;
+    --good:#3F6B4C;
+    --shadow:0 1px 2px rgba(25,20,17,.04), 0 8px 30px rgba(25,20,17,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0A0908; --panel:#151210; --tint:#241A15;
+      --ink:#FBFAF8; --ink-soft:#E7E1DA; --muted:#A8A29E; --faint:#78716C;
+      --hairline:#2A241F; --hairline-strong:#3A322B;
+      --ember:#D97757; --ember-bright:#E08A6C; --ember-deep:#C15F3C;
+      --good:#7FB08C;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 40px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0A0908; --panel:#151210; --tint:#241A15;
+    --ink:#FBFAF8; --ink-soft:#E7E1DA; --muted:#A8A29E; --faint:#78716C;
+    --hairline:#2A241F; --hairline-strong:#3A322B;
+    --ember:#D97757; --ember-bright:#E08A6C; --ember-deep:#C15F3C;
+    --good:#7FB08C;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 40px rgba(0,0,0,.5);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:840px;margin:0 auto;padding:0 28px}
+  img{max-width:100%}
+  a{color:var(--ember-deep);text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:2px}
+
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin:0}
+  h2{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(25px,3.6vw,34px);line-height:1.12;letter-spacing:-.02em;margin:0;text-wrap:balance}
+  h2 em{font-style:italic;color:var(--ember)}
+  h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:19px;letter-spacing:-.01em;margin:0}
+  p{margin:0}
+
+  .topbar{border-bottom:1px solid var(--hairline)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:baseline;gap:2px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:23px;letter-spacing:-.01em}
+  .brand .i{color:var(--ember)}
+  .topbar .kind{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  section{padding:50px 0;border-top:1px solid var(--hairline)}
+  section:first-of-type{border-top:0}
+  .lede{font-size:clamp(18px,2.2vw,21px);line-height:1.55;color:var(--ink-soft);max-width:62ch;margin:18px 0 0}
+  .body{margin:16px 0 0;color:var(--ink-soft);max-width:64ch}
+
+  .hero{padding:60px 0 42px}
+  .hero h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(32px,5.6vw,52px);line-height:1.05;letter-spacing:-.02em;margin:18px 0 0;text-wrap:balance}
+  .hero h1 em{font-style:italic;color:var(--ember)}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:32px;padding-top:22px;border-top:1px solid var(--hairline)}
+  .meta div{display:flex;flex-direction:column;gap:2px}
+  .meta .k{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .meta .v{font-size:15.5px;color:var(--ink-soft);font-weight:500}
+
+  .layers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:14px;overflow:hidden;margin:24px 0 0}
+  @media(max-width:640px){.layers{grid-template-columns:1fr}}
+  .layers .s{background:var(--paper);padding:20px 20px;display:flex;flex-direction:column;gap:6px}
+  .layers .s .h{display:flex;align-items:baseline;gap:10px}
+  .layers .s .num{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:22px;color:var(--ember)}
+  .layers .s h3{font-size:16.5px}
+  .layers .s p{font-size:14px;color:var(--muted);line-height:1.45}
+
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:14px;overflow:hidden;margin:24px 0 0}
+  @media(max-width:560px){.metrics{grid-template-columns:1fr}}
+  .metric{background:var(--paper);padding:20px 18px;display:flex;flex-direction:column;gap:6px}
+  .metric .n{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(23px,3.6vw,29px);line-height:1;letter-spacing:-.02em;color:var(--ember);font-variant-numeric:tabular-nums}
+  .metric .l{font-size:13.5px;color:var(--muted);line-height:1.35}
+
+  .domains{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 0}
+  @media(max-width:680px){.domains{grid-template-columns:1fr}}
+  .domain{background:var(--panel);border:1px solid var(--hairline);border-radius:14px;padding:22px 22px 20px}
+  .domain .dh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:14px}
+  .domain h3{color:var(--ink);font-size:17.5px}
+  .domain .tag{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);white-space:nowrap}
+  .domain ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+  .domain li{position:relative;padding-left:20px;font-size:15px;color:var(--ink-soft);line-height:1.4}
+  .domain li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--ember-bright)}
+
+  .days{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 0}
+  @media(max-width:680px){.days{grid-template-columns:1fr}}
+  .day{background:var(--panel);border:1px solid var(--hairline);border-radius:14px;padding:22px}
+  .day .dl{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin-bottom:4px}
+  .day h3{margin-bottom:14px}
+  .day h5{margin:14px 0 8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .day ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+  .day li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+  .day li::before{content:"›";position:absolute;left:2px;top:-1px;color:var(--ember-bright);font-weight:700;font-size:18px}
+  .day0{margin:16px 0 0;padding:18px 22px;background:var(--tint);border:1px solid var(--hairline);border-radius:14px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+  @media(max-width:560px){.day0{grid-template-columns:1fr}}
+  .day0 .dl{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);white-space:nowrap;padding-top:3px}
+  .day0 p{font-size:15px;color:var(--ink-soft);line-height:1.5}
+
+  .learn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0 0}
+  @media(max-width:680px){.learn{grid-template-columns:1fr}}
+  .lgroup{background:var(--panel);border:1px solid var(--hairline);border-radius:14px;padding:20px 22px}
+  .lgroup h4{margin:0 0 12px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:16px;color:var(--ink)}
+  .lgroup ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+  .lgroup li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+  .lgroup li .ck{position:absolute;left:0;top:0;color:var(--good);font-weight:700}
+
+  .flow{margin:24px 0 0;padding:22px 24px;background:var(--panel);border:1px solid var(--hairline);border-radius:14px}
+  .flow h4{margin:0 0 12px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .flow ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;counter-reset:st}
+  @media(max-width:600px){.flow ol{grid-template-columns:1fr}}
+  .flow li{counter-increment:st;position:relative;padding-left:30px;font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+  .flow li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:1px;font-size:11.5px;font-weight:600;letter-spacing:.06em;color:var(--ember)}
+  .flow .gate{margin-top:14px;padding-top:12px;border-top:1px solid var(--hairline-strong);font-size:14px;color:var(--muted)}
+  .flow .gate b{color:var(--ink-soft)}
+
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:14px;overflow:hidden;margin:24px 0 0}
+  @media(max-width:640px){.strip{grid-template-columns:1fr}}
+  .strip .s{background:var(--paper);padding:20px 20px;display:flex;flex-direction:column;gap:6px}
+  .strip .s .h{display:flex;align-items:baseline;gap:10px}
+  .strip .s .num{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:22px;color:var(--ember)}
+  .strip .s h3{font-size:16.5px}
+  .strip .s p{font-size:14px;color:var(--muted);line-height:1.45}
+  .strip .s .when{margin-top:2px;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+
+  .deliver{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;margin:22px 0 0}
+  @media(max-width:600px){.deliver{grid-template-columns:1fr}}
+  .deliver .d{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:11px 0;border-bottom:1px solid var(--hairline)}
+  .deliver .d .ck{color:var(--good);font-weight:700;font-size:16px;line-height:1.5}
+  .deliver .d .dt{font-size:15.5px;color:var(--ink-soft)}
+  .deliver .d .dt b{color:var(--ink);font-weight:600}
+
+  .guar{background:var(--tint);border:1px solid var(--hairline-strong);border-radius:16px;padding:28px 30px 24px;margin:24px 0 0}
+  .guar h3{font-size:22px;color:var(--ink);margin-bottom:14px}
+  .guar .seq{display:flex;flex-direction:column;gap:12px}
+  .guar .seq div{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+  .guar .seq .d{font-family:'Fraunces',Georgia,serif;font-weight:600;color:var(--ember);font-size:15px;white-space:nowrap;min-width:52px;padding-top:1px}
+  .guar .seq .t{color:var(--ink-soft);font-size:15.5px}
+  .guar .cond{margin-top:16px;padding-top:14px;border-top:1px solid var(--hairline-strong);font-size:14.5px;color:var(--muted)}
+  .guar .cond b{color:var(--ink-soft)}
+
+  .pricebox{background:#201A15;border:1px solid #33291F;border-radius:18px;padding:32px;margin:24px 0 0}
+  .pricebox .stack{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+  .pricebox .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:15.5px;color:#E4DED6}
+  .pricebox .row .rv{font-variant-numeric:tabular-nums;white-space:nowrap;color:#FAF6F1;font-weight:500}
+  .pricebox .row.alt{padding-top:12px;border-top:1px dashed rgba(255,255,255,.14)}
+  .pricebox .row.alt span:first-child{color:#C9C1B8}
+  .pricebox .final{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18)}
+  .pricebox .final .fl{font-family:'Fraunces',Georgia,serif;font-size:19px;font-weight:500;color:#FBFAF8}
+  .pricebox .final .fl small{display:block;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;color:#B4ABA2;margin-top:4px}
+  .pricebox .final .fv{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,42px);letter-spacing:-.02em;color:var(--ember-bright);font-variant-numeric:tabular-nums;line-height:1}
+  .pricebox .terms{margin-top:15px;font-size:13.5px;color:#C2BAB2;line-height:1.5}
+
+  .faq{margin:22px 0 0}
+  details{border:1px solid var(--hairline);border-radius:12px;background:var(--panel);overflow:hidden}
+  details+details{margin-top:10px}
+  summary{cursor:pointer;padding:17px 20px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:16.5px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-weight:400;font-size:22px;color:var(--ember);flex:0 0 auto;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details .ans{padding:0 20px 18px;color:var(--ink-soft);font-size:15.5px;line-height:1.6}
+  summary:focus-visible{outline:2px solid var(--ember);outline-offset:-2px;border-radius:10px}
+
+  .next{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:14px;overflow:hidden;margin:24px 0 0}
+  @media(max-width:680px){.next{grid-template-columns:1fr 1fr}}
+  .next .n{background:var(--paper);padding:20px 18px;display:flex;flex-direction:column;gap:8px}
+  .next .n .s{font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--ember)}
+  .next .n .txt{font-size:14.5px;color:var(--ink-soft);line-height:1.4}
+  .close{margin-top:24px;font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(19px,2.6vw,23px);line-height:1.4;color:var(--ink);max-width:56ch}
+
+  footer{border-top:1px solid var(--hairline);padding:32px 0 60px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;align-items:center}
+  footer .brand{font-size:18px}
+  .note{font-size:12.5px;color:var(--faint);margin-top:12px;line-height:1.5}
+
+  @media print{
+    section{padding:24px 0;break-inside:avoid}
+    .domain,.day,.lgroup,.flow,.guar,.pricebox,details{break-inside:avoid}
+    details{display:block}
+    details:not([open]) .ans{display:block}
+    summary::after{display:none}
+    .pricebox{background:var(--panel);border:1px solid var(--hairline-strong)}
+    .pricebox .row,.pricebox .terms,.pricebox .final .fl small{color:var(--muted)}
+    .pricebox .row .rv,.pricebox .final .fl{color:var(--ink)}
+    .pricebox .final .fv{color:var(--ember-deep)}
+  }
+  @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">kre<span class="i">i</span></div>
+    <div class="kind">Pasiūlymas · Konfidencialu</div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">DI diegimas ir mokymai · HOMA</p>
+    <h1>Nuo užklausos iki susitikimo be rankinio darbo, <em>ir DI darbuotojas kiekvienoje Homa rolėje.</em></h1>
+    <p class="lede">Dvi intensyvios dienos su visa komanda: rinkodara, pardavimai, analitika, dizainas, klientų aptarnavimas ir skambučių centras. Pirmą dieną kiekviena rolė pasistato savo DI darbuotoją ant savo tikrų darbų. Antrą dieną kartu paleidžiame bandomąjį leadų procesą: užklausa iš svetainės, duomenų bazė, atsakingas žmogus, automatinis laiškas, registracija kalendoriuje. Sistema lieka jūsų. Už rezultatą atsakome mes.</p>
+    <div class="meta">
+      <div><span class="k">Kam</span><span class="v">HOMA · Julita Juškaitė, rinkodaros projektų vadovė</span></div>
+      <div><span class="k">Ką</span><span class="v">2 dienų gyvi mokymai + bandomasis procesas</span></div>
+      <div><span class="k">Kam skirta</span><span class="v">Iki 12 žmonių, 6 rolės</span></div>
+      <div><span class="k">Kada</span><span class="v">Per 3-4 savaites nuo patvirtinimo</span></div>
+      <div><span class="k">Investicija</span><span class="v">9 500 € + PVM</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Ką perskaitėme laiške</p>
+    <h2>Trys sluoksniai viename laiške, ir <em>kodėl dvi dienos, ne viena.</em></h2>
+    <p class="body">Jūsų laiškas yra ne mokymų užsakymas, o beveik gatavas procesų žemėlapis. Jame trys skirtingi dalykai, ir kiekvienam reikia skirtingo formato.</p>
+    <div class="layers">
+      <div class="s">
+        <div class="h"><span class="num">1</span><h3>DI kasdieniame darbe</h3></div>
+        <p>Šešios rolės, kiekviena su savo darbais: nuo rinkos duomenų iki maketų adaptacijos. Tai mokymai, bet ne teoriniai: kiekvienas išeina su veikiančiu DI darbuotoju.</p>
+      </div>
+      <div class="s">
+        <div class="h"><span class="num">2</span><h3>Leadų procesas</h3></div>
+        <p>Nuo formos iki registracijos kalendoriuje: dublikatai, priskyrimas, laiškai, priminimai, viena kliento istorija. Tai jau ne mokymai, o procesas, kurį reikia pastatyti ir paleisti.</p>
+      </div>
+      <div class="s">
+        <div class="h"><span class="num">3</span><h3>Skambučiai ir vienas tiesos šaltinis</h3></div>
+        <p>Skambučių santraukos ir įžvalgos, patvirtintos projekto informacijos sklaida į visus kanalus. Tai principai ir šablonai, kuriuos įdiegiame ir paliekame jums plėsti.</p>
+      </div>
+    </div>
+    <p class="body">Viena diena duoda įgūdžius. Dvi dienos duoda įgūdžius ir veikiantį procesą, kurį trečią dieną jau naudoja pardavimų vadovės. Todėl siūlome dvi dienas, o vienos dienos variantą paliekame kaip alternatyvą investicijos skiltyje.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Ką spręsime</p>
+    <h2>Šešios rolės, viena sistema: <em>kiekvienas išeina su savo DI darbuotoju.</em></h2>
+    <p class="body">Jūsų įvardintus darbus sudėliojome pagal roles. Kiekvienas punktas yra atskiras DI darbuotojas: pirmuosius statome gyvai per dvi dienas, likusius pasistatote patys su mūsų šablonais ir 30 dienų palyda.</p>
+    <div class="domains">
+      <div class="domain">
+        <div class="dh"><h3>NT analitikė</h3><span class="tag">1 žmogus</span></div>
+        <ul>
+          <li>Rinkos ir konkurentų duomenų surinkimas ir atnaujinimas</li>
+          <li>Kainų, plotų, pasiūlos ir pardavimo tempo palyginimas</li>
+          <li>Neatitikimų ir neįprastų pokyčių pastebėjimas</li>
+          <li>Periodinė ataskaita ir trumpa santrauka vadovybei</li>
+          <li>Pardavimo ir biudžeto prognozių scenarijai</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <div class="dh"><h3>Rinkodara</h3><span class="tag">4 žmonės</span></div>
+        <ul>
+          <li>Visų projektų būklės, terminų ir rizikų santrauka vadovei</li>
+          <li>Susitikimų santraukos ir užduotys iš jų automatiškai</li>
+          <li>Iš vienos projekto informacijos: turinys skirtingiems kanalams</li>
+          <li>Meta reklamų brief'ai, kampai ir tekstų variantai su DI</li>
+          <li>Patikra, ar visuose kanaluose ta pati ir aktuali informacija</li>
+          <li>Kalbėjimas vietoj rašymo: DI rašo, kol jūs diktuojate</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <div class="dh"><h3>Pardavimai</h3><span class="tag">3 žmonės</span></div>
+        <ul>
+          <li>Automatinis leadų paskirstymas pagal projektą ir taisykles</li>
+          <li>Reakcijos laiko sekimas ir priminimai dėl užstrigusių kontaktų</li>
+          <li>Kliento kelias nuo užklausos iki rezervacijos vienoje vietoje</li>
+          <li>Konversijos pagal projektą, pardavėją ir šaltinį</li>
+          <li>Savaitinė rezultatų santrauka ir prarastų pardavimų priežastys</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <div class="dh"><h3>Grafikos dizainerė</h3><span class="tag">1 žmogus</span></div>
+        <ul>
+          <li>Struktūruota dizaino užduotis iš rinkodaros brief'o</li>
+          <li>Pirminės kūrybinės kryptys ir maketų eskizai</li>
+          <li>Patvirtinto maketo adaptacija skirtingiems formatams</li>
+          <li>Tekstų, kainų ir duomenų sutapimo patikra</li>
+          <li>Versijos, patvirtinimai, failų pavadinimai ir formatai</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <div class="dh"><h3>Ryšių su klientais koordinatorė</h3><span class="tag">1 žmogus</span></div>
+        <ul>
+          <li>Registracijos, patvirtinimai, priminimai ir pakeitimai</li>
+          <li>Atsakymai į pasikartojančius klausimus iš DUK bazės</li>
+          <li>Klientų atsiliepimų fiksavimas ir perdavimas komandoms</li>
+          <li>Priminimai apie klientus, kuriems privalu atsakyti</li>
+        </ul>
+      </div>
+      <div class="domain">
+        <div class="dh"><h3>Skambučių centras</h3><span class="tag">2+ žmonės</span></div>
+        <ul>
+          <li>Įrašas, transkripcija ir automatinė skambučio santrauka</li>
+          <li>Poreikis, biudžetas, terminas ir dominantis projektas iš pokalbio</li>
+          <li>Kitų veiksmų sąrašas po kiekvieno skambučio</li>
+          <li>Dažniausi klausimai, prieštaravimai ir nepardavimo priežastys</li>
+          <li>Skambučių kokybė pagal jūsų patvirtintus kriterijus</li>
+          <li>Įžvalgos rinkodarai, svetainei ir DUK skilčiai</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">2 dienų programa</p>
+    <h2>Ko konkrečiai išmoksite ir ką <em>išsinešite veikiančio.</em></h2>
+    <p class="body">Statome kartu su jumis, ne už jus: jūsų žmonės kuria greta, kad po dviejų dienų mokėtų patys. Veda du krei vedėjai: Antanas ir kolega, kad vienu metu galėtume dirbti su dviem grupėmis.</p>
+
+    <div class="day0">
+      <span class="dl">Prieš · Žemėlapis</span>
+      <p>Iš jūsų laiško ir vieno valandos pokalbio nuotoliu sudarome dabartinio leadų proceso schemą, prioritetų sąrašą ir prieigų sąrašą. Į pirmą dieną ateiname jau žinodami, ką statysime.</p>
+    </div>
+
+    <div class="days">
+      <div class="day">
+        <div class="dl">1 diena</div>
+        <h3>Pagrindai visai komandai ir pirmieji DI darbuotojai pagal roles</h3>
+        <h5>Rytas · visi kartu</h5>
+        <ul>
+          <li>DI darbuotojo mąstysena: kaip DI perima konkretų darbą</li>
+          <li>Promptai, kurie duoda patikimą rezultatą kaskart, ir kaip DI nehaliucinuotų</li>
+          <li>Kalbėjimas vietoj rašymo: diktuoji, DI rašo laiškus, brief'us, santraukas</li>
+          <li>Saugus darbas su klientų duomenimis: ką galima, ko negalima, BDAR praktikoje</li>
+          <li>DI asistento diegimas į kiekvieno dalyvio kompiuterį</li>
+        </ul>
+        <h5>Popietė · dvi grupės pagal roles</h5>
+        <ul>
+          <li>Rinkodara, analitikė, dizainerė: projekto santrauka, turinys keliems kanalams iš vienos informacijos, Meta brief'as, rinkos duomenų ataskaita, struktūruota dizaino užduotis</li>
+          <li>Pardavimai, koordinatorė, skambučių centras: skambučio santrauka su poreikiais ir kitais veiksmais, atsakymai iš DUK bazės, savaitinė pardavimų santrauka</li>
+          <li>Kiekvienas išeina su bent vienu veikiančiu DI darbuotoju ant savo tikro darbo</li>
+        </ul>
+      </div>
+      <div class="day">
+        <div class="dl">2 diena</div>
+        <h3>Bandomasis leadų procesas ir sistema, kuri lieka</h3>
+        <h5>Rytas · pardavimai, koordinatorė, rinkodara</h5>
+        <ul>
+          <li>Gyvai statome procesą: forma, bazė, dublikatų patikra, žymėjimas, priskyrimas, laiškas, kalendorius, priminimas</li>
+          <li>Kur pilna automatika, o kur laiško laukia žmogaus patvirtinimas</li>
+          <li>Klaidos ir išimtys: pamestos užklausos, dubliuotos registracijos, neteisingas laiškas</li>
+        </ul>
+        <h5>Popietė · visi kartu</h5>
+        <ul>
+          <li>Skambučių analizės ir santraukų šablonas, kokybės kriterijai</li>
+          <li>Vienas patvirtintos projekto informacijos šaltinis: principas, pirmas variantas, kas ką tvirtina</li>
+          <li>Excel ar CRM: rekomendacija su argumentais ir kada pereiti</li>
+          <li>Automatizacijų prioritetų sąrašas pagal naudą, kainą ir sudėtingumą</li>
+          <li>Kaip statyti naujus DI darbuotojus patiems: promptų biblioteka, gerosios praktikos, 30 dienų planas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h4>Bandomasis procesas, kurį paleidžiame antrą dieną</h4>
+      <ol>
+        <li>Klientas užpildo formą svetainėje, portale ar reklamoje</li>
+        <li>Užklausa patenka į bendrą bazę</li>
+        <li>Patikra, ar kontaktas jau yra ir ar užklausa nesidubliuoja</li>
+        <li>Žymėjimas pagal projektą, šaltinį, kampaniją ir dominantį būstą</li>
+        <li>Priskyrimas atsakingai pardavimų vadovei pagal taisykles</li>
+        <li>Pranešimas ir užduotis atsakingai susisiekti</li>
+        <li>Klientui automatinis laiškas pagal projektą ir užklausą</li>
+        <li>Nuoroda pasirinkti laiką, tik realiai laisvi laikai</li>
+        <li>Įvykis abiejų šalių kalendoriuose, priminimas prieš susitikimą</li>
+        <li>Po susitikimo: rezultato fiksavimas ir kita užduotis</li>
+      </ol>
+      <p class="gate"><b>Ant kokių įrankių.</b> Statome ant to, ką jau turite (Excel arba Google lentelė, el. paštas, kalendoriai), arba ant bazinio CRM plano, jei per Žemėlapį nuspręsime, kad laikas. Pilnas CRM diegimas ir integracijos su NT portalais yra atskiras etapas, kurį, jei norėsite, suplanuojame po 30 dienų.</p>
+    </div>
+
+    <div class="learn">
+      <div class="lgroup">
+        <h4>Pagrindai, sauga ir tikslumas</h4>
+        <ul>
+          <li><span class="ck">✓</span>Dirbti atsakingai ir saugiai, kad klientų ir įmonės duomenys liktų apsaugoti</li>
+          <li><span class="ck">✓</span>Kad DI nehaliucinuotų ir darbą atliktų tiksliai, kaip reikia</li>
+          <li><span class="ck">✓</span>Rašyti promptus, kurie duoda patikimą rezultatą kaskart</li>
+          <li><span class="ck">✓</span>Diktuoti vietoj rašymo ir gauti gatavą tekstą</li>
+        </ul>
+      </div>
+      <div class="lgroup">
+        <h4>Atmintis ir kontekstas</h4>
+        <ul>
+          <li><span class="ck">✓</span>Kaip suteikti DI projekto kontekstą, kad jis žinotų kainas, terminus ir faktus</li>
+          <li><span class="ck">✓</span>Kad DI atsimintų, kas jau daryta ir nuspręsta</li>
+          <li><span class="ck">✓</span>Kaip DI mokosi iš klaidų ir jų nekartoja</li>
+        </ul>
+      </div>
+      <div class="lgroup">
+        <h4>Integracijos ir automatizacija</h4>
+        <ul>
+          <li><span class="ck">✓</span>Kaip DI prisijungia prie el. pašto, kalendoriaus, lentelių, CRM ir naršyklės</li>
+          <li><span class="ck">✓</span>Kaip automatizuoti pasikartojančius darbus, kad vyktų be jūsų įsikišimo</li>
+          <li><span class="ck">✓</span>Kur būtinas žmogaus patvirtinimas ir kaip jį įdėti į procesą</li>
+        </ul>
+      </div>
+      <div class="lgroup">
+        <h4>Kokybė ir mastelis</h4>
+        <ul>
+          <li><span class="ck">✓</span>Kaip tikrinti DI rezultatą prieš jam pasiekiant klientą</li>
+          <li><span class="ck">✓</span>Kaip prioritizuoti, kurį DI darbuotoją kurti pirmiausia</li>
+          <li><span class="ck">✓</span>Kaip skambučių įžvalgas paversti rinkodaros sprendimais</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Preliminari programa: galutinę suderiname per Žemėlapį pagal jūsų prioritetus. Per dvi dienas gyvai pastatome didžiausios grąžos darbuotojus ir bandomąjį procesą; likusius sudėliojate patys su šablonais ir 30 dienų palyda.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Kodėl krei</p>
+    <h2>Leadų procesas ir Meta reklama yra <em>kasdienis krei darbas, ne teorija.</em></h2>
+    <p class="body">Antanas vadovauja augimui finansų įmonių grupėje, kurioje per Meta reklamą kas mėnesį surenkami šimtai užklausų ir perduodami pardavimų komandai. Tą patį kelią, nuo formos iki susitikimo, esame perėję patys, su tomis pačiomis problemomis: dublikatai, lėta reakcija, pamesti kontaktai. Turime ir veikiantį pavyzdį: DI darbuotoją, kuris gauna užklausą, užduoda patikslinančius klausimus, paruošia pasiūlymą, registruoja susitikimą ir įrašo į CRM. Parodysime jį pokalbyje.</p>
+    <div class="metrics">
+      <div class="metric"><span class="n">200 000 €</span><span class="l">Sandoris, kurį kliento DI agentas padėjo rasti ir apdirbti (Eldeko, Klaipėda)</span></div>
+      <div class="metric"><span class="n">3-4 d. → 10 min</span><span class="l">Audito dokumentas, kurį auditorius įvertino „Perfekt“</span></div>
+      <div class="metric"><span class="n">~80 val./mėn</span><span class="l">Rankinio darbo, kuris nebekartojamas ranka</span></div>
+    </div>
+    <p class="note">Skaičiai iš pokalbio su Eldeko vadovu Mariumi Kanevičiumi (2026-09-04). Istorija: krei.lt/istorijos.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Eiga</p>
+    <h2>Kaip viskas vyks, nuo Žemėlapio iki <em>savarankiškos komandos.</em></h2>
+    <div class="strip">
+      <div class="s">
+        <div class="h"><span class="num">1</span><h3>Žemėlapis</h3></div>
+        <p>Valandos pokalbis nuotoliu: dabartinio proceso schema, prioritetai, prieigos, dalyviai.</p>
+        <span class="when">Prieš · nuotoliu</span>
+      </div>
+      <div class="s">
+        <div class="h"><span class="num">2</span><h3>Dvi dienos</h3></div>
+        <p>Pas jus arba jūsų pasirinktoje vietoje: diegiam į kiekvieno kompiuterį, statom gyvai, paleidžiam procesą.</p>
+        <span class="when">Vilnius · biuras ar sodyba</span>
+      </div>
+      <div class="s">
+        <div class="h"><span class="num">3</span><h3>Palyda</h3></div>
+        <p>30 dienų atsakom klausimus ir surengiam vieną palydos sesiją, kad procesas ir darbuotojai prigytų.</p>
+        <span class="when">30 dienų po</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Kas lieka jums</p>
+    <h2>Išeinate ne su užrašais. Su <em>veikiančiu procesu ir dokumentais, kurie lieka pas jus.</em></h2>
+    <p class="body">Tai jūsų laiške išvardinti rezultatai, vienas prie vieno.</p>
+    <div class="deliver">
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Dabartinio leadų proceso schema</b> nuo užklausos iki pardavimo</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Rekomenduojama būsimo proceso schema</b></span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Veikiantis bandomasis procesas:</b> užklausa iš svetainės, bazė, atsakingas žmogus, automatinis laiškas, registracija kalendoriuje</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Automatinių laiškų ir priminimų šablonai</b> pagal projektą</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Leadų paskirstymo taisyklės</b> ir privalomų duomenų laukų sąrašas</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Skambučių analizės ir santraukų šablonas</b></span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Komandos atsakomybių ir patvirtinimų matrica</b></span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Automatizacijų prioritetų sąrašas</b> pagal naudą, kainą ir sudėtingumą</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Rekomendacija: Excel ar CRM,</b> ir jei CRM, tai kuris ir kada</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Klaidų ir išimčių valdymo planas</b> automatizacijoms</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>BDAR, prieigų ir klientų duomenų saugumo taisyklės</b></span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>DI asistentai kiekvieno dalyvio kompiuteryje</b> ir promptų biblioteka pagal roles</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>Darbo instrukcijos (SOP)</b> jūsų aplanke, pakartojama sistema</span></div>
+      <div class="d"><span class="ck">✓</span><span class="dt"><b>30 dienų palaikymas</b> ir viena palydos sesija</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Rizika mūsų, ne jūsų</p>
+    <h2>Rezultatų garantija, kurios Lietuvoje <em>neduoda niekas.</em></h2>
+    <div class="guar">
+      <h3>Veikia arba grąžiname pinigus.</h3>
+      <div class="seq">
+        <div><span class="d">30 d.</span><span class="t">Jei per 30 dienų jūsų komandoje realiai nedirba bent vienas DI darbuotojas, dirbame nemokamai dar iki 15 dienų.</span></div>
+        <div><span class="d">45 d.</span><span class="t">Jei ir tada neveikia, o jūsų pusė buvo atlikta, grąžiname 100% sumos. Automatiškai, be diskusijų.</span></div>
+      </div>
+      <p class="cond"><b>Jūsų pusė yra dalyvavimas, ne rezultatas</b> (rezultatas yra mūsų darbas): (1) paskirti žmonės dalyvavo mokymuose ir palydoje; (2) prieigos ir duomenys pateikti laiku. Visos sąlygos yra sutartyje, prieš mokant.</p>
+    </div>
+    <p class="note">Ši garantija paprastai netaikoma vien mokymams. Jums ją įtraukiame sąmoningai, nes esame tikri, kad suveiks.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Investicija</p>
+    <h2>Ką tai kainuotų kitur, ir <em>ką mokate dabar.</em></h2>
+    <p class="body">Dvylika apmokytų žmonių, veikiantis leadų procesas, DI darbuotojai kiekvienoje rolėje ir dvi pilnos dienos vietoje: tai diegimo, ne seminaro apimtis.</p>
+    <div class="pricebox">
+      <div class="stack">
+        <div class="row"><span>Samdyti vieną DI specialistą</span><span class="rv">3 000-4 000 € / mėn + Sodra</span></div>
+        <div class="row"><span>Agentūra už vieną automatizuotą procesą</span><span class="rv">nuo ~8 000 €</span></div>
+        <div class="row alt"><span>Alternatyva: 1 mokymų diena visai komandai, be bandomojo proceso ir be garantijos</span><span class="rv">6 500 € + PVM</span></div>
+      </div>
+      <div class="final">
+        <span class="fl">Žemėlapis + 2 dienos + 30 d. palyda<small>Rekomenduojamas variantas</small></span>
+        <span class="fv">9 500 € <span style="font-size:.5em;font-family:'Inter',sans-serif;font-weight:500">+ PVM</span></span>
+      </div>
+      <p class="terms">Apmokėjimas: 50% avansas patvirtinus, 50% po mokymų. Kaina apima iki 12 dalyvių (papildomas dalyvis 490 €), Žemėlapį, diegimą į kiekvieno kompiuterį, bandomąjį procesą, visus išvardintus dokumentus ir šablonus bei 30 dienų palydą. Kelionė Vilniuje įskaičiuota. Galioja 14 dienų.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Dažni klausimai</p>
+    <h2>Ką paprastai klausia prieš pradedant.</h2>
+    <div class="faq">
+      <details open>
+        <summary>Ar tai jau CRM diegimas?</summary>
+        <div class="ans">Ne. Per dvi dienas paleidžiame bandomąjį procesą ant įrankių, kuriuos jau turite, ir duodame argumentuotą rekomendaciją, ar likti su Excel, ar pereiti į CRM, ir į kurį. Jei pasirinksite CRM, jo diegimą ir integracijas su portalais planuojame kaip atskirą etapą po 30 dienų, jau žinodami, kas procese veikia.</div>
+      </details>
+      <details>
+        <summary>Skambučių įrašymas ir teisinis pagrindas?</summary>
+        <div class="ans">Parodome, kaip įrašyti, transkribuoti ir analizuoti skambučius saugiai, ir duodame BDAR taisyklių šabloną su informavimo tekstais. Teisinį pagrindą įrašams (sutikimas, teisėtas interesas) pasitvirtinate su savo teisininku, nes tai priklauso nuo jūsų procesų. Kol jo nėra, viską galima daryti su darbuotojo užrašais po skambučio: santrauka, poreikiai ir kiti veiksmai veikia ir taip.</div>
+      </details>
+      <details>
+        <summary>Biuras ar sodyba?</summary>
+        <div class="ans">Tinka abu. Reikia stabilaus interneto, kiekvienam dalyviui savo kompiuterio ir prieigų prie savo darbo įrankių (el. pašto, kalendoriaus, lentelių). Sodyba dažnai net geriau, nes niekas neišeina „tik penkioms minutėms“ į susitikimą.</div>
+      </details>
+      <details>
+        <summary>O jei komanda neįsitrauks ir nieko neprigis?</summary>
+        <div class="ans">Būtent todėl darome kartu, ne už jus, kiekvienas stato ant savo tikro darbo, ir 30 dienų palydime. O garantija saugo jus: jei per 30 dienų komanda neturi bent vieno veikiančio DI darbuotojo, dirbame nemokamai dar iki 15 dienų, o jei ir tada neveikia (jūsų pusė atlikta), grąžiname 100%.</div>
+      </details>
+      <details>
+        <summary>Kas su klientų duomenų saugumu?</summary>
+        <div class="ans">Sistemos veikia jūsų aplinkoje, jūsų duomenys niekada nenaudojami modelių apmokymui, o duomenų tvarkymo sutartį (DPA) pasirašome prieš pradedant. Pirmą dieną atskira dalis skirta tam, ką su klientų duomenimis galima daryti, o ko ne.</div>
+      </details>
+      <details>
+        <summary>Ar reikia programuotojų?</summary>
+        <div class="ans">Ne. Didžioji dalis šių darbuotojų ir pats bandomasis procesas statomi be nė vienos kodo eilutės. Būtent todėl jį galės keisti ir plėsti jūsų komanda, ne mes.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Kiti žingsniai</p>
+    <h2>Nuo patvirtinimo iki <em>veikiančio proceso.</em></h2>
+    <div class="next">
+      <div class="n"><span class="s">01</span><span class="txt">30 min pokalbis: parodome veikiantį leadų procesą ir suderiname dalyvius bei datas</span></div>
+      <div class="n"><span class="s">02</span><span class="txt">Patvirtinat pasiūlymą, 50% avansas fiksuoja jūsų datas</span></div>
+      <div class="n"><span class="s">03</span><span class="txt">Pasirašom paslaugų teikimo sutartį ir DPA, darom Žemėlapį</span></div>
+      <div class="n"><span class="s">04</span><span class="txt">Dvi dienos su komanda + 30 d. palyda</span></div>
+    </div>
+    <p class="close">Julita, šis laiškas jau yra pusė Žemėlapio. Kitą pusę padarykime kartu ir per dvi dienas paverskime jį veikiančiu procesu, kuriuo trečią dieną naudojasi visa komanda.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">kre<span class="i">i</span></div>
+    <div>DI darbuotojai jūsų verslui · Vilnius · krei.lt · antanas@krei.lt · +370 603 04727</div>
+  </div>
+</footer>
+
+</body>
+</html>
